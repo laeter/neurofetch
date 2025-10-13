@@ -4,14 +4,25 @@
 
 > Made with ❤️ for the Neuro-sama community. Primarily for personal use on Arch Linux.
 
-![Neurofetch](https://img.shields.io/badge/neuro-sama-cyan?style=for-the-badge) ![Based on Fastfetch](https://img.shields.io/badge/based%20on-fastfetch-blue?style=for-the-badge) ![Arch Linux](https://img.shields.io/badge/arch-linux-1793D1?style=for-the-badge&logo=arch-linux)
+<div align="center">
+
+![Neurofetch](https://img.shields.io/badge/neuro--sama-cyan?style=for-the-badge) 
+![Based on Fastfetch](https://img.shields.io/badge/based%20on-fastfetch-blue?style=for-the-badge) 
+![Arch Linux](https://img.shields.io/badge/arch-linux-1793D1?style=for-the-badge&logo=arch-linux)
+
+</div>
 
 ## Screenshots
 
-<img src="screenshots/neuro.png" width="49%" align="left" />
-<img src="screenshots/evil.png" width="49%" align="right" />
-<img src="screenshots/vedal.png" width="49%" align="left" />
-<img src="screenshots/anny.png" width="49%" align="right" />
+<div align="center">
+  <img src="screenshots/neuro.png" width="49%" />
+  <img src="screenshots/evil.png" width="49%" />
+</div>
+
+<div align="center">
+  <img src="screenshots/vedal.png" width="49%" />
+  <img src="screenshots/anny.png" width="49%" />
+</div>
 
 ## Features
 
@@ -26,11 +37,13 @@
 ## Installation
 
 ### Quick Install (Maximum Brainrot Method)
+
 ```bash
 curl -sL https://raw.githubusercontent.com/laeter/neurofetch/dev/install.sh | bash
 ```
 
 ### Manual Install
+
 ```bash
 git clone https://github.com/laeter/neurofetch.git ~/.config/neurofetch
 cd ~/.config/neurofetch
@@ -40,6 +53,7 @@ make -j$(nproc)
 ```
 
 Add to your PATH (~/.zshrc or ~/.bashrc):
+
 ```bash
 export PATH="$HOME/.config/neurofetch:$PATH"
 ```
@@ -47,6 +61,7 @@ export PATH="$HOME/.config/neurofetch:$PATH"
 ## Usage
 
 ### Display Specific Logos
+
 ```bash
 neurofetch --neuro    # Neurosama
 neurofetch --evil     # EvilNeuro
@@ -55,6 +70,7 @@ neurofetch --anny     # Anny
 ```
 
 ### Set Default Logo
+
 ```bash
 neurofetch --neuro-a  # Apply Neurosama as default
 neurofetch --evil-a   # Apply EvilNeuro as default
@@ -63,6 +79,7 @@ neurofetch --anny-a   # Apply Anny as default
 ```
 
 ### Terminal Startup Modes
+
 ```bash
 neurofetch -r         # Random mode (default)
 neurofetch -n         # Sequential mode (cycles through all)
@@ -78,6 +95,7 @@ neurofetch -n         # Sequential mode (cycles through all)
 ## Configuration
 
 Neurofetch uses a custom config at `~/.config/neurofetch/config.jsonc` with:
+
 - Boxed sections with Unicode borders
 - Nerd Font icons for each info type
 - Hardware, Software, and Uptime sections
@@ -96,4 +114,8 @@ Same as fastfetch - MIT License
 
 ---
 
+<div align="center">
+
 *For Neuro. For Evil. For Vedal. For Anny. For the Neuro-sama Community❤️.*
+
+</div>
