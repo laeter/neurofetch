@@ -80,4 +80,4 @@ Same as fastfetch - MIT License
 
 ---
 
-*For Neuro. For Evil. For Vedal. For Anny. Heart.*
+*For Neuro. For Evil. For Vedal. For Anny. For the Neuro-sama Community❤️.*
