@@ -1,6 +1,6 @@
 # Neurofetch
 
-**Neuro-sama themed system information tool** - A fastfetch fork featuring custom ASCII art for the Neuro family.
+**A Neuro-sama Fetch themed system information tool** - A fastfetch fork featuring custom ASCII art for the Neuro family.
 
 > Made with ❤️ for the Neuro-sama community. Primarily for personal use on Arch Linux.
 
