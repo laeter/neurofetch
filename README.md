@@ -3,7 +3,10 @@
 **A Neuro-sama Fetch themed system information tool** - A fastfetch fork featuring custom ASCII art for the Neuro family.
 
 > Made with ❤️ for the Neuro-sama community. Primarily for personal use on Arch Linux.
->**NOTES** Some parts may not be working for other os I have not tested on others than anything Arch Based.
+
+> [!NOTE]
+> Some parts may not be working for other OS. I have not tested on anything other than Arch-based distributions.
+
 <div align="center">
 
 ![Neurofetch](https://img.shields.io/badge/neuro--sama-cyan?style=for-the-badge) 
@@ -31,8 +34,6 @@
 - 🎯 **Easy Commands**: Simple shortcuts for all logos
 - 🔄 **Smart Modes**: Random or sequential logo rotation on terminal startup
 - 🎨 **RGB Colors**: Authentic character colors with full RGB support
-
-
 
 ## Installation
 
