@@ -21,6 +21,8 @@
 - 🔄 **Smart Modes**: Random or sequential logo rotation on terminal startup
 - 🎨 **RGB Colors**: Authentic character colors with full RGB support
 
+
+
 ## Installation
 
 ### Quick Install (Maximum Brainrot Method)
