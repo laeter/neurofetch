@@ -16,6 +16,12 @@
 
 ## Installation
 
+### Quick Install (Maximum Brainrot Method)
+```bash
+curl -sL https://raw.githubusercontent.com/laeter/neurofetch/dev/install.sh | bash
+```
+
+### Manual Install
 ```bash
 git clone https://github.com/laeter/neurofetch.git ~/.config/neurofetch
 cd ~/.config/neurofetch
@@ -24,7 +30,7 @@ cmake .. -DCMAKE_BUILD_TYPE=RelWithDebInfo
 make -j$(nproc)
 ```
 
-Add to your PATH:
+Add to your PATH (~/.zshrc or ~/.bashrc):
 ```bash
 export PATH="$HOME/.config/neurofetch:$PATH"
 ```
