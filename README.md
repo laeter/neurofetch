@@ -71,7 +71,8 @@ Neurofetch uses a custom config at `~/.config/neurofetch/config.jsonc` with:
 ## Credits
 
 - **Base**: [fastfetch](https://github.com/fastfetch-cli/fastfetch) - The blazing-fast system information tool
-- **ASCII Art**: Neuro-sama community
+- **ASCII Art**: [fetch-sama](https://github.com/c-error/fetch-sama) by c-error - All Neuro family ASCII art (Neurosama, EvilNeuro, Vedal, Anny) with RGB color palettes
+- **Neuro-sama Community**: For the inspiration and support
 - **Development**: Built with maximum brainrot energy ✨
 
 ## License
