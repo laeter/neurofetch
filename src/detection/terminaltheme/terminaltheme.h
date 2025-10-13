@@ -1,6 +1,6 @@
 #pragma once
 
-#include "fastfetch.h"
+#include "neurofetch.h"
 #include "modules/terminaltheme/option.h"
 
 typedef struct FFTerminalThemeColor

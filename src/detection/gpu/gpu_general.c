@@ -58,6 +58,6 @@ const char* ffDetectGPUImpl(FF_MAYBE_UNUSED const FFGPUOptions* options, FFlist*
 
 const char* ffDetectGPUImpl(FF_MAYBE_UNUSED const FFGPUOptions* options, FF_MAYBE_UNUSED FFlist* gpus)
 {
-    return "Fastfetch was built without libpciaccess support";
+    return "Neurofetch was built without libpciaccess support";
 }
 #endif

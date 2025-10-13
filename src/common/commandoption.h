@@ -1,8 +1,8 @@
 #pragma once
 
-#include "fastfetch.h"
+#include "neurofetch.h"
 
-// Things only needed by fastfetch
+// Things only needed by neurofetch
 typedef struct FFdata
 {
     FFstrbuf structure;

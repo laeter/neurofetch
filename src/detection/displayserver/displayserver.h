@@ -1,6 +1,6 @@
 #pragma once
 
-#include "fastfetch.h"
+#include "neurofetch.h"
 #include "modules/display/option.h"
 
 #define FF_DE_PRETTY_PLASMA "KDE Plasma"

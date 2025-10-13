@@ -1,4 +1,4 @@
-#include "fastfetch.h"
+#include "neurofetch.h"
 #include "detection/media/media.h"
 #include "util/stringUtils.h"
 
@@ -247,6 +247,6 @@ void ffDetectMediaImpl(FFMediaResult* media)
         const char* error = getMedia(media);
         ffStrbufAppendS(&media->error, error);
     #else
-        ffStrbufAppendS(&media->error, "Fastfetch was compiled without DBus support");
+        ffStrbufAppendS(&media->error, "Neurofetch was compiled without DBus support");
     #endif
 }

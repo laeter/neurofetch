@@ -54,7 +54,7 @@ static const char* detectFsLabel(struct statfs* fs, FFDisk* disk)
 #else
 static const char* detectFsLabel(FF_MAYBE_UNUSED struct statfs* fs, FF_MAYBE_UNUSED FFDisk* disk)
 {
-    return "Fastfetch was compiled without libgeom support";
+    return "Neurofetch was compiled without libgeom support";
 }
 #endif
 

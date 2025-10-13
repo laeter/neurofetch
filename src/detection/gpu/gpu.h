@@ -1,6 +1,6 @@
 #pragma once
 
-#include "fastfetch.h"
+#include "neurofetch.h"
 #include "modules/gpu/option.h"
 
 #define FF_GPU_TEMP_UNSET (-DBL_MAX)

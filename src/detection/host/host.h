@@ -1,6 +1,6 @@
 #pragma once
 
-#include "fastfetch.h"
+#include "neurofetch.h"
 #include "modules/host/option.h"
 
 typedef struct FFHostResult

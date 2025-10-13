@@ -1,4 +1,4 @@
-#include "fastfetch.h"
+#include "neurofetch.h"
 #include "common/init.h"
 #include "common/parsing.h"
 #include "common/thread.h"
@@ -122,7 +122,7 @@ void ffStart(void)
 
     //reset everything to default before we start printing
     if(!instance.config.display.pipe && !instance.state.resultDoc)
-        fputs(FASTFETCH_TEXT_MODIFIER_RESET, stdout);
+        fputs(NEUROFETCH_TEXT_MODIFIER_RESET, stdout);
 
     if(ffHideCursor)
         fputs("\033[?25l", stdout);
@@ -162,7 +162,7 @@ void ffDestroyInstance(void)
     destroyState();
 }
 
-//Must be in a file compiled with the libfastfetch target, because the FF_HAVE* macros are not defined for the executable targets
+//Must be in a file compiled with the libneurofetch target, because the FF_HAVE* macros are not defined for the executable targets
 void ffListFeatures(void)
 {
     fputs(

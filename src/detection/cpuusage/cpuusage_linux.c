@@ -1,4 +1,4 @@
-#include "fastfetch.h"
+#include "neurofetch.h"
 #include "detection/cpuusage/cpuusage.h"
 #include "common/io/io.h"
 

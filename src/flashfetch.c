@@ -1,4 +1,4 @@
-#include "fastfetch.h"
+#include "neurofetch.h"
 
 #include "common/init.h"
 #include "modules/modules.h"

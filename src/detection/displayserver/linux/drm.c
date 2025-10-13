@@ -451,5 +451,5 @@ const char* ffdsConnectDrm(FF_MAYBE_UNUSED FFDisplayServerResult* result)
     return drmParseSysfs(result);
     #endif
 
-    return "fastfetch was compiled without drm support";
+    return "neurofetch was compiled without drm support";
 }

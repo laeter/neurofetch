@@ -433,7 +433,7 @@ const char* ffdsConnectXcbRandr(FFDisplayServerResult* result)
 {
     //Do nothing. There are other implementations coming
     FF_UNUSED(result)
-    return "Fastfetch was compiled without libxcb-randr support";
+    return "Neurofetch was compiled without libxcb-randr support";
 }
 
 #endif

@@ -1,4 +1,4 @@
-#include "fastfetch.h"
+#include "neurofetch.h"
 #include "detection/gpu/gpu.h"
 #include "detection/vulkan/vulkan.h"
 
@@ -70,9 +70,9 @@ static const char* detectVulkan(FFVulkanResult* result)
     }
 
     const uint32_t projectVersion = VK_MAKE_VERSION(
-        FASTFETCH_PROJECT_VERSION_MAJOR,
-        FASTFETCH_PROJECT_VERSION_MINOR,
-        FASTFETCH_PROJECT_VERSION_PATCH
+        NEUROFETCH_PROJECT_VERSION_MAJOR,
+        NEUROFETCH_PROJECT_VERSION_MINOR,
+        NEUROFETCH_PROJECT_VERSION_PATCH
     );
 
     VkInstance vkInstance;
@@ -82,7 +82,7 @@ static const char* detectVulkan(FFVulkanResult* result)
         .pApplicationInfo = &(VkApplicationInfo) {
             .sType = VK_STRUCTURE_TYPE_APPLICATION_INFO,
             .pNext = NULL,
-            .pApplicationName = FASTFETCH_PROJECT_NAME,
+            .pApplicationName = NEUROFETCH_PROJECT_NAME,
             .applicationVersion = projectVersion,
             .pEngineName = "vulkanPrintGPUs",
             .engineVersion = projectVersion,
@@ -270,7 +270,7 @@ FFVulkanResult* ffDetectVulkan(void)
         #ifdef FF_HAVE_VULKAN
             result.error = detectVulkan(&result);
         #else
-            result.error = "fastfetch was compiled without vulkan support";
+            result.error = "neurofetch was compiled without vulkan support";
         #endif
     }
 

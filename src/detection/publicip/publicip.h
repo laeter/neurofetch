@@ -1,6 +1,6 @@
 #pragma once
 
-#include "fastfetch.h"
+#include "neurofetch.h"
 #include "modules/publicip/option.h"
 
 typedef struct FFPublicIpResult

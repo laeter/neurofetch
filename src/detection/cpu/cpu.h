@@ -1,6 +1,6 @@
 #pragma once
 
-#include "fastfetch.h"
+#include "neurofetch.h"
 #include "modules/cpu/option.h"
 
 #define FF_CPU_TEMP_UNSET (-DBL_MAX)

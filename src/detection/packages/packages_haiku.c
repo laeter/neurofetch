@@ -8,7 +8,7 @@ void ffDetectPackagesImpl(FFPackagesResult* result, FFPackagesOptions* options)
 
     if (!(options->disabled & FF_PACKAGES_FLAG_HPKG_BIT))
     {
-        result->hpkgSystem = ffPackagesGetNumElements(FASTFETCH_TARGET_DIR_ROOT "/system/packages", false);
-        result->hpkgUser = ffPackagesGetNumElements(FASTFETCH_TARGET_DIR_ROOT "/boot/home/config/packages", false);
+        result->hpkgSystem = ffPackagesGetNumElements(NEUROFETCH_TARGET_DIR_ROOT "/system/packages", false);
+        result->hpkgUser = ffPackagesGetNumElements(NEUROFETCH_TARGET_DIR_ROOT "/boot/home/config/packages", false);
     }
 }

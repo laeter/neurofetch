@@ -1,5 +1,5 @@
 
-#include "fastfetch.h"
+#include "neurofetch.h"
 #include "opengl.h"
 
 #define GL_SILENCE_DEPRECATION
@@ -62,7 +62,7 @@ const char* ffDetectOpenGL(FFOpenGLOptions* options, FFOpenGLResult* result)
         const char* ffOpenGLDetectByEGL(FFOpenGLResult* result);
         return ffOpenGLDetectByEGL(result);
         #else
-        return "fastfetch was compiled without egl support";
+        return "neurofetch was compiled without egl support";
         #endif
     }
     else

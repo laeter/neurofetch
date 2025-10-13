@@ -110,7 +110,7 @@ void ffDestroyVersionOptions(FFVersionOptions* options)
 
 FFModuleBaseInfo ffVersionModuleInfo = {
     .name = FF_VERSION_MODULE_NAME,
-    .description = "Print Fastfetch version",
+    .description = "Print Neurofetch version",
     .initOptions = (void*) ffInitVersionOptions,
     .destroyOptions = (void*) ffDestroyVersionOptions,
     .parseJsonObject = (void*) ffParseVersionJsonObject,

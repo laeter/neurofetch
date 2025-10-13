@@ -71,7 +71,7 @@ static const char* detectSound(FFlist* devices)
         return "Failed to get pulseaudio mainloop api";
     }
 
-    pa_context* context = ffpa_context_new(mainloopApi, "fastfetch");
+    pa_context* context = ffpa_context_new(mainloopApi, "neurofetch");
     if(!context)
     {
         ffpa_mainloop_free(mainloop);
@@ -133,6 +133,6 @@ const char* ffDetectSound(FFlist* devices)
         return detectSound(devices);
     #else
         FF_UNUSED(devices);
-        return "Fastfetch was built without libpulse support";
+        return "Neurofetch was built without libpulse support";
     #endif
 }

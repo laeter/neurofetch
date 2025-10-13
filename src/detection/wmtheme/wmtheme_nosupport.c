@@ -1,4 +1,4 @@
-#include "fastfetch.h"
+#include "neurofetch.h"
 #include "wmtheme.h"
 
 bool ffDetectWmTheme(FFstrbuf* themeOrError)

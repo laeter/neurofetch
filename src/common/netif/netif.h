@@ -1,6 +1,6 @@
 #pragma once
 
-#include "fastfetch.h"
+#include "neurofetch.h"
 
 #ifndef _WIN32
     #include <net/if.h>

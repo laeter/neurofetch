@@ -1,6 +1,6 @@
 #pragma once
 
-#include "fastfetch.h"
+#include "neurofetch.h"
 
 typedef enum __attribute__((__packed__)) FFLogoLineType
 {
@@ -13,8 +13,8 @@ typedef enum __attribute__((__packed__)) FFLogoLineType
 typedef struct FFlogo
 {
     const char* lines;
-    const char* names[FASTFETCH_LOGO_MAX_NAMES];
-    const char* colors[FASTFETCH_LOGO_MAX_COLORS];
+    const char* names[NEUROFETCH_LOGO_MAX_NAMES];
+    const char* colors[NEUROFETCH_LOGO_MAX_COLORS];
     const char* colorKeys;
     const char* colorTitle;
     FFLogoLineType type;

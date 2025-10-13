@@ -1,4 +1,4 @@
-#include "fastfetch.h"
+#include "neurofetch.h"
 #include "terminalfont.h"
 #include "detection/terminalshell/terminalshell.h"
 #include "common/io/io.h"
@@ -9,7 +9,7 @@
     #include FT_FREETYPE_H
 #endif
 
-#define FF_TERMUX_FONT_PATH FASTFETCH_TARGET_DIR_HOME "/.termux/font.ttf"
+#define FF_TERMUX_FONT_PATH NEUROFETCH_TARGET_DIR_HOME "/.termux/font.ttf"
 
 const char* detectTermux(FFTerminalFontResult* terminalFont)
 {
@@ -54,7 +54,7 @@ exit:
     #else
 
     FF_UNUSED(terminalFont);
-    return "Fastfetch was built without freetype2 support";
+    return "Neurofetch was built without freetype2 support";
 
     #endif
 }

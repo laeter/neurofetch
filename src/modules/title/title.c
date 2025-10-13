@@ -8,7 +8,7 @@ static void appendText(FFstrbuf* output, const FFstrbuf* text, const FFstrbuf* c
     if (!instance.config.display.pipe)
     {
         if (instance.config.display.brightColor)
-            ffStrbufAppendS(output, FASTFETCH_TEXT_MODIFIER_BOLT);
+            ffStrbufAppendS(output, NEUROFETCH_TEXT_MODIFIER_BOLT);
         if (color->length > 0)
             ffStrbufAppendF(output, "\e[%sm", color->chars);
         else if (instance.config.display.colorTitle.length > 0)
@@ -18,7 +18,7 @@ static void appendText(FFstrbuf* output, const FFstrbuf* text, const FFstrbuf* c
     ffStrbufAppend(output, text);
 
     if(!instance.config.display.pipe)
-        ffStrbufAppendS(output, FASTFETCH_TEXT_MODIFIER_RESET);
+        ffStrbufAppendS(output, NEUROFETCH_TEXT_MODIFIER_RESET);
 }
 
 bool ffPrintTitle(FFTitleOptions* options)
@@ -39,7 +39,7 @@ bool ffPrintTitle(FFTitleOptions* options)
     {
         ffStrbufAppendF(&atColored, "\e[%sm", options->colorAt.chars);
         ffStrbufAppendC(&atColored, '@');
-        ffStrbufAppendS(&atColored, FASTFETCH_TEXT_MODIFIER_RESET);
+        ffStrbufAppendS(&atColored, NEUROFETCH_TEXT_MODIFIER_RESET);
     }
     else
         ffStrbufAppendC(&atColored, '@');

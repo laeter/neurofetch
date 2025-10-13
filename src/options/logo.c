@@ -6,8 +6,9 @@
 void ffOptionsInitLogo(FFOptionsLogo* options)
 {
     ffStrbufInit(&options->source);
-    options->type = FF_LOGO_TYPE_AUTO;
-    for(uint8_t i = 0; i < (uint8_t) FASTFETCH_LOGO_MAX_COLORS; ++i)
+    ffStrbufSetStatic(&options->source, "Neurosama");
+    options->type = FF_LOGO_TYPE_BUILTIN;
+    for(uint8_t i = 0; i < (uint8_t) NEUROFETCH_LOGO_MAX_COLORS; ++i)
         ffStrbufInit(&options->colors[i]);
     options->width = 0;
     options->height = 0; //preserve aspect ratio
@@ -78,7 +79,7 @@ logoType:
             int index = (int)subKey[6] - '0' - 1;
 
             //Match only --logo-color-[1-9]
-            if(index < 0 || index >= FASTFETCH_LOGO_MAX_COLORS)
+            if(index < 0 || index >= NEUROFETCH_LOGO_MAX_COLORS)
             {
                 fprintf(stderr, "Error: invalid --color-[1-9] index: %c\n", key[13]);
                 exit(472);
@@ -189,6 +190,66 @@ logoType:
         ffOptionParseString(key, value, &options->source);
         options->type = FF_LOGO_TYPE_IMAGE_RAW;
     }
+    else if(ffStrEqualsIgnCase(key, "--neuro"))
+    {
+        ffStrbufSetStatic(&options->source, "Neurosama");
+        options->type = FF_LOGO_TYPE_BUILTIN;
+    }
+    else if(ffStrEqualsIgnCase(key, "--neuro-a"))
+    {
+        system("sed -i 's/\"source\": \".*\"/\"source\": \"Neurosama\"/' ~/.config/neurofetch/config.jsonc");
+        printf("Default logo set to: Neurosama\n");
+        exit(0);
+    }
+    else if(ffStrEqualsIgnCase(key, "--evil"))
+    {
+        ffStrbufSetStatic(&options->source, "EvilNeuro");
+        options->type = FF_LOGO_TYPE_BUILTIN;
+    }
+    else if(ffStrEqualsIgnCase(key, "--evil-a"))
+    {
+        system("sed -i 's/\"source\": \".*\"/\"source\": \"EvilNeuro\"/' ~/.config/neurofetch/config.jsonc");
+        printf("Default logo set to: EvilNeuro\n");
+        exit(0);
+    }
+    else if(ffStrEqualsIgnCase(key, "--vedal"))
+    {
+        ffStrbufSetStatic(&options->source, "Vedal");
+        options->type = FF_LOGO_TYPE_BUILTIN;
+    }
+    else if(ffStrEqualsIgnCase(key, "--vedal-a"))
+    {
+        system("sed -i 's/\"source\": \".*\"/\"source\": \"Vedal\"/' ~/.config/neurofetch/config.jsonc");
+        printf("Default logo set to: Vedal\n");
+        exit(0);
+    }
+    else if(ffStrEqualsIgnCase(key, "--anny"))
+    {
+        ffStrbufSetStatic(&options->source, "Anny");
+        options->type = FF_LOGO_TYPE_BUILTIN;
+    }
+    else if(ffStrEqualsIgnCase(key, "--anny-a"))
+    {
+        system("sed -i 's/\"source\": \".*\"/\"source\": \"Anny\"/' ~/.config/neurofetch/config.jsonc");
+        printf("Default logo set to: Anny\n");
+        exit(0);
+    }
+    else if(ffStrEqualsIgnCase(key, "-r") || ffStrEqualsIgnCase(key, "--random-mode"))
+    {
+        // Enable random mode in .zshrc - uncomment random section, comment sequential section
+        system("sed -i '/^# Randomly select/,/^esac$/ { s/^# //; }' ~/.config/zsh/.zshrc");
+        system("sed -i '/^# # Sequential select/,/^# echo/ { s/^# // ; s/^/# / }' ~/.config/zsh/.zshrc");
+        printf("Random mode enabled - terminal will show random logos on startup\n");
+        exit(0);
+    }
+    else if(ffStrEqualsIgnCase(key, "-n") || ffStrEqualsIgnCase(key, "--normal-mode"))
+    {
+        // Enable sequential mode in .zshrc - comment random section, uncomment sequential section
+        system("sed -i '/^# Randomly select/,/^esac$/ { s/^/# / }' ~/.config/zsh/.zshrc");
+        system("sed -i '/^# # Sequential select/,/^# echo/ { s/^# // }' ~/.config/zsh/.zshrc");
+        printf("Sequential mode enabled - terminal will cycle through logos in order\n");
+        exit(0);
+    }
     else if((subKey = ffOptionTestPrefix(key, "chafa")))
     {
         if(subKey[0] == '\0')
@@ -244,7 +305,7 @@ void ffOptionsDestroyLogo(FFOptionsLogo* options)
 {
     ffStrbufDestroy(&options->source);
     ffStrbufDestroy(&options->chafaSymbols);
-    for(uint8_t i = 0; i < (uint8_t) FASTFETCH_LOGO_MAX_COLORS; ++i)
+    for(uint8_t i = 0; i < (uint8_t) NEUROFETCH_LOGO_MAX_COLORS; ++i)
         ffStrbufDestroy(&options->colors[i]);
 }
 
@@ -315,7 +376,7 @@ const char* ffOptionsParseLogoJsonConfig(FFOptionsLogo* options, yyjson_val* roo
             yyjson_obj_foreach(val, idxc, maxc, keyc, valc)
             {
                 uint32_t index = (uint32_t) strtoul(unsafe_yyjson_get_str(keyc), NULL, 10);
-                if (index < 1 || index > FASTFETCH_LOGO_MAX_COLORS)
+                if (index < 1 || index > NEUROFETCH_LOGO_MAX_COLORS)
                     return "Keys of property 'color' must be a number between 1 to 9";
 
                 ffOptionParseColor(yyjson_get_str(valc), &options->colors[index - 1]);
@@ -526,7 +587,7 @@ void ffOptionsGenerateLogoJsonConfig(FFOptionsLogo* options, yyjson_mut_doc* doc
 
     {
         yyjson_mut_val* color = yyjson_mut_obj(doc);
-        for (int i = 0; i < FASTFETCH_LOGO_MAX_COLORS; i++)
+        for (int i = 0; i < NEUROFETCH_LOGO_MAX_COLORS; i++)
         {
             char c = (char)('1' + i);
             yyjson_mut_obj_add(color, yyjson_mut_strncpy(doc, &c, 1), yyjson_mut_strbuf(doc, &options->colors[i]));

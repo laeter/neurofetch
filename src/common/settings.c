@@ -1,4 +1,4 @@
-#include "fastfetch.h"
+#include "neurofetch.h"
 #include "common/settings.h"
 #include "common/library.h"
 #include "common/thread.h"

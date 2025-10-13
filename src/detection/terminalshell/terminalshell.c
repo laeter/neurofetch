@@ -1,4 +1,4 @@
-#include "fastfetch.h"
+#include "neurofetch.h"
 #include "common/io/io.h"
 #include "common/processing.h"
 #include "common/properties.h"
@@ -94,7 +94,7 @@ static bool getShellVersionFish(FFstrbuf* exe, FFstrbuf* version)
 static bool getShellVersionPwsh(FFstrbuf* exe, FFstrbuf* version)
 {
     // Requires manually setting $POWERSHELL_VERSION
-    // $env:POWERSHELL_VERSION = $PSVersionTable.PSVersion.ToString(); fastfetch.exe
+    // $env:POWERSHELL_VERSION = $PSVersionTable.PSVersion.ToString(); neurofetch.exe
     const char* env = getenv("POWERSHELL_VERSION");
     if (env)
     {
@@ -584,8 +584,8 @@ static bool getTerminalVersionKitty(FFstrbuf* exe, FFstrbuf* version)
     char buffer[1024] = {};
     if (
         #if __linux__ || __GNU__
-        ffReadFileData(FASTFETCH_TARGET_DIR_USR "/lib64/kitty/kitty/constants.py", ARRAY_SIZE(buffer) - 1, buffer) ||
-        ffReadFileData(FASTFETCH_TARGET_DIR_USR "/lib/kitty/kitty/constants.py", ARRAY_SIZE(buffer) - 1, buffer)
+        ffReadFileData(NEUROFETCH_TARGET_DIR_USR "/lib64/kitty/kitty/constants.py", ARRAY_SIZE(buffer) - 1, buffer) ||
+        ffReadFileData(NEUROFETCH_TARGET_DIR_USR "/lib/kitty/kitty/constants.py", ARRAY_SIZE(buffer) - 1, buffer)
         #else
         ffReadFileData(_PATH_LOCALBASE "/share/kitty/kitty/constants.py", ARRAY_SIZE(buffer) - 1, buffer)
         #endif
@@ -640,7 +640,7 @@ static bool getTerminalVersionKitty(FFstrbuf* exe, FFstrbuf* version)
     #endif
 
     char versionHex[64];
-    // https://github.com/fastfetch-cli/fastfetch/discussions/1030#discussioncomment-9845233
+    // https://github.com/neurofetch-cli/neurofetch/discussions/1030#discussioncomment-9845233
     if (ffGetTerminalResponse(
         "\eP+q6b697474792d71756572792d76657273696f6e\e\\", // kitty-query-version
         1,

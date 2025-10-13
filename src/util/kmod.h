@@ -1,5 +1,5 @@
 #pragma once
 
-#include "fastfetch.h"
+#include "neurofetch.h"
 
 bool ffKmodLoaded(const char* modName);

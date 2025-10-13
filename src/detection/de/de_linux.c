@@ -29,9 +29,9 @@ static void getKDE(FFstrbuf* result, FFDEOptions* options)
     if(result->length == 0)
         ffParsePropFile(_PATH_LOCALBASE "/share/xsessions/plasmax11.desktop", "X-KDE-PluginInfo-Version =", result);
 #else
-    ffParsePropFile(FASTFETCH_TARGET_DIR_USR "/share/wayland-sessions/plasma.desktop", "X-KDE-PluginInfo-Version =", result);
+    ffParsePropFile(NEUROFETCH_TARGET_DIR_USR "/share/wayland-sessions/plasma.desktop", "X-KDE-PluginInfo-Version =", result);
     if(result->length == 0)
-        ffParsePropFile(FASTFETCH_TARGET_DIR_USR "/share/xsessions/plasmax11.desktop", "X-KDE-PluginInfo-Version =", result);
+        ffParsePropFile(NEUROFETCH_TARGET_DIR_USR "/share/xsessions/plasmax11.desktop", "X-KDE-PluginInfo-Version =", result);
 #endif
 
     if(result->length == 0)

@@ -4,7 +4,7 @@
 
 const FFlogo ffLogoUnknown = {
     .names = {"unknown"},
-    .lines = FASTFETCH_DATATEXT_LOGO_UNKNOWN,
+    .lines = NEUROFETCH_DATATEXT_LOGO_UNKNOWN,
     .colors = {
         FF_COLOR_FG_DEFAULT,
     },
@@ -14,17 +14,35 @@ static const FFlogo A[] = {
     // Adélie
     {
         .names = {"Adélie", "Adelie"},
-        .lines = FASTFETCH_DATATEXT_LOGO_ADELIE,
+        .lines = NEUROFETCH_DATATEXT_LOGO_ADELIE,
         .colors = {
             FF_COLOR_FG_BLUE,
             FF_COLOR_FG_WHITE,
             FF_COLOR_FG_CYAN,
         },
     },
+    // Anny
+    {
+        .names = {"Anny"},
+        .lines = NEUROFETCH_DATATEXT_LOGO_ANNY,
+        .colors = {
+            "38;2;220;213;215",     // $1 - Pale pink
+            "38;2;122;103;111",     // $2 - Dark mauve
+            "38;2;236;159;185",     // $3 - Bright pink
+            "38;2;254;246;240",     // $4 - Cream
+            "38;2;124;85;166",      // $5 - Dark purple
+            "38;2;204;158;246",     // $6 - Lavender
+            "38;2;255;255;255",     // $7 - Pure white
+            "38;2;255;208;199",     // $8 - Soft salmon
+            "38;2;246;190;182",     // $9 - Light rose
+        },
+        .colorKeys = "38;2;236;159;185",
+        .colorTitle = "38;2;236;159;185",
+    },
     // AerOS
     {
         .names = {"aerOS"},
-        .lines = FASTFETCH_DATATEXT_LOGO_AEROS,
+        .lines = NEUROFETCH_DATATEXT_LOGO_AEROS,
         .colors = {
             FF_COLOR_FG_CYAN,
             FF_COLOR_FG_CYAN,
@@ -33,7 +51,7 @@ static const FFlogo A[] = {
     // Aeon
     {
         .names = {"Aeon"},
-        .lines = FASTFETCH_DATATEXT_LOGO_AEON,
+        .lines = NEUROFETCH_DATATEXT_LOGO_AEON,
         .colors = {
             FF_COLOR_FG_256 "36",
             FF_COLOR_FG_256 "36",
@@ -42,7 +60,7 @@ static const FFlogo A[] = {
     // Aeon
     {
         .names = {"AerynOS"},
-        .lines = FASTFETCH_DATATEXT_LOGO_AERYNOS,
+        .lines = NEUROFETCH_DATATEXT_LOGO_AERYNOS,
         .colors = {
             FF_COLOR_FG_DEFAULT,
             FF_COLOR_FG_MAGENTA,
@@ -51,7 +69,7 @@ static const FFlogo A[] = {
     // Afterglow
     {
         .names = {"Afterglow"},
-        .lines = FASTFETCH_DATATEXT_LOGO_AFTERGLOW,
+        .lines = NEUROFETCH_DATATEXT_LOGO_AFTERGLOW,
         .colors = {
             FF_COLOR_FG_MAGENTA,
             FF_COLOR_FG_RED,
@@ -62,7 +80,7 @@ static const FFlogo A[] = {
     // AIX
     {
         .names = {"aix"},
-        .lines = FASTFETCH_DATATEXT_LOGO_AIX,
+        .lines = NEUROFETCH_DATATEXT_LOGO_AIX,
         .colors = {
             FF_COLOR_FG_GREEN,
             FF_COLOR_FG_WHITE,
@@ -73,7 +91,7 @@ static const FFlogo A[] = {
     // AlmaLinux
     {
         .names = {"Almalinux"},
-        .lines = FASTFETCH_DATATEXT_LOGO_ALMALINUX,
+        .lines = NEUROFETCH_DATATEXT_LOGO_ALMALINUX,
         .colors = {
             FF_COLOR_FG_RED,
             FF_COLOR_FG_LIGHT_YELLOW,
@@ -87,7 +105,7 @@ static const FFlogo A[] = {
     // Alpine
     {
         .names = {"Alpine"},
-        .lines = FASTFETCH_DATATEXT_LOGO_ALPINE,
+        .lines = NEUROFETCH_DATATEXT_LOGO_ALPINE,
         .colors = {
             FF_COLOR_FG_BLUE,
         },
@@ -97,7 +115,7 @@ static const FFlogo A[] = {
     // Alpine2
     {
         .names = {"Alpine2"},
-        .lines = FASTFETCH_DATATEXT_LOGO_ALPINE2,
+        .lines = NEUROFETCH_DATATEXT_LOGO_ALPINE2,
         .type = FF_LOGO_LINE_TYPE_ALTER_BIT,
         .colors = {
             FF_COLOR_FG_BLUE,
@@ -110,7 +128,7 @@ static const FFlogo A[] = {
     {
         .names = {"Alpine_small"},
         .type = FF_LOGO_LINE_TYPE_SMALL_BIT,
-        .lines = FASTFETCH_DATATEXT_LOGO_ALPINE_SMALL,
+        .lines = NEUROFETCH_DATATEXT_LOGO_ALPINE_SMALL,
         .colors = {
             FF_COLOR_FG_BLUE,
             FF_COLOR_FG_WHITE,
@@ -122,7 +140,7 @@ static const FFlogo A[] = {
     {
         .names = {"alpine2_small"},
         .type = FF_LOGO_LINE_TYPE_SMALL_BIT | FF_LOGO_LINE_TYPE_ALTER_BIT,
-        .lines = FASTFETCH_DATATEXT_LOGO_ALPINE2_SMALL,
+        .lines = NEUROFETCH_DATATEXT_LOGO_ALPINE2_SMALL,
         .colors = {
             FF_COLOR_FG_BLUE,
             FF_COLOR_FG_WHITE,
@@ -134,7 +152,7 @@ static const FFlogo A[] = {
     {
         .names = {"alpine3_small"},
         .type = FF_LOGO_LINE_TYPE_SMALL_BIT | FF_LOGO_LINE_TYPE_ALTER_BIT,
-        .lines = FASTFETCH_DATATEXT_LOGO_ALPINE3_SMALL,
+        .lines = NEUROFETCH_DATATEXT_LOGO_ALPINE3_SMALL,
         .colors = {
             FF_COLOR_FG_DEFAULT,
         },
@@ -144,7 +162,7 @@ static const FFlogo A[] = {
     // Alter
     {
         .names = {"Alter"},
-        .lines = FASTFETCH_DATATEXT_LOGO_ALTER,
+        .lines = NEUROFETCH_DATATEXT_LOGO_ALTER,
         .colors = {
             FF_COLOR_FG_CYAN,
         },
@@ -154,7 +172,7 @@ static const FFlogo A[] = {
     // ALTLinux
     {
         .names = {"ALTLinux"},
-        .lines = FASTFETCH_DATATEXT_LOGO_ALTLINUX,
+        .lines = NEUROFETCH_DATATEXT_LOGO_ALTLINUX,
         .colors = {
             FF_COLOR_FG_YELLOW,
             FF_COLOR_FG_BLACK,
@@ -166,7 +184,7 @@ static const FFlogo A[] = {
     // Amazon
     {
         .names = {"Amazon"},
-        .lines = FASTFETCH_DATATEXT_LOGO_AMAZON,
+        .lines = NEUROFETCH_DATATEXT_LOGO_AMAZON,
         .colors = {
             FF_COLOR_FG_YELLOW,
             FF_COLOR_FG_WHITE,
@@ -175,7 +193,7 @@ static const FFlogo A[] = {
     // AmazonLinux
     {
         .names = {"Amazon Linux", "amzn"},
-        .lines = FASTFETCH_DATATEXT_LOGO_AMAZON_LINUX,
+        .lines = NEUROFETCH_DATATEXT_LOGO_AMAZON_LINUX,
         .colors = {
             FF_COLOR_FG_WHITE,
             FF_COLOR_FG_256 "178",
@@ -184,7 +202,7 @@ static const FFlogo A[] = {
     // AmogOS
     {
         .names = {"AmogOS"},
-        .lines = FASTFETCH_DATATEXT_LOGO_AMOGOS,
+        .lines = NEUROFETCH_DATATEXT_LOGO_AMOGOS,
         .colors = {
             FF_COLOR_FG_WHITE,
             FF_COLOR_FG_CYAN,
@@ -195,7 +213,7 @@ static const FFlogo A[] = {
     // Anarchy
     {
         .names = {"Anarchy"},
-        .lines = FASTFETCH_DATATEXT_LOGO_ANARCHY,
+        .lines = NEUROFETCH_DATATEXT_LOGO_ANARCHY,
         .colors = {
             FF_COLOR_FG_WHITE,
             FF_COLOR_FG_BLUE,
@@ -206,7 +224,7 @@ static const FFlogo A[] = {
     // Android
     {
         .names = {"android"},
-        .lines = FASTFETCH_DATATEXT_LOGO_ANDROID,
+        .lines = NEUROFETCH_DATATEXT_LOGO_ANDROID,
         .colors = {
             FF_COLOR_FG_GREEN,
             FF_COLOR_FG_WHITE,
@@ -218,7 +236,7 @@ static const FFlogo A[] = {
     {
         .names = {"android_small"},
         .type = FF_LOGO_LINE_TYPE_SMALL_BIT,
-        .lines = FASTFETCH_DATATEXT_LOGO_ANDROID_SMALL,
+        .lines = NEUROFETCH_DATATEXT_LOGO_ANDROID_SMALL,
         .colors = {
             FF_COLOR_FG_GREEN,
         },
@@ -228,7 +246,7 @@ static const FFlogo A[] = {
     // AnduinOS
     {
         .names = {"anduinos"},
-        .lines = FASTFETCH_DATATEXT_LOGO_ANDUINOS,
+        .lines = NEUROFETCH_DATATEXT_LOGO_ANDUINOS,
         .colors = {
             FF_COLOR_FG_CYAN,
             FF_COLOR_FG_BLUE,
@@ -239,7 +257,7 @@ static const FFlogo A[] = {
     // Antergos
     {
         .names = {"Antergos"},
-        .lines = FASTFETCH_DATATEXT_LOGO_ANTERGOS,
+        .lines = NEUROFETCH_DATATEXT_LOGO_ANTERGOS,
         .colors = {
             FF_COLOR_FG_BLUE,
             FF_COLOR_FG_CYAN,
@@ -250,7 +268,7 @@ static const FFlogo A[] = {
     // Antix
     {
         .names = {"antiX"},
-        .lines = FASTFETCH_DATATEXT_LOGO_ANTIX,
+        .lines = NEUROFETCH_DATATEXT_LOGO_ANTIX,
         .colors = {
             FF_COLOR_FG_RED,
         },
@@ -260,7 +278,7 @@ static const FFlogo A[] = {
     // AnushOS
     {
         .names = {"AnushOS"},
-        .lines = FASTFETCH_DATATEXT_LOGO_ANUSHOS,
+        .lines = NEUROFETCH_DATATEXT_LOGO_ANUSHOS,
         .colors = {
             FF_COLOR_FG_WHITE,
             FF_COLOR_FG_BLACK,
@@ -274,7 +292,7 @@ static const FFlogo A[] = {
     // AoscOsRetro
     {
         .names = {"Aosc OS/Retro", "aoscosretro"},
-        .lines = FASTFETCH_DATATEXT_LOGO_AOSCOSRETRO,
+        .lines = NEUROFETCH_DATATEXT_LOGO_AOSCOSRETRO,
         .colors = {
             FF_COLOR_FG_BLUE,
             FF_COLOR_FG_WHITE,
@@ -286,7 +304,7 @@ static const FFlogo A[] = {
     {
         .names = {"Aosc OS/Retro_small", "aoscosretro_small"},
         .type = FF_LOGO_LINE_TYPE_SMALL_BIT,
-        .lines = FASTFETCH_DATATEXT_LOGO_AOSCOSRETRO_SMALL,
+        .lines = NEUROFETCH_DATATEXT_LOGO_AOSCOSRETRO_SMALL,
         .colors = {
             FF_COLOR_FG_BLUE,
             FF_COLOR_FG_WHITE,
@@ -297,7 +315,7 @@ static const FFlogo A[] = {
     // AoscOS
     {
         .names = {"Aosc OS", "aoscos"},
-        .lines = FASTFETCH_DATATEXT_LOGO_AOSCOS,
+        .lines = NEUROFETCH_DATATEXT_LOGO_AOSCOS,
         .colors = {
             FF_COLOR_FG_BLUE,
             FF_COLOR_FG_BLACK,
@@ -308,7 +326,7 @@ static const FFlogo A[] = {
     // AoscOS_old
     {
         .names = {"Aosc OS_old", "aoscos_old"},
-        .lines = FASTFETCH_DATATEXT_LOGO_AOSCOS_OLD,
+        .lines = NEUROFETCH_DATATEXT_LOGO_AOSCOS_OLD,
         .type = FF_LOGO_LINE_TYPE_ALTER_BIT,
         .colors = {
             FF_COLOR_FG_DEFAULT,
@@ -319,7 +337,7 @@ static const FFlogo A[] = {
     // Aperture
     {
         .names = {"Aperture"},
-        .lines = FASTFETCH_DATATEXT_LOGO_APERTURE,
+        .lines = NEUROFETCH_DATATEXT_LOGO_APERTURE,
         .colors = {
             FF_COLOR_FG_CYAN,
             FF_COLOR_FG_CYAN,
@@ -336,7 +354,7 @@ static const FFlogo A[] = {
     // Apple
     {
         .names = {"Apple"},
-        .lines = FASTFETCH_DATATEXT_LOGO_MACOS,
+        .lines = NEUROFETCH_DATATEXT_LOGO_MACOS,
         .colors = {
             FF_COLOR_FG_GREEN,
             FF_COLOR_FG_YELLOW,
@@ -351,7 +369,7 @@ static const FFlogo A[] = {
     {
         .names = {"Apple_small"},
         .type = FF_LOGO_LINE_TYPE_SMALL_BIT,
-        .lines = FASTFETCH_DATATEXT_LOGO_MACOS_SMALL,
+        .lines = NEUROFETCH_DATATEXT_LOGO_MACOS_SMALL,
         .colors = {
             FF_COLOR_FG_GREEN,
             FF_COLOR_FG_YELLOW,
@@ -365,7 +383,7 @@ static const FFlogo A[] = {
     // Apricity
     {
         .names = {"Apricity"},
-        .lines = FASTFETCH_DATATEXT_LOGO_APRICITY,
+        .lines = NEUROFETCH_DATATEXT_LOGO_APRICITY,
         .colors = {
             FF_COLOR_FG_DEFAULT,
         },
@@ -375,7 +393,7 @@ static const FFlogo A[] = {
     // ArchBox
     {
         .names = {"ArchBox"},
-        .lines = FASTFETCH_DATATEXT_LOGO_ARCHBOX,
+        .lines = NEUROFETCH_DATATEXT_LOGO_ARCHBOX,
         .colors = {
             FF_COLOR_FG_GREEN,
         },
@@ -385,7 +403,7 @@ static const FFlogo A[] = {
     // Archcraft
     {
         .names = {"Archcraft"},
-        .lines = FASTFETCH_DATATEXT_LOGO_ARCHCRAFT,
+        .lines = NEUROFETCH_DATATEXT_LOGO_ARCHCRAFT,
         .colors = {
             FF_COLOR_FG_CYAN,
         },
@@ -396,7 +414,7 @@ static const FFlogo A[] = {
     {
         .names = {"Archcraft2"},
         .type = FF_LOGO_LINE_TYPE_ALTER_BIT,
-        .lines = FASTFETCH_DATATEXT_LOGO_ARCHCRAFT2,
+        .lines = NEUROFETCH_DATATEXT_LOGO_ARCHCRAFT2,
         .colors = {
             FF_COLOR_FG_CYAN,
         },
@@ -406,7 +424,7 @@ static const FFlogo A[] = {
     // Arch
     {
         .names = {"arch", "archmerge"},
-        .lines = FASTFETCH_DATATEXT_LOGO_ARCH,
+        .lines = NEUROFETCH_DATATEXT_LOGO_ARCH,
         .colors = {
             FF_COLOR_FG_CYAN,
             FF_COLOR_FG_CYAN,
@@ -416,7 +434,7 @@ static const FFlogo A[] = {
     {
         .names = {"arch2"},
         .type = FF_LOGO_LINE_TYPE_ALTER_BIT,
-        .lines = FASTFETCH_DATATEXT_LOGO_ARCH2,
+        .lines = NEUROFETCH_DATATEXT_LOGO_ARCH2,
         .colors = {
             FF_COLOR_FG_CYAN,
             FF_COLOR_FG_CYAN,
@@ -426,7 +444,7 @@ static const FFlogo A[] = {
     {
         .names = {"arch3"},
         .type = FF_LOGO_LINE_TYPE_ALTER_BIT,
-        .lines = FASTFETCH_DATATEXT_LOGO_ARCH3,
+        .lines = NEUROFETCH_DATATEXT_LOGO_ARCH3,
         .colors = {
             FF_COLOR_FG_CYAN,
             FF_COLOR_FG_CYAN,
@@ -436,7 +454,7 @@ static const FFlogo A[] = {
     {
         .names = {"arch_small"},
         .type = FF_LOGO_LINE_TYPE_SMALL_BIT,
-        .lines = FASTFETCH_DATATEXT_LOGO_ARCH_SMALL,
+        .lines = NEUROFETCH_DATATEXT_LOGO_ARCH_SMALL,
         .colors = {
             FF_COLOR_FG_CYAN,
             FF_COLOR_FG_CYAN,
@@ -446,7 +464,7 @@ static const FFlogo A[] = {
     {
         .names = {"arch_old"},
         .type = FF_LOGO_LINE_TYPE_ALTER_BIT,
-        .lines = FASTFETCH_DATATEXT_LOGO_ARCH_OLD,
+        .lines = NEUROFETCH_DATATEXT_LOGO_ARCH_OLD,
         .colors = {
             FF_COLOR_FG_BLUE,
             FF_COLOR_FG_WHITE,
@@ -457,7 +475,7 @@ static const FFlogo A[] = {
     // Archlabs
     {
         .names = {"ARCHlabs"},
-        .lines = FASTFETCH_DATATEXT_LOGO_ARCHLABS,
+        .lines = NEUROFETCH_DATATEXT_LOGO_ARCHLABS,
         .colors = {
             FF_COLOR_FG_CYAN,
             FF_COLOR_FG_RED,
@@ -468,7 +486,7 @@ static const FFlogo A[] = {
     // ArchStrike
     {
         .names = {"ArchStrike"},
-        .lines = FASTFETCH_DATATEXT_LOGO_ARCHSTRIKE,
+        .lines = NEUROFETCH_DATATEXT_LOGO_ARCHSTRIKE,
         .colors = {
             FF_COLOR_FG_CYAN,
             FF_COLOR_FG_BLACK,
@@ -479,7 +497,7 @@ static const FFlogo A[] = {
     // Arkane
     {
         .names = {"Arkane", "Arkane Linux"},
-        .lines = FASTFETCH_DATATEXT_LOGO_ARKANE,
+        .lines = NEUROFETCH_DATATEXT_LOGO_ARKANE,
         .colors = {
             FF_COLOR_FG_256 "237",
             FF_COLOR_FG_256 "130",
@@ -491,7 +509,7 @@ static const FFlogo A[] = {
     // Armbian
     {
         .names = {"Armbian"},
-        .lines = FASTFETCH_DATATEXT_LOGO_ARMBIAN,
+        .lines = NEUROFETCH_DATATEXT_LOGO_ARMBIAN,
         .colors = {
             FF_COLOR_FG_WHITE,
             FF_COLOR_FG_RED,
@@ -503,7 +521,7 @@ static const FFlogo A[] = {
     {
         .names = {"Armbian2"},
         .type = FF_LOGO_LINE_TYPE_ALTER_BIT,
-        .lines = FASTFETCH_DATATEXT_LOGO_ARMBIAN2,
+        .lines = NEUROFETCH_DATATEXT_LOGO_ARMBIAN2,
         .colors = {
             FF_COLOR_FG_RED,
         },
@@ -513,7 +531,7 @@ static const FFlogo A[] = {
     // Artix
     {
         .names = {"artix", "artixlinux", "artix-linux"},
-        .lines = FASTFETCH_DATATEXT_LOGO_ARTIX,
+        .lines = NEUROFETCH_DATATEXT_LOGO_ARTIX,
         .colors = {
             FF_COLOR_FG_CYAN,
         },
@@ -524,7 +542,7 @@ static const FFlogo A[] = {
     {
         .names = {"artix_small", "artixlinux_small"},
         .type = FF_LOGO_LINE_TYPE_SMALL_BIT,
-        .lines = FASTFETCH_DATATEXT_LOGO_ARTIX_SMALL,
+        .lines = NEUROFETCH_DATATEXT_LOGO_ARTIX_SMALL,
         .colors = {
             FF_COLOR_FG_CYAN,
         },
@@ -535,7 +553,7 @@ static const FFlogo A[] = {
     {
         .names = {"artix2_small", "artixlinux2_small"},
         .type = FF_LOGO_LINE_TYPE_SMALL_BIT | FF_LOGO_LINE_TYPE_ALTER_BIT,
-        .lines = FASTFETCH_DATATEXT_LOGO_ARTIX2_SMALL,
+        .lines = NEUROFETCH_DATATEXT_LOGO_ARTIX2_SMALL,
         .colors = {
             FF_COLOR_FG_CYAN,
         },
@@ -545,7 +563,7 @@ static const FFlogo A[] = {
     // ArcoLinux
     {
         .names = {"arco", "arcolinux", "arco-linux"},
-        .lines = FASTFETCH_DATATEXT_LOGO_ARCO,
+        .lines = NEUROFETCH_DATATEXT_LOGO_ARCO,
         .colors = {
             FF_COLOR_FG_BLUE,
             FF_COLOR_FG_WHITE,
@@ -557,7 +575,7 @@ static const FFlogo A[] = {
     {
         .names = {"arco_small", "arcolinux_small", "arco-linux_small"},
         .type = FF_LOGO_LINE_TYPE_SMALL_BIT,
-        .lines = FASTFETCH_DATATEXT_LOGO_ARCO_SMALL,
+        .lines = NEUROFETCH_DATATEXT_LOGO_ARCO_SMALL,
         .colors = {
             FF_COLOR_FG_BLUE,
             FF_COLOR_FG_WHITE,
@@ -568,7 +586,7 @@ static const FFlogo A[] = {
     // ArseLinux
     {
         .names = {"arse", "arselinux", "arse-linux"},
-        .lines = FASTFETCH_DATATEXT_LOGO_ARSELINUX,
+        .lines = NEUROFETCH_DATATEXT_LOGO_ARSELINUX,
         .colors = {
             FF_COLOR_FG_BLUE,
             FF_COLOR_FG_WHITE,
@@ -579,7 +597,7 @@ static const FFlogo A[] = {
     // Arya
     {
         .names = {"Arya"},
-        .lines = FASTFETCH_DATATEXT_LOGO_ARYA,
+        .lines = NEUROFETCH_DATATEXT_LOGO_ARYA,
         .colors = {
             FF_COLOR_FG_GREEN,
             FF_COLOR_FG_RED,
@@ -590,7 +608,7 @@ static const FFlogo A[] = {
     // Asahi
     {
         .names = {"asahi", "asahi-linux"},
-        .lines = FASTFETCH_DATATEXT_LOGO_ASAHI,
+        .lines = NEUROFETCH_DATATEXT_LOGO_ASAHI,
         .colors = {
             FF_COLOR_FG_YELLOW,
             FF_COLOR_FG_GREEN,
@@ -606,7 +624,7 @@ static const FFlogo A[] = {
     // Asahi2
     {
         .names = {"asahi2", "asahi-linux2"},
-        .lines = FASTFETCH_DATATEXT_LOGO_ASAHI2,
+        .lines = NEUROFETCH_DATATEXT_LOGO_ASAHI2,
         .type = FF_LOGO_LINE_TYPE_ALTER_BIT,
         .colors = {
             FF_COLOR_FG_LIGHT_YELLOW,
@@ -623,7 +641,7 @@ static const FFlogo A[] = {
     // Aster
     {
         .names = {"aster"},
-        .lines = FASTFETCH_DATATEXT_LOGO_ASTER,
+        .lines = NEUROFETCH_DATATEXT_LOGO_ASTER,
         .colors = {
             FF_COLOR_FG_CYAN,
         },
@@ -633,7 +651,7 @@ static const FFlogo A[] = {
     // AsteroidOS
     {
         .names = {"AsteroidOS"},
-        .lines = FASTFETCH_DATATEXT_LOGO_ASTEROIDOS,
+        .lines = NEUROFETCH_DATATEXT_LOGO_ASTEROIDOS,
         .colors = {
             FF_COLOR_FG_256 "160",
             FF_COLOR_FG_256 "208",
@@ -646,7 +664,7 @@ static const FFlogo A[] = {
     // AstOS
     {
         .names = {"astOS"},
-        .lines = FASTFETCH_DATATEXT_LOGO_ASTOS,
+        .lines = NEUROFETCH_DATATEXT_LOGO_ASTOS,
         .colors = {
             FF_COLOR_FG_DEFAULT,
         },
@@ -656,7 +674,7 @@ static const FFlogo A[] = {
     // Astra
     {
         .names = {"Astra", "Astra Linux", "astralinux"},
-        .lines = FASTFETCH_DATATEXT_LOGO_ASTRA_LINUX,
+        .lines = NEUROFETCH_DATATEXT_LOGO_ASTRA_LINUX,
         .colors = {
             FF_COLOR_FG_LIGHT_RED,
             FF_COLOR_FG_WHITE,
@@ -667,7 +685,7 @@ static const FFlogo A[] = {
     // Ataraxia
     {
         .names = {"Ataraxia Linux", "Ataraxia"},
-        .lines = FASTFETCH_DATATEXT_LOGO_JANUSLINUX,
+        .lines = NEUROFETCH_DATATEXT_LOGO_JANUSLINUX,
         .colors = {
             FF_COLOR_FG_BLUE,
             FF_COLOR_FG_MAGENTA,
@@ -678,7 +696,7 @@ static const FFlogo A[] = {
     // AthenaOS
     {
         .names = {"AthenaOS"},
-        .lines = FASTFETCH_DATATEXT_LOGO_ATHENAOS,
+        .lines = NEUROFETCH_DATATEXT_LOGO_ATHENAOS,
         .colors = {
             FF_COLOR_FG_BLUE,
             FF_COLOR_FG_LIGHT_BLUE,
@@ -689,7 +707,7 @@ static const FFlogo A[] = {
     // AthenaOS_old
     {
         .names = {"AthenaOS_old"},
-        .lines = FASTFETCH_DATATEXT_LOGO_ATHENAOS_OLD,
+        .lines = NEUROFETCH_DATATEXT_LOGO_ATHENAOS_OLD,
         .type = FF_LOGO_LINE_TYPE_ALTER_BIT,
         .colors = {
             FF_COLOR_FG_WHITE,
@@ -701,7 +719,7 @@ static const FFlogo A[] = {
     // Aurora
     {
         .names = {"Aurora"},
-        .lines = FASTFETCH_DATATEXT_LOGO_AURORA,
+        .lines = NEUROFETCH_DATATEXT_LOGO_AURORA,
         .colors = {
             FF_COLOR_FG_BLUE,
             FF_COLOR_FG_MAGENTA,
@@ -712,7 +730,7 @@ static const FFlogo A[] = {
     // AxOS
     {
         .names = {"AxOS"},
-        .lines = FASTFETCH_DATATEXT_LOGO_AXOS,
+        .lines = NEUROFETCH_DATATEXT_LOGO_AXOS,
         .colors = {
             FF_COLOR_FG_RGB "222;6;255",
             FF_COLOR_FG_RGB "222;6;255",
@@ -721,7 +739,7 @@ static const FFlogo A[] = {
     // Azos
     {
         .names = {"Azos"},
-        .lines = FASTFETCH_DATATEXT_LOGO_AZOS,
+        .lines = NEUROFETCH_DATATEXT_LOGO_AZOS,
         .colors = {
             FF_COLOR_FG_CYAN,
             FF_COLOR_FG_RED,
@@ -735,7 +753,7 @@ static const FFlogo B[] = {
     // Bedrock
     {
         .names = {"bedrock"},
-        .lines = FASTFETCH_DATATEXT_LOGO_BEDROCK,
+        .lines = NEUROFETCH_DATATEXT_LOGO_BEDROCK,
         .colors = {
             FF_COLOR_FG_LIGHT_BLACK, //grey
             FF_COLOR_FG_DEFAULT,
@@ -746,7 +764,7 @@ static const FFlogo B[] = {
     // BedrockSmall
     {
         .names = {"bedrock_small"},
-        .lines = FASTFETCH_DATATEXT_LOGO_BEDROCK_SMALL,
+        .lines = NEUROFETCH_DATATEXT_LOGO_BEDROCK_SMALL,
         .type = FF_LOGO_LINE_TYPE_SMALL_BIT,
         .colors = {
             FF_COLOR_FG_LIGHT_BLACK, //grey
@@ -758,7 +776,7 @@ static const FFlogo B[] = {
     // BigLinux
     {
         .names = {"BigLinux"},
-        .lines = FASTFETCH_DATATEXT_LOGO_BIGLINUX,
+        .lines = NEUROFETCH_DATATEXT_LOGO_BIGLINUX,
         .colors = {
             FF_COLOR_FG_CYAN,
             FF_COLOR_FG_YELLOW,
@@ -770,7 +788,7 @@ static const FFlogo B[] = {
     // Bitrig
     {
         .names = {"Bitrig"},
-        .lines = FASTFETCH_DATATEXT_LOGO_BITRIG,
+        .lines = NEUROFETCH_DATATEXT_LOGO_BITRIG,
         .colors = {
             FF_COLOR_FG_GREEN,
         },
@@ -780,7 +798,7 @@ static const FFlogo B[] = {
     // BlackArch
     {
         .names = {"Blackarch"},
-        .lines = FASTFETCH_DATATEXT_LOGO_BLACKARCH,
+        .lines = NEUROFETCH_DATATEXT_LOGO_BLACKARCH,
         .colors = {
             FF_COLOR_FG_RED,
             FF_COLOR_FG_LIGHT_RED,
@@ -792,7 +810,7 @@ static const FFlogo B[] = {
     // BlackMesa
     {
         .names = {"BlackMesa", "black-mesa"},
-        .lines = FASTFETCH_DATATEXT_LOGO_BLACKMESA,
+        .lines = NEUROFETCH_DATATEXT_LOGO_BLACKMESA,
         .colors = {
             FF_COLOR_FG_BLACK,
         },
@@ -802,7 +820,7 @@ static const FFlogo B[] = {
     // BlackPanther
     {
         .names = {"BlackPanther"},
-        .lines = FASTFETCH_DATATEXT_LOGO_BLACKPANTHER,
+        .lines = NEUROFETCH_DATATEXT_LOGO_BLACKPANTHER,
         .colors = {
             FF_COLOR_FG_RED,
             FF_COLOR_FG_YELLOW,
@@ -814,7 +832,7 @@ static const FFlogo B[] = {
     // BLAG
     {
         .names = {"BLAG"},
-        .lines = FASTFETCH_DATATEXT_LOGO_BLAG,
+        .lines = NEUROFETCH_DATATEXT_LOGO_BLAG,
         .colors = {
             FF_COLOR_FG_MAGENTA,
         },
@@ -824,7 +842,7 @@ static const FFlogo B[] = {
     // BlankOn
     {
         .names = {"BlankOn"},
-        .lines = FASTFETCH_DATATEXT_LOGO_BLANKON,
+        .lines = NEUROFETCH_DATATEXT_LOGO_BLANKON,
         .colors = {
             FF_COLOR_FG_RED,
             FF_COLOR_FG_WHITE,
@@ -835,7 +853,7 @@ static const FFlogo B[] = {
     // BlueLight
     {
         .names = {"BlueLight"},
-        .lines = FASTFETCH_DATATEXT_LOGO_BLUELIGHT,
+        .lines = NEUROFETCH_DATATEXT_LOGO_BLUELIGHT,
         .colors = {
             FF_COLOR_FG_WHITE,
             FF_COLOR_FG_BLUE,
@@ -846,7 +864,7 @@ static const FFlogo B[] = {
     // Bodhi
     {
         .names = {"Bodhi"},
-        .lines = FASTFETCH_DATATEXT_LOGO_BODHI,
+        .lines = NEUROFETCH_DATATEXT_LOGO_BODHI,
         .colors = {
             FF_COLOR_FG_WHITE,
             FF_COLOR_FG_LIGHT_YELLOW,
@@ -858,7 +876,7 @@ static const FFlogo B[] = {
     // Bonsai
     {
         .names = {"Bonsai"},
-        .lines = FASTFETCH_DATATEXT_LOGO_BONSAI,
+        .lines = NEUROFETCH_DATATEXT_LOGO_BONSAI,
         .colors = {
             FF_COLOR_FG_CYAN,
             FF_COLOR_FG_GREEN,
@@ -870,7 +888,7 @@ static const FFlogo B[] = {
     // BredOS
     {
         .names = {"Bredos"},
-        .lines = FASTFETCH_DATATEXT_LOGO_BREDOS,
+        .lines = NEUROFETCH_DATATEXT_LOGO_BREDOS,
         .colors = {
             FF_COLOR_FG_RGB "198;151;66", //grey
         },
@@ -880,7 +898,7 @@ static const FFlogo B[] = {
     // BSD
     {
         .names = {"BSD"},
-        .lines = FASTFETCH_DATATEXT_LOGO_BSD,
+        .lines = NEUROFETCH_DATATEXT_LOGO_BSD,
         .colors = {
             FF_COLOR_FG_RED,
             FF_COLOR_FG_WHITE,
@@ -894,7 +912,7 @@ static const FFlogo B[] = {
     // BunsenLabs
     {
         .names = {"BunsenLabs"},
-        .lines = FASTFETCH_DATATEXT_LOGO_BUNSENLABS,
+        .lines = NEUROFETCH_DATATEXT_LOGO_BUNSENLABS,
         .colors = {
             FF_COLOR_FG_DEFAULT,
         },
@@ -909,7 +927,7 @@ static const FFlogo C[] = {
     // CachyOS
     {
         .names = {"CachyOS"},
-        .lines = FASTFETCH_DATATEXT_LOGO_CACHYOS,
+        .lines = NEUROFETCH_DATATEXT_LOGO_CACHYOS,
         .colors = {
             FF_COLOR_FG_CYAN,
             FF_COLOR_FG_GREEN,
@@ -922,7 +940,7 @@ static const FFlogo C[] = {
     {
         .names = {"CachyOS_small"},
         .type = FF_LOGO_LINE_TYPE_SMALL_BIT,
-        .lines = FASTFETCH_DATATEXT_LOGO_CACHYOS_SMALL,
+        .lines = NEUROFETCH_DATATEXT_LOGO_CACHYOS_SMALL,
         .colors = {
             FF_COLOR_FG_CYAN,
         },
@@ -932,7 +950,7 @@ static const FFlogo C[] = {
     // Calculate
     {
         .names = {"Calculate"},
-        .lines = FASTFETCH_DATATEXT_LOGO_CALCULATE,
+        .lines = NEUROFETCH_DATATEXT_LOGO_CALCULATE,
         .colors = {
             FF_COLOR_FG_WHITE,
             FF_COLOR_FG_YELLOW,
@@ -943,7 +961,7 @@ static const FFlogo C[] = {
     // CalinixOS
     {
         .names = {"Calinix", "calinixos"},
-        .lines = FASTFETCH_DATATEXT_LOGO_CALINIXOS,
+        .lines = NEUROFETCH_DATATEXT_LOGO_CALINIXOS,
         .colors = {
             FF_COLOR_FG_MAGENTA,
         },
@@ -954,7 +972,7 @@ static const FFlogo C[] = {
     {
         .names = {"Calinix_small", "calinixos_small"},
         .type = FF_LOGO_LINE_TYPE_SMALL_BIT,
-        .lines = FASTFETCH_DATATEXT_LOGO_CALINIXOS_SMALL,
+        .lines = NEUROFETCH_DATATEXT_LOGO_CALINIXOS_SMALL,
         .colors = {
             FF_COLOR_FG_MAGENTA,
         },
@@ -964,7 +982,7 @@ static const FFlogo C[] = {
     // Carbs
     {
         .names = {"Carbs"},
-        .lines = FASTFETCH_DATATEXT_LOGO_CARBS,
+        .lines = NEUROFETCH_DATATEXT_LOGO_CARBS,
         .colors = {
             FF_COLOR_FG_MAGENTA,
         },
@@ -974,7 +992,7 @@ static const FFlogo C[] = {
     // CBL-Mariner
     {
         .names = {"CBL-Mariner"},
-        .lines = FASTFETCH_DATATEXT_LOGO_CBL_MARINER,
+        .lines = NEUROFETCH_DATATEXT_LOGO_CBL_MARINER,
         .colors = {
             FF_COLOR_FG_CYAN,
         },
@@ -984,7 +1002,7 @@ static const FFlogo C[] = {
     // CelOS
     {
         .names = {"Cel", "celos", "cel-linux", "celos-linux"},
-        .lines = FASTFETCH_DATATEXT_LOGO_CELOS,
+        .lines = NEUROFETCH_DATATEXT_LOGO_CELOS,
         .colors = {
             FF_COLOR_FG_MAGENTA,
             FF_COLOR_FG_BLACK,
@@ -995,7 +1013,7 @@ static const FFlogo C[] = {
     // Center
     {
         .names = {"Center"},
-        .lines = FASTFETCH_DATATEXT_LOGO_CENTER,
+        .lines = NEUROFETCH_DATATEXT_LOGO_CENTER,
         .colors = {
             FF_COLOR_FG_DEFAULT,
         },
@@ -1005,7 +1023,7 @@ static const FFlogo C[] = {
     // CentOS
     {
         .names = {"CentOS"},
-        .lines = FASTFETCH_DATATEXT_LOGO_CENTOS,
+        .lines = NEUROFETCH_DATATEXT_LOGO_CENTOS,
         .colors = {
             FF_COLOR_FG_YELLOW,
             FF_COLOR_FG_GREEN,
@@ -1020,7 +1038,7 @@ static const FFlogo C[] = {
     {
         .names = {"CentOS_small"},
         .type = FF_LOGO_LINE_TYPE_SMALL_BIT,
-        .lines = FASTFETCH_DATATEXT_LOGO_CENTOS_SMALL,
+        .lines = NEUROFETCH_DATATEXT_LOGO_CENTOS_SMALL,
         .colors = {
             FF_COLOR_FG_YELLOW,
             FF_COLOR_FG_GREEN,
@@ -1033,7 +1051,7 @@ static const FFlogo C[] = {
     // Cereus
     {
         .names = {"Cereus", "Cereus Linux"},
-        .lines = FASTFETCH_DATATEXT_LOGO_CEREUS,
+        .lines = NEUROFETCH_DATATEXT_LOGO_CEREUS,
         .colors = {
             FF_COLOR_FG_256 "173",
             FF_COLOR_FG_256 "108",
@@ -1047,7 +1065,7 @@ static const FFlogo C[] = {
     // Chakra
     {
         .names = {"Chakra"},
-        .lines = FASTFETCH_DATATEXT_LOGO_CHAKRA,
+        .lines = NEUROFETCH_DATATEXT_LOGO_CHAKRA,
         .colors = {
             FF_COLOR_FG_BLUE,
         },
@@ -1057,7 +1075,7 @@ static const FFlogo C[] = {
     // ChaletOS
     {
         .names = {"ChaletOS"},
-        .lines = FASTFETCH_DATATEXT_LOGO_CHALETOS,
+        .lines = NEUROFETCH_DATATEXT_LOGO_CHALETOS,
         .colors = {
             FF_COLOR_FG_BLUE,
             FF_COLOR_FG_WHITE
@@ -1068,7 +1086,7 @@ static const FFlogo C[] = {
     // Chapeau
     {
         .names = {"Chapeau"},
-        .lines = FASTFETCH_DATATEXT_LOGO_CHAPEAU,
+        .lines = NEUROFETCH_DATATEXT_LOGO_CHAPEAU,
         .colors = {
             FF_COLOR_FG_GREEN,
             FF_COLOR_FG_WHITE,
@@ -1079,7 +1097,7 @@ static const FFlogo C[] = {
     // Chimera
     {
         .names = {"Chimera"},
-        .lines = FASTFETCH_DATATEXT_LOGO_CHIMERA_LINUX,
+        .lines = NEUROFETCH_DATATEXT_LOGO_CHIMERA_LINUX,
         .colors = {
             FF_COLOR_FG_RED,
             FF_COLOR_FG_MAGENTA,
@@ -1092,7 +1110,7 @@ static const FFlogo C[] = {
     // ChonkySealOS
     {
         .names = {"ChonkySealOS"},
-        .lines = FASTFETCH_DATATEXT_LOGO_CHONKYSEALOS,
+        .lines = NEUROFETCH_DATATEXT_LOGO_CHONKYSEALOS,
         .colors = {
             FF_COLOR_FG_DEFAULT,
         },
@@ -1102,7 +1120,7 @@ static const FFlogo C[] = {
     // Chrom
     {
         .names = {"Chrom", "ChromeOS"},
-        .lines = FASTFETCH_DATATEXT_LOGO_CHROM,
+        .lines = NEUROFETCH_DATATEXT_LOGO_CHROM,
         .colors = {
             FF_COLOR_FG_GREEN,
             FF_COLOR_FG_RED,
@@ -1116,7 +1134,7 @@ static const FFlogo C[] = {
     // Cleanjaro
     {
         .names = {"Cleanjaro"},
-        .lines = FASTFETCH_DATATEXT_LOGO_CLEANJARO,
+        .lines = NEUROFETCH_DATATEXT_LOGO_CLEANJARO,
         .colors = {
             FF_COLOR_FG_DEFAULT,
         },
@@ -1127,7 +1145,7 @@ static const FFlogo C[] = {
     {
         .names = {"Cleanjaro_small"},
         .type = FF_LOGO_LINE_TYPE_SMALL_BIT,
-        .lines = FASTFETCH_DATATEXT_LOGO_CLEANJARO_SMALL,
+        .lines = NEUROFETCH_DATATEXT_LOGO_CLEANJARO_SMALL,
         .colors = {
             FF_COLOR_FG_DEFAULT,
         },
@@ -1137,7 +1155,7 @@ static const FFlogo C[] = {
     // ClearLinux
     {
         .names = {"Clear Linux", "clearlinux", "Clear Linux OS"},
-        .lines = FASTFETCH_DATATEXT_LOGO_CLEAR_LINUX,
+        .lines = NEUROFETCH_DATATEXT_LOGO_CLEAR_LINUX,
         .colors = {
             FF_COLOR_FG_BLUE,
             FF_COLOR_FG_YELLOW,
@@ -1148,7 +1166,7 @@ static const FFlogo C[] = {
     // ClearOS
     {
         .names = {"ClearOS"},
-        .lines = FASTFETCH_DATATEXT_LOGO_CLEAROS,
+        .lines = NEUROFETCH_DATATEXT_LOGO_CLEAROS,
         .colors = {
             FF_COLOR_FG_GREEN,
         },
@@ -1158,7 +1176,7 @@ static const FFlogo C[] = {
     // Clover
     {
         .names = {"Clover"},
-        .lines = FASTFETCH_DATATEXT_LOGO_CLOVER,
+        .lines = NEUROFETCH_DATATEXT_LOGO_CLOVER,
         .colors = {
             FF_COLOR_FG_GREEN,
             FF_COLOR_FG_CYAN,
@@ -1169,7 +1187,7 @@ static const FFlogo C[] = {
     // Cobalt
     {
         .names = {"Cobalt"},
-        .lines = FASTFETCH_DATATEXT_LOGO_COBALT,
+        .lines = NEUROFETCH_DATATEXT_LOGO_COBALT,
         .colors = {
             FF_COLOR_FG_BLUE,
             FF_COLOR_FG_BLUE,
@@ -1183,7 +1201,7 @@ static const FFlogo C[] = {
     // Codex Linux (reMarkable OS)
     {
         .names = {"Codex Linux"},
-        .lines = FASTFETCH_DATATEXT_LOGO_CODEX,
+        .lines = NEUROFETCH_DATATEXT_LOGO_CODEX,
         .colors = {
             FF_COLOR_FG_WHITE
         },
@@ -1191,7 +1209,7 @@ static const FFlogo C[] = {
     // Condres
     {
         .names = {"Condres"},
-        .lines = FASTFETCH_DATATEXT_LOGO_CONDRES,
+        .lines = NEUROFETCH_DATATEXT_LOGO_CONDRES,
         .colors = {
             FF_COLOR_FG_GREEN,
             FF_COLOR_FG_YELLOW,
@@ -1203,7 +1221,7 @@ static const FFlogo C[] = {
     // ContainerLinux
     {
         .names = {"ContainerLinux", "Container Linux", "Container Linux by CoreOS"},
-        .lines = FASTFETCH_DATATEXT_LOGO_FEDORA_COREOS,
+        .lines = NEUROFETCH_DATATEXT_LOGO_FEDORA_COREOS,
         .colors = {
             FF_COLOR_FG_BLUE,
             FF_COLOR_FG_WHITE,
@@ -1215,7 +1233,7 @@ static const FFlogo C[] = {
     // Common Torizon
     {
         .names = {"common-torizon"},
-        .lines = FASTFETCH_DATATEXT_LOGO_TORIZONCORE,
+        .lines = NEUROFETCH_DATATEXT_LOGO_TORIZONCORE,
         .colors = {
             FF_COLOR_FG_LIGHT_WHITE,
             FF_COLOR_FG_YELLOW,
@@ -1225,7 +1243,7 @@ static const FFlogo C[] = {
     // Cosmic DE
     {
         .names = {"Cosmic"},
-        .lines = FASTFETCH_DATATEXT_LOGO_COSMIC,
+        .lines = NEUROFETCH_DATATEXT_LOGO_COSMIC,
         .colors = {
             FF_COLOR_FG_WHITE,
             FF_COLOR_FG_LIGHT_YELLOW,
@@ -1239,7 +1257,7 @@ static const FFlogo C[] = {
     // CRUX
     {
         .names = {"CRUX"},
-        .lines = FASTFETCH_DATATEXT_LOGO_CRUX,
+        .lines = NEUROFETCH_DATATEXT_LOGO_CRUX,
         .colors = {
             FF_COLOR_FG_BLUE,
             FF_COLOR_FG_MAGENTA,
@@ -1252,7 +1270,7 @@ static const FFlogo C[] = {
     {
         .names = {"CRUX_small"},
         .type = FF_LOGO_LINE_TYPE_SMALL_BIT,
-        .lines = FASTFETCH_DATATEXT_LOGO_CRUX_SMALL,
+        .lines = NEUROFETCH_DATATEXT_LOGO_CRUX_SMALL,
         .colors = {
             FF_COLOR_FG_BLUE,
             FF_COLOR_FG_MAGENTA,
@@ -1264,7 +1282,7 @@ static const FFlogo C[] = {
     // CrystalLinux
     {
         .names = {"Crystal", "Crystal", "crystal-linux", "Crystal-Linux"},
-        .lines = FASTFETCH_DATATEXT_LOGO_CRYSTAL,
+        .lines = NEUROFETCH_DATATEXT_LOGO_CRYSTAL,
         .colors = {
             FF_COLOR_FG_MAGENTA,
         },
@@ -1274,7 +1292,7 @@ static const FFlogo C[] = {
     // Cucumber
     {
         .names = {"Cucumber", "CucumberOS"},
-        .lines = FASTFETCH_DATATEXT_LOGO_CUCUMBER,
+        .lines = NEUROFETCH_DATATEXT_LOGO_CUCUMBER,
         .colors = {
             FF_COLOR_FG_GREEN,
             FF_COLOR_FG_YELLOW,
@@ -1285,7 +1303,7 @@ static const FFlogo C[] = {
     // CuerdOS
     {
         .names = {"CuerdOS", "CuerdOS GNU/Linux"},
-        .lines = FASTFETCH_DATATEXT_LOGO_CUERDOS,
+        .lines = NEUROFETCH_DATATEXT_LOGO_CUERDOS,
         .colors = {
             FF_COLOR_FG_YELLOW,
             FF_COLOR_FG_GREEN,
@@ -1296,7 +1314,7 @@ static const FFlogo C[] = {
     // CutefishOS
     {
         .names = {"CutefishOS"},
-        .lines = FASTFETCH_DATATEXT_LOGO_CUTEFISHOS,
+        .lines = NEUROFETCH_DATATEXT_LOGO_CUTEFISHOS,
         .colors = {
             FF_COLOR_FG_CYAN,
             FF_COLOR_FG_WHITE,
@@ -1306,7 +1324,7 @@ static const FFlogo C[] = {
     // CuteOS
     {
         .names = {"CuteOS"},
-        .lines = FASTFETCH_DATATEXT_LOGO_CUTEOS,
+        .lines = NEUROFETCH_DATATEXT_LOGO_CUTEOS,
         .colors = {
             FF_COLOR_FG_BLUE,
             FF_COLOR_FG_CYAN,
@@ -1318,7 +1336,7 @@ static const FFlogo C[] = {
     // CyberOS
     {
         .names = {"CyberOS"},
-        .lines = FASTFETCH_DATATEXT_LOGO_CYBEROS,
+        .lines = NEUROFETCH_DATATEXT_LOGO_CYBEROS,
         .colors = {
             FF_COLOR_FG_BLUE,
             FF_COLOR_FG_CYAN,
@@ -1330,7 +1348,7 @@ static const FFlogo C[] = {
     // cycledream
     {
         .names = {"cycledream"},
-        .lines = FASTFETCH_DATATEXT_LOGO_CYCLEDREAM,
+        .lines = NEUROFETCH_DATATEXT_LOGO_CYCLEDREAM,
         .colors = {
             FF_COLOR_FG_MAGENTA,
         },
@@ -1345,7 +1363,7 @@ static const FFlogo D[] = {
     // DahliaOS
     {
         .names = {"dahliaOS"},
-        .lines = FASTFETCH_DATATEXT_LOGO_DAHLIA,
+        .lines = NEUROFETCH_DATATEXT_LOGO_DAHLIA,
         .colors = {
             FF_COLOR_FG_RED,
         },
@@ -1355,7 +1373,7 @@ static const FFlogo D[] = {
     // DarkOS
     {
         .names = {"DarkOS"},
-        .lines = FASTFETCH_DATATEXT_LOGO_DARKOS,
+        .lines = NEUROFETCH_DATATEXT_LOGO_DARKOS,
         .colors = {
             FF_COLOR_FG_RED,
             FF_COLOR_FG_CYAN,
@@ -1369,7 +1387,7 @@ static const FFlogo D[] = {
     // Debian
     {
         .names = {"Debian", "debian-linux"},
-        .lines = FASTFETCH_DATATEXT_LOGO_DEBIAN,
+        .lines = NEUROFETCH_DATATEXT_LOGO_DEBIAN,
         .colors = {
             FF_COLOR_FG_RED,
             FF_COLOR_FG_WHITE,
@@ -1381,7 +1399,7 @@ static const FFlogo D[] = {
     {
         .names = {"Debian_small", "debian-linux_small"},
         .type = FF_LOGO_LINE_TYPE_SMALL_BIT,
-        .lines = FASTFETCH_DATATEXT_LOGO_DEBIAN_SMALL,
+        .lines = NEUROFETCH_DATATEXT_LOGO_DEBIAN_SMALL,
         .colors = {
             FF_COLOR_FG_RED,
         },
@@ -1391,7 +1409,7 @@ static const FFlogo D[] = {
     // Deepin
     {
         .names = {"Deepin", "deepin-linux"},
-        .lines = FASTFETCH_DATATEXT_LOGO_DEEPIN,
+        .lines = NEUROFETCH_DATATEXT_LOGO_DEEPIN,
         .colors = {
             FF_COLOR_FG_GREEN,
         },
@@ -1401,7 +1419,7 @@ static const FFlogo D[] = {
     // DesaOS
     {
         .names = {"DesaOS"},
-        .lines = FASTFETCH_DATATEXT_LOGO_DESAOS,
+        .lines = NEUROFETCH_DATATEXT_LOGO_DESAOS,
         .colors = {
             FF_COLOR_FG_GREEN,
             FF_COLOR_FG_WHITE,
@@ -1412,7 +1430,7 @@ static const FFlogo D[] = {
     // Devuan
     {
         .names = {"Devuan"},
-        .lines = FASTFETCH_DATATEXT_LOGO_DEVUAN,
+        .lines = NEUROFETCH_DATATEXT_LOGO_DEVUAN,
         .colors = {
             FF_COLOR_FG_MAGENTA,
         },
@@ -1423,7 +1441,7 @@ static const FFlogo D[] = {
     {
         .names = {"Devuan_small"},
         .type = FF_LOGO_LINE_TYPE_SMALL_BIT,
-        .lines = FASTFETCH_DATATEXT_LOGO_DEVUAN_SMALL,
+        .lines = NEUROFETCH_DATATEXT_LOGO_DEVUAN_SMALL,
         .colors = {
             FF_COLOR_FG_MAGENTA,
         },
@@ -1433,7 +1451,7 @@ static const FFlogo D[] = {
     // DietPi
     {
         .names = {"DietPi"},
-        .lines = FASTFETCH_DATATEXT_LOGO_DIETPI,
+        .lines = NEUROFETCH_DATATEXT_LOGO_DIETPI,
         .colors = {
             FF_COLOR_FG_GREEN,
             FF_COLOR_FG_LIGHT_BLACK,
@@ -1444,7 +1462,7 @@ static const FFlogo D[] = {
     // DracOS
     {
         .names = {"DracOS"},
-        .lines = FASTFETCH_DATATEXT_LOGO_DRACOS,
+        .lines = NEUROFETCH_DATATEXT_LOGO_DRACOS,
         .colors = {
             FF_COLOR_FG_RED,
             FF_COLOR_FG_WHITE,
@@ -1455,7 +1473,7 @@ static const FFlogo D[] = {
     // DragonFly
     {
         .names = {"DragonFly"},
-        .lines = FASTFETCH_DATATEXT_LOGO_DRAGONFLY,
+        .lines = NEUROFETCH_DATATEXT_LOGO_DRAGONFLY,
         .colors = {
             FF_COLOR_FG_RED,
             FF_COLOR_FG_DEFAULT,
@@ -1467,7 +1485,7 @@ static const FFlogo D[] = {
     {
         .names = {"DragonFly_small"},
         .type = FF_LOGO_LINE_TYPE_SMALL_BIT,
-        .lines = FASTFETCH_DATATEXT_LOGO_DRAGONFLY_SMALL,
+        .lines = NEUROFETCH_DATATEXT_LOGO_DRAGONFLY_SMALL,
         .colors = {
             FF_COLOR_FG_RED,
             FF_COLOR_FG_DEFAULT,
@@ -1479,7 +1497,7 @@ static const FFlogo D[] = {
     {
         .names = {"DragonFly_old"},
         .type = FF_LOGO_LINE_TYPE_ALTER_BIT,
-        .lines = FASTFETCH_DATATEXT_LOGO_DRAGONFLY_OLD,
+        .lines = NEUROFETCH_DATATEXT_LOGO_DRAGONFLY_OLD,
         .colors = {
             FF_COLOR_FG_RED,
             FF_COLOR_FG_DEFAULT,
@@ -1491,7 +1509,7 @@ static const FFlogo D[] = {
     // DraugerOS
     {
         .names = {"DraugerOS", "Drauger"},
-        .lines = FASTFETCH_DATATEXT_LOGO_DRAUGER,
+        .lines = NEUROFETCH_DATATEXT_LOGO_DRAUGER,
         .colors = {
             FF_COLOR_FG_RED,
             FF_COLOR_FG_WHITE,
@@ -1502,7 +1520,7 @@ static const FFlogo D[] = {
     // Droidian
     {
         .names = {"Droidian"},
-        .lines = FASTFETCH_DATATEXT_LOGO_DROIDIAN,
+        .lines = NEUROFETCH_DATATEXT_LOGO_DROIDIAN,
         .colors = {
             FF_COLOR_FG_GREEN,
             FF_COLOR_FG_LIGHT_GREEN,
@@ -1515,10 +1533,21 @@ static const FFlogo D[] = {
 };
 
 static const FFlogo E[] = {
+    // EvilNeuro
+    {
+        .names = {"EvilNeuro", "Evil"},
+        .lines = NEUROFETCH_DATATEXT_LOGO_EVILNEURO,
+        .colors = {
+            FF_COLOR_FG_RED,
+            FF_COLOR_FG_WHITE,
+        },
+        .colorKeys = FF_COLOR_FG_RED,
+        .colorTitle = FF_COLOR_FG_RED,
+    },
     // Elbrus
     {
         .names = {"elbrus"},
-        .lines = FASTFETCH_DATATEXT_LOGO_ELBRUS,
+        .lines = NEUROFETCH_DATATEXT_LOGO_ELBRUS,
         .colors = {
             FF_COLOR_FG_BLUE,
         },
@@ -1528,7 +1557,7 @@ static const FFlogo E[] = {
     // Elementary
     {
         .names = {"Elementary"},
-        .lines = FASTFETCH_DATATEXT_LOGO_ELEMENTARY,
+        .lines = NEUROFETCH_DATATEXT_LOGO_ELEMENTARY,
         .colors = {
             FF_COLOR_FG_DEFAULT,
         },
@@ -1539,7 +1568,7 @@ static const FFlogo E[] = {
     {
         .names = {"Elementary_small"},
         .type = FF_LOGO_LINE_TYPE_SMALL_BIT,
-        .lines = FASTFETCH_DATATEXT_LOGO_ELEMENTARY_SMALL,
+        .lines = NEUROFETCH_DATATEXT_LOGO_ELEMENTARY_SMALL,
         .colors = {
             FF_COLOR_FG_DEFAULT,
         },
@@ -1549,7 +1578,7 @@ static const FFlogo E[] = {
     // Elive
     {
         .names = {"Elive"},
-        .lines = FASTFETCH_DATATEXT_LOGO_ELIVE,
+        .lines = NEUROFETCH_DATATEXT_LOGO_ELIVE,
         .colors = {
             FF_COLOR_FG_WHITE,
             FF_COLOR_FG_LIGHT_CYAN,
@@ -1561,7 +1590,7 @@ static const FFlogo E[] = {
     // EmperorOS
     {
         .names = {"Emperor"},
-        .lines = FASTFETCH_DATATEXT_LOGO_EMPEROROS,
+        .lines = NEUROFETCH_DATATEXT_LOGO_EMPEROROS,
         .colors = {
             FF_COLOR_FG_YELLOW,
             FF_COLOR_FG_DEFAULT,
@@ -1570,7 +1599,7 @@ static const FFlogo E[] = {
     // EncryptOS
     {
         .names = {"EncryptOS"},
-        .lines = FASTFETCH_DATATEXT_LOGO_ENCRYPTOS,
+        .lines = NEUROFETCH_DATATEXT_LOGO_ENCRYPTOS,
         .colors = {
             FF_COLOR_FG_MAGENTA,
         },
@@ -1580,7 +1609,7 @@ static const FFlogo E[] = {
     // EndeavourOS
     {
         .names = {"EndeavourOS"},
-        .lines = FASTFETCH_DATATEXT_LOGO_ENDEAVOUROS,
+        .lines = NEUROFETCH_DATATEXT_LOGO_ENDEAVOUROS,
         .colors = {
             FF_COLOR_FG_MAGENTA,
             FF_COLOR_FG_RED,
@@ -1593,7 +1622,7 @@ static const FFlogo E[] = {
     {
         .names = {"EndeavourOS_small"},
         .type = FF_LOGO_LINE_TYPE_SMALL_BIT,
-        .lines = FASTFETCH_DATATEXT_LOGO_ENDEAVOUROS_SMALL,
+        .lines = NEUROFETCH_DATATEXT_LOGO_ENDEAVOUROS_SMALL,
         .colors = {
             FF_COLOR_FG_RED,
             FF_COLOR_FG_MAGENTA,
@@ -1603,7 +1632,7 @@ static const FFlogo E[] = {
     // Endless
     {
         .names = {"Endless"},
-        .lines = FASTFETCH_DATATEXT_LOGO_ENDLESS,
+        .lines = NEUROFETCH_DATATEXT_LOGO_ENDLESS,
         .colors = {
             FF_COLOR_FG_RED,
             FF_COLOR_FG_WHITE
@@ -1614,7 +1643,7 @@ static const FFlogo E[] = {
     // Enso
     {
         .names = {"Enso"},
-        .lines = FASTFETCH_DATATEXT_LOGO_ENSO,
+        .lines = NEUROFETCH_DATATEXT_LOGO_ENSO,
         .colors = {
             FF_COLOR_FG_DEFAULT,
         },
@@ -1624,7 +1653,7 @@ static const FFlogo E[] = {
     // EshanizedOS
     {
         .names = {"EshanizedOS"},
-        .lines = FASTFETCH_DATATEXT_LOGO_ESHANIZEDOS,
+        .lines = NEUROFETCH_DATATEXT_LOGO_ESHANIZEDOS,
         .colors = {
             FF_COLOR_FG_RED,
             FF_COLOR_FG_WHITE,
@@ -1633,7 +1662,7 @@ static const FFlogo E[] = {
     // EuroLinux
     {
         .names = {"EuroLinux"},
-        .lines = FASTFETCH_DATATEXT_LOGO_EUROLINUX,
+        .lines = NEUROFETCH_DATATEXT_LOGO_EUROLINUX,
         .colors = {
             FF_COLOR_FG_BLUE,
             FF_COLOR_FG_WHITE,
@@ -1644,7 +1673,7 @@ static const FFlogo E[] = {
     // EvolutionOS
     {
         .names = {"EvolutionOS"},
-        .lines = FASTFETCH_DATATEXT_LOGO_EVOLUTIONOS,
+        .lines = NEUROFETCH_DATATEXT_LOGO_EVOLUTIONOS,
         .colors = {
             FF_COLOR_FG_GREEN,
             FF_COLOR_FG_WHITE,
@@ -1654,7 +1683,7 @@ static const FFlogo E[] = {
     {
         .names = {"EvolutionOS_small"},
         .type = FF_LOGO_LINE_TYPE_SMALL_BIT,
-        .lines = FASTFETCH_DATATEXT_LOGO_EVOLUTIONOS_SMALL,
+        .lines = NEUROFETCH_DATATEXT_LOGO_EVOLUTIONOS_SMALL,
         .colors = {
             FF_COLOR_FG_GREEN,
             FF_COLOR_FG_WHITE,
@@ -1664,7 +1693,7 @@ static const FFlogo E[] = {
     {
         .names = {"EvolutionOS_old"},
         .type = FF_LOGO_LINE_TYPE_ALTER_BIT,
-        .lines = FASTFETCH_DATATEXT_LOGO_EVOLUTIONOS_OLD,
+        .lines = NEUROFETCH_DATATEXT_LOGO_EVOLUTIONOS_OLD,
         .colors = {
             FF_COLOR_FG_LIGHT_BLUE,
             FF_COLOR_FG_WHITE,
@@ -1673,7 +1702,7 @@ static const FFlogo E[] = {
     // eweOS
     {
         .names = {"eweOS"},
-        .lines = FASTFETCH_DATATEXT_LOGO_EWEOS,
+        .lines = NEUROFETCH_DATATEXT_LOGO_EWEOS,
         .colors = {
            FF_COLOR_FG_WHITE,
            FF_COLOR_FG_LIGHT_YELLOW,
@@ -1685,7 +1714,7 @@ static const FFlogo E[] = {
     // Exherbo
     {
         .names = {"Exherbo", "exherbo-linux"},
-        .lines = FASTFETCH_DATATEXT_LOGO_EXHERBO,
+        .lines = NEUROFETCH_DATATEXT_LOGO_EXHERBO,
         .colors = {
             FF_COLOR_FG_BLUE,
             FF_COLOR_FG_WHITE,
@@ -1697,7 +1726,7 @@ static const FFlogo E[] = {
     // ExodiaPredator
     {
         .names = {"Exodia Predator", "exodia-predator", "Exodia Predator OS"},
-        .lines = FASTFETCH_DATATEXT_LOGO_EXODIA_PREDATOR,
+        .lines = NEUROFETCH_DATATEXT_LOGO_EXODIA_PREDATOR,
         .colors = {
             FF_COLOR_FG_MAGENTA,
         },
@@ -1709,10 +1738,10 @@ static const FFlogo E[] = {
 };
 
 static const FFlogo F[] = {
-    // Fastfetch
+    // Neurofetch
     {
-        .names = {"Fastfetch", "FF"},
-        .lines = FASTFETCH_DATATEXT_LOGO_FASTFETCH,
+        .names = {"Neurofetch", "FF"},
+        .lines = NEUROFETCH_DATATEXT_LOGO_NEUROSAMA,
         .colors = {
             FF_COLOR_FG_BLUE,
             FF_COLOR_FG_RED,
@@ -1728,7 +1757,7 @@ static const FFlogo F[] = {
     // Fedora
     {
         .names = {"Fedora"},
-        .lines = FASTFETCH_DATATEXT_LOGO_FEDORA,
+        .lines = NEUROFETCH_DATATEXT_LOGO_FEDORA,
         .colors = {
             FF_COLOR_FG_BLUE,
             FF_COLOR_FG_WHITE,
@@ -1739,7 +1768,7 @@ static const FFlogo F[] = {
     // FedoraAsahiRemix
     {
         .names = {"fedora-asahi-remix"},
-        .lines = FASTFETCH_DATATEXT_LOGO_ASAHI,
+        .lines = NEUROFETCH_DATATEXT_LOGO_ASAHI,
         .colors = {
             FF_COLOR_FG_YELLOW,
             FF_COLOR_FG_GREEN,
@@ -1756,7 +1785,7 @@ static const FFlogo F[] = {
     {
         .names = {"Fedora_small"},
         .type = FF_LOGO_LINE_TYPE_SMALL_BIT,
-        .lines = FASTFETCH_DATATEXT_LOGO_FEDORA_SMALL,
+        .lines = NEUROFETCH_DATATEXT_LOGO_FEDORA_SMALL,
         .colors = {
             FF_COLOR_FG_BLUE,
         },
@@ -1766,7 +1795,7 @@ static const FFlogo F[] = {
     {
         .names = {"Fedora2_small"},
         .type = FF_LOGO_LINE_TYPE_SMALL_BIT | FF_LOGO_LINE_TYPE_ALTER_BIT,
-        .lines = FASTFETCH_DATATEXT_LOGO_FEDORA2_SMALL,
+        .lines = NEUROFETCH_DATATEXT_LOGO_FEDORA2_SMALL,
         .colors = {
             FF_COLOR_FG_BLUE,
         },
@@ -1777,7 +1806,7 @@ static const FFlogo F[] = {
     {
         .names = {"Fedora_old"},
         .type = FF_LOGO_LINE_TYPE_ALTER_BIT,
-        .lines = FASTFETCH_DATATEXT_LOGO_FEDORA_OLD,
+        .lines = NEUROFETCH_DATATEXT_LOGO_FEDORA_OLD,
         .colors = {
             FF_COLOR_FG_BLUE,
             FF_COLOR_FG_WHITE,
@@ -1788,7 +1817,7 @@ static const FFlogo F[] = {
     // FedoraSilverblue
     {
         .names = {"Fedora-Silverblue"},
-        .lines = FASTFETCH_DATATEXT_LOGO_FEDORA_SILVERBLUE,
+        .lines = NEUROFETCH_DATATEXT_LOGO_FEDORA_SILVERBLUE,
         .colors = {
             FF_COLOR_FG_BLUE,
             FF_COLOR_FG_WHITE,
@@ -1800,7 +1829,7 @@ static const FFlogo F[] = {
     // FedoraKinoite
     {
         .names = {"Fedora-Kinoite"},
-        .lines = FASTFETCH_DATATEXT_LOGO_FEDORA_KINOITE,
+        .lines = NEUROFETCH_DATATEXT_LOGO_FEDORA_KINOITE,
         .colors = {
             FF_COLOR_FG_BLUE,
             FF_COLOR_FG_WHITE,
@@ -1811,7 +1840,7 @@ static const FFlogo F[] = {
     // FedoraSericea
     {
         .names = {"Fedora-Sericea"},
-        .lines = FASTFETCH_DATATEXT_LOGO_FEDORA_SERICEA,
+        .lines = NEUROFETCH_DATATEXT_LOGO_FEDORA_SERICEA,
         .colors = {
             FF_COLOR_FG_BLUE,
             FF_COLOR_FG_WHITE,
@@ -1822,7 +1851,7 @@ static const FFlogo F[] = {
     // FedoraCoreOS
     {
         .names = {"Fedora-CoreOS"},
-        .lines = FASTFETCH_DATATEXT_LOGO_FEDORA_COREOS,
+        .lines = NEUROFETCH_DATATEXT_LOGO_FEDORA_COREOS,
         .colors = {
             FF_COLOR_FG_BLUE,
             FF_COLOR_FG_WHITE,
@@ -1834,7 +1863,7 @@ static const FFlogo F[] = {
     // FemboyOS
     {
         .names = {"FemboyOS"},
-        .lines = FASTFETCH_DATATEXT_LOGO_FEMBOYOS,
+        .lines = NEUROFETCH_DATATEXT_LOGO_FEMBOYOS,
         .colors = {
             FF_COLOR_FG_BLUE,
         },
@@ -1844,7 +1873,7 @@ static const FFlogo F[] = {
     // Feren
     {
         .names = {"Feren"},
-        .lines = FASTFETCH_DATATEXT_LOGO_FEREN,
+        .lines = NEUROFETCH_DATATEXT_LOGO_FEREN,
         .colors = {
             FF_COLOR_FG_BLUE,
         },
@@ -1854,7 +1883,7 @@ static const FFlogo F[] = {
     // Filotimo
     {
         .names = {"filotimo"},
-        .lines = FASTFETCH_DATATEXT_LOGO_FILOTIMO,
+        .lines = NEUROFETCH_DATATEXT_LOGO_FILOTIMO,
         .colors = {
             FF_COLOR_FG_BLUE,
         },
@@ -1864,7 +1893,7 @@ static const FFlogo F[] = {
     // Finnix
     {
         .names = {"Finnix"},
-        .lines = FASTFETCH_DATATEXT_LOGO_FINNIX,
+        .lines = NEUROFETCH_DATATEXT_LOGO_FINNIX,
         .colors = {
             FF_COLOR_FG_BLUE,
             FF_COLOR_FG_WHITE,
@@ -1875,7 +1904,7 @@ static const FFlogo F[] = {
     // Floflis
     {
         .names = {"Floflis"},
-        .lines = FASTFETCH_DATATEXT_LOGO_FLOFLIS,
+        .lines = NEUROFETCH_DATATEXT_LOGO_FLOFLIS,
         .colors = {
             FF_COLOR_FG_LIGHT_CYAN,
         },
@@ -1885,7 +1914,7 @@ static const FFlogo F[] = {
     // FreeBSD
     {
         .names = {"Freebsd"},
-        .lines = FASTFETCH_DATATEXT_LOGO_FREEBSD,
+        .lines = NEUROFETCH_DATATEXT_LOGO_FREEBSD,
         .colors = {
             FF_COLOR_FG_WHITE,
             FF_COLOR_FG_RED,
@@ -1897,7 +1926,7 @@ static const FFlogo F[] = {
     {
         .names = {"freebsd_small"},
         .type = FF_LOGO_LINE_TYPE_SMALL_BIT,
-        .lines = FASTFETCH_DATATEXT_LOGO_FREEBSD_SMALL,
+        .lines = NEUROFETCH_DATATEXT_LOGO_FREEBSD_SMALL,
         .colors = {
             FF_COLOR_FG_RED,
         },
@@ -1907,7 +1936,7 @@ static const FFlogo F[] = {
     // FreeMiNT
     {
         .names = {"FreeMiNT"},
-        .lines = FASTFETCH_DATATEXT_LOGO_FREEMINT,
+        .lines = NEUROFETCH_DATATEXT_LOGO_FREEMINT,
         .colors = {
             FF_COLOR_FG_WHITE
         },
@@ -1917,7 +1946,7 @@ static const FFlogo F[] = {
     // Frugalware
     {
         .names = {"Frugalware", "frugalware-linux"},
-        .lines = FASTFETCH_DATATEXT_LOGO_FRUGALWARE,
+        .lines = NEUROFETCH_DATATEXT_LOGO_FRUGALWARE,
         .colors = {
             FF_COLOR_FG_BLUE,
             FF_COLOR_FG_WHITE,
@@ -1928,7 +1957,7 @@ static const FFlogo F[] = {
     // Funtoo
     {
         .names = {"Funtoo"},
-        .lines = FASTFETCH_DATATEXT_LOGO_FUNTOO,
+        .lines = NEUROFETCH_DATATEXT_LOGO_FUNTOO,
         .colors = {
             FF_COLOR_FG_MAGENTA,
             FF_COLOR_FG_WHITE,
@@ -1939,7 +1968,7 @@ static const FFlogo F[] = {
     // Furreto
     {
         .names = {"Furreto"},
-        .lines = FASTFETCH_DATATEXT_LOGO_FURRETO,
+        .lines = NEUROFETCH_DATATEXT_LOGO_FURRETO,
         .colors = {
             FF_COLOR_FG_WHITE,
             FF_COLOR_FG_LIGHT_MAGENTA,
@@ -1955,7 +1984,7 @@ static const FFlogo G[] = {
     // GalliumOS
     {
         .names = {"GalliumOS"},
-        .lines = FASTFETCH_DATATEXT_LOGO_GALLIUMOS,
+        .lines = NEUROFETCH_DATATEXT_LOGO_GALLIUMOS,
         .colors = {
             FF_COLOR_FG_BLUE,
             FF_COLOR_FG_WHITE,
@@ -1966,7 +1995,7 @@ static const FFlogo G[] = {
     // Garuda
     {
         .names = {"Garuda", "garuda-linux"},
-        .lines = FASTFETCH_DATATEXT_LOGO_GARUDA,
+        .lines = NEUROFETCH_DATATEXT_LOGO_GARUDA,
         .colors = {
             FF_COLOR_FG_RED,
         },
@@ -1976,7 +2005,7 @@ static const FFlogo G[] = {
     // GarudaDragon
     {
         .names = {"GarudaDragon", "garuda-dragon"},
-        .lines = FASTFETCH_DATATEXT_LOGO_GARUDA_DRAGON,
+        .lines = NEUROFETCH_DATATEXT_LOGO_GARUDA_DRAGON,
         .colors = {
             FF_COLOR_FG_RED,
         },
@@ -1987,7 +2016,7 @@ static const FFlogo G[] = {
     {
         .names = {"Garuda_small", "garuda-linux_small"},
         .type = FF_LOGO_LINE_TYPE_SMALL_BIT,
-        .lines = FASTFETCH_DATATEXT_LOGO_GARUDA_SMALL,
+        .lines = NEUROFETCH_DATATEXT_LOGO_GARUDA_SMALL,
         .colors = {
             FF_COLOR_FG_RED,
         },
@@ -1997,7 +2026,7 @@ static const FFlogo G[] = {
     // Gentoo
     {
         .names = {"Gentoo"},
-        .lines = FASTFETCH_DATATEXT_LOGO_GENTOO,
+        .lines = NEUROFETCH_DATATEXT_LOGO_GENTOO,
         .colors = {
             FF_COLOR_FG_MAGENTA,
             FF_COLOR_FG_WHITE,
@@ -2009,7 +2038,7 @@ static const FFlogo G[] = {
     {
         .names = {"Gentoo_small"},
         .type = FF_LOGO_LINE_TYPE_SMALL_BIT,
-        .lines = FASTFETCH_DATATEXT_LOGO_GENTOO_SMALL,
+        .lines = NEUROFETCH_DATATEXT_LOGO_GENTOO_SMALL,
         .colors = {
             FF_COLOR_FG_MAGENTA,
             FF_COLOR_FG_WHITE,
@@ -2020,7 +2049,7 @@ static const FFlogo G[] = {
     // GhostBSD
     {
         .names = {"GhostBSD"},
-        .lines = FASTFETCH_DATATEXT_LOGO_GHOSTBSD,
+        .lines = NEUROFETCH_DATATEXT_LOGO_GHOSTBSD,
         .colors = {
             FF_COLOR_FG_BLUE,
         },
@@ -2030,7 +2059,7 @@ static const FFlogo G[] = {
     // GhostFreak
     {
         .names = {"GhostFreak"},
-        .lines = FASTFETCH_DATATEXT_LOGO_GHOSTFREAK,
+        .lines = NEUROFETCH_DATATEXT_LOGO_GHOSTFREAK,
         .colors = {
             FF_COLOR_FG_DEFAULT,
         },
@@ -2040,7 +2069,7 @@ static const FFlogo G[] = {
     // Glaucus
     {
         .names = {"Glaucus"},
-        .lines = FASTFETCH_DATATEXT_LOGO_GLAUCUS,
+        .lines = NEUROFETCH_DATATEXT_LOGO_GLAUCUS,
         .colors = {
             FF_COLOR_FG_MAGENTA,
         },
@@ -2050,7 +2079,7 @@ static const FFlogo G[] = {
     // GNewSense
     {
         .names = {"gNewSense"},
-        .lines = FASTFETCH_DATATEXT_LOGO_GNEWSENSE,
+        .lines = NEUROFETCH_DATATEXT_LOGO_GNEWSENSE,
         .colors = {
             FF_COLOR_FG_BLUE,
         },
@@ -2060,7 +2089,7 @@ static const FFlogo G[] = {
     // GNOME
     {
         .names = {"GNOME"},
-        .lines = FASTFETCH_DATATEXT_LOGO_GNOME,
+        .lines = NEUROFETCH_DATATEXT_LOGO_GNOME,
         .colors = {
             FF_COLOR_FG_BLUE,
         },
@@ -2070,7 +2099,7 @@ static const FFlogo G[] = {
     // GNU
     {
         .names = {"GNU"},
-        .lines = FASTFETCH_DATATEXT_LOGO_GNU,
+        .lines = NEUROFETCH_DATATEXT_LOGO_GNU,
         .colors = {
             FF_COLOR_FG_DEFAULT,
         },
@@ -2080,7 +2109,7 @@ static const FFlogo G[] = {
     // GoboLinux
     {
         .names = {"GoboLinux", "Gobo"},
-        .lines = FASTFETCH_DATATEXT_LOGO_GOBOLINUX,
+        .lines = NEUROFETCH_DATATEXT_LOGO_GOBOLINUX,
         .colors = {
             FF_COLOR_FG_MAGENTA,
         },
@@ -2090,7 +2119,7 @@ static const FFlogo G[] = {
     // GoldenDogLinux
     {
         .names = {"GoldenDog Linux", "GDL", "goldendoglinux"},
-        .lines = FASTFETCH_DATATEXT_LOGO_GOLDENDOGLINUX,
+        .lines = NEUROFETCH_DATATEXT_LOGO_GOLDENDOGLINUX,
         .colors = {
             FF_COLOR_FG_YELLOW,
         },
@@ -2100,7 +2129,7 @@ static const FFlogo G[] = {
     // GrapheneOS
     {
         .names = {"GrapheneOS"},
-        .lines = FASTFETCH_DATATEXT_LOGO_GRAPHENEOS,
+        .lines = NEUROFETCH_DATATEXT_LOGO_GRAPHENEOS,
         .colors = {
             FF_COLOR_FG_DEFAULT,
         },
@@ -2110,7 +2139,7 @@ static const FFlogo G[] = {
     // Grombyang
     {
         .names = {"Grombyang"},
-        .lines = FASTFETCH_DATATEXT_LOGO_GROMBYANG,
+        .lines = NEUROFETCH_DATATEXT_LOGO_GROMBYANG,
         .colors = {
             FF_COLOR_FG_BLUE,
             FF_COLOR_FG_GREEN,
@@ -2122,7 +2151,7 @@ static const FFlogo G[] = {
     // Guix
     {
         .names = {"Guix"},
-        .lines = FASTFETCH_DATATEXT_LOGO_GUIX,
+        .lines = NEUROFETCH_DATATEXT_LOGO_GUIX,
         .colors = {
             FF_COLOR_FG_YELLOW,
         },
@@ -2133,7 +2162,7 @@ static const FFlogo G[] = {
     {
         .names = {"Guix_small"},
         .type = FF_LOGO_LINE_TYPE_SMALL_BIT,
-        .lines = FASTFETCH_DATATEXT_LOGO_GUIX_SMALL,
+        .lines = NEUROFETCH_DATATEXT_LOGO_GUIX_SMALL,
         .colors = {
             FF_COLOR_FG_YELLOW,
         },
@@ -2143,7 +2172,7 @@ static const FFlogo G[] = {
     // GXDE
     {
         .names = {"GXDE"},
-        .lines = FASTFETCH_DATATEXT_LOGO_DEEPIN,
+        .lines = NEUROFETCH_DATATEXT_LOGO_DEEPIN,
         .colors = {
             FF_COLOR_FG_RED,
         },
@@ -2158,7 +2187,7 @@ static const FFlogo H[] = {
     // Haiku
     {
         .names = {"Haiku"},
-        .lines = FASTFETCH_DATATEXT_LOGO_HAIKU,
+        .lines = NEUROFETCH_DATATEXT_LOGO_HAIKU,
         .colors = {
             FF_COLOR_FG_DEFAULT,
             FF_COLOR_FG_GREEN,
@@ -2169,7 +2198,7 @@ static const FFlogo H[] = {
     // Haiku2
     {
         .names = {"Haiku2"},
-        .lines = FASTFETCH_DATATEXT_LOGO_HAIKU2,
+        .lines = NEUROFETCH_DATATEXT_LOGO_HAIKU2,
         .colors = {
             FF_COLOR_FG_GREEN,
             FF_COLOR_FG_DEFAULT,
@@ -2181,7 +2210,7 @@ static const FFlogo H[] = {
     {
         .names = {"Haiku_small"},
         .type = FF_LOGO_LINE_TYPE_SMALL_BIT,
-        .lines = FASTFETCH_DATATEXT_LOGO_HAIKU_SMALL,
+        .lines = NEUROFETCH_DATATEXT_LOGO_HAIKU_SMALL,
         .colors = {
             FF_COLOR_FG_GREEN,
         },
@@ -2191,7 +2220,7 @@ static const FFlogo H[] = {
     // HamoniKR
     {
         .names = {"HamoniKR"},
-        .lines = FASTFETCH_DATATEXT_LOGO_HAMONIKR,
+        .lines = NEUROFETCH_DATATEXT_LOGO_HAMONIKR,
         .colors = {
             FF_COLOR_FG_BLUE,
             FF_COLOR_FG_WHITE,
@@ -2203,7 +2232,7 @@ static const FFlogo H[] = {
     // HarDClanZ
     {
         .names = {"HarDClanZ"},
-        .lines = FASTFETCH_DATATEXT_LOGO_HARDCLANZ,
+        .lines = NEUROFETCH_DATATEXT_LOGO_HARDCLANZ,
         .colors = {
             FF_COLOR_FG_BLUE,
             FF_COLOR_FG_WHITE,
@@ -2215,7 +2244,7 @@ static const FFlogo H[] = {
     // HardenedBSD
     {
         .names = {"HardenedBSD"},
-        .lines = FASTFETCH_DATATEXT_LOGO_FREEBSD,
+        .lines = NEUROFETCH_DATATEXT_LOGO_FREEBSD,
         .colors = {
             FF_COLOR_FG_WHITE,
             FF_COLOR_FG_RED,
@@ -2226,7 +2255,7 @@ static const FFlogo H[] = {
     // HarmonyOS
     {
         .names = {"HarmonyOS"},
-        .lines = FASTFETCH_DATATEXT_LOGO_HARMONYOS,
+        .lines = NEUROFETCH_DATATEXT_LOGO_HARMONYOS,
         .colors = {
             FF_COLOR_FG_WHITE,
             FF_COLOR_FG_BLUE,
@@ -2237,7 +2266,7 @@ static const FFlogo H[] = {
     // Hash
     {
         .names = {"Hash"},
-        .lines = FASTFETCH_DATATEXT_LOGO_HASH,
+        .lines = NEUROFETCH_DATATEXT_LOGO_HASH,
         .colors = {
             FF_COLOR_FG_256 "123",
             FF_COLOR_FG_256 "123",
@@ -2246,7 +2275,7 @@ static const FFlogo H[] = {
     // HeliumOS
     {
         .names = {"HeliumOS"},
-        .lines = FASTFETCH_DATATEXT_LOGO_HELIUMOS,
+        .lines = NEUROFETCH_DATATEXT_LOGO_HELIUMOS,
         .colors = {
             FF_COLOR_FG_256 "81",
         },
@@ -2256,7 +2285,7 @@ static const FFlogo H[] = {
     // Huawei Cloud EulerOS
     {
         .names = {"Huawei Cloud EulerOS", "hce"},
-        .lines = FASTFETCH_DATATEXT_LOGO_HCE,
+        .lines = NEUROFETCH_DATATEXT_LOGO_HCE,
         .colors = {
             FF_COLOR_FG_RED,
         },
@@ -2266,7 +2295,7 @@ static const FFlogo H[] = {
     // Huayra
     {
         .names = {"Huayra"},
-        .lines = FASTFETCH_DATATEXT_LOGO_HUAYRA,
+        .lines = NEUROFETCH_DATATEXT_LOGO_HUAYRA,
         .colors = {
             FF_COLOR_FG_DEFAULT,
         },
@@ -2276,7 +2305,7 @@ static const FFlogo H[] = {
     // Hybrid
     {
         .names = {"Hybrid"},
-        .lines = FASTFETCH_DATATEXT_LOGO_HYBRID,
+        .lines = NEUROFETCH_DATATEXT_LOGO_HYBRID,
         .colors = {
             FF_COLOR_FG_BLUE,
             FF_COLOR_FG_LIGHT_BLUE,
@@ -2287,7 +2316,7 @@ static const FFlogo H[] = {
     // HydroOS
     {
         .names = {"HydroOS"},
-        .lines = FASTFETCH_DATATEXT_LOGO_HYDROOS,
+        .lines = NEUROFETCH_DATATEXT_LOGO_HYDROOS,
         .colors = {
             FF_COLOR_FG_RED,
         },
@@ -2297,7 +2326,7 @@ static const FFlogo H[] = {
     // HyprOS
     {
         .names = {"hypros"},
-        .lines = FASTFETCH_DATATEXT_LOGO_HYPROS,
+        .lines = NEUROFETCH_DATATEXT_LOGO_HYPROS,
         .colors = {
             FF_COLOR_FG_RED,
             FF_COLOR_FG_YELLOW,
@@ -2308,7 +2337,7 @@ static const FFlogo H[] = {
     // Hyperbola
     {
         .names = {"Hyperbola"},
-        .lines = FASTFETCH_DATATEXT_LOGO_HYPERBOLA,
+        .lines = NEUROFETCH_DATATEXT_LOGO_HYPERBOLA,
         .colors = {
             FF_COLOR_FG_LIGHT_BLACK,
         },
@@ -2319,7 +2348,7 @@ static const FFlogo H[] = {
     {
         .names = {"Hyperbola_small"},
         .type = FF_LOGO_LINE_TYPE_SMALL_BIT,
-        .lines = FASTFETCH_DATATEXT_LOGO_HYPERBOLA_SMALL,
+        .lines = NEUROFETCH_DATATEXT_LOGO_HYPERBOLA_SMALL,
         .colors = {
             FF_COLOR_FG_LIGHT_BLACK,
         },
@@ -2329,7 +2358,7 @@ static const FFlogo H[] = {
     // HydraPWK
     {
         .names = {"HydraPWK"},
-        .lines = FASTFETCH_DATATEXT_LOGO_HYDRAPWK,
+        .lines = NEUROFETCH_DATATEXT_LOGO_HYDRAPWK,
         .colors = {
             FF_COLOR_FG_RED,
             FF_COLOR_FG_DEFAULT,
@@ -2343,7 +2372,7 @@ static const FFlogo I[] = {
     // Iglunix
     {
         .names = {"Iglunix", "Iglu"},
-        .lines = FASTFETCH_DATATEXT_LOGO_IGLUNIX,
+        .lines = NEUROFETCH_DATATEXT_LOGO_IGLUNIX,
         .colors = {
             FF_COLOR_FG_LIGHT_BLACK,
         },
@@ -2353,7 +2382,7 @@ static const FFlogo I[] = {
     // InstantOS
     {
         .names = {"InstantOS"},
-        .lines = FASTFETCH_DATATEXT_LOGO_INSTANTOS,
+        .lines = NEUROFETCH_DATATEXT_LOGO_INSTANTOS,
         .colors = {
             FF_COLOR_FG_BLUE,
             FF_COLOR_FG_CYAN,
@@ -2364,7 +2393,7 @@ static const FFlogo I[] = {
     // Interix
     {
         .names = {"Interix"},
-        .lines = FASTFETCH_DATATEXT_LOGO_INTERIX,
+        .lines = NEUROFETCH_DATATEXT_LOGO_INTERIX,
         .colors = {
             FF_COLOR_FG_RED,
             FF_COLOR_FG_WHITE,
@@ -2376,7 +2405,7 @@ static const FFlogo I[] = {
     // IRIX
     {
         .names = {"IRIX"},
-        .lines = FASTFETCH_DATATEXT_LOGO_IRIX,
+        .lines = NEUROFETCH_DATATEXT_LOGO_IRIX,
         .colors = {
             FF_COLOR_FG_BLUE,
         },
@@ -2386,7 +2415,7 @@ static const FFlogo I[] = {
     // Ironclad
     {
         .names = {"Ironclad"},
-        .lines = FASTFETCH_DATATEXT_LOGO_IRONCLAD,
+        .lines = NEUROFETCH_DATATEXT_LOGO_IRONCLAD,
         .colors = {
             FF_COLOR_FG_BLACK,
         },
@@ -2396,7 +2425,7 @@ static const FFlogo I[] = {
     // Itc
     {
         .names = {"Itc"},
-        .lines = FASTFETCH_DATATEXT_LOGO_ITC,
+        .lines = NEUROFETCH_DATATEXT_LOGO_ITC,
         .colors = {
             FF_COLOR_FG_RED,
         },
@@ -2411,7 +2440,7 @@ static const FFlogo J[] = {
     // Januslinux
     {
         .names = {"januslinux", "janus"},
-        .lines = FASTFETCH_DATATEXT_LOGO_JANUSLINUX,
+        .lines = NEUROFETCH_DATATEXT_LOGO_JANUSLINUX,
         .colors = {
             FF_COLOR_FG_BLUE,
             FF_COLOR_FG_MAGENTA,
@@ -2427,7 +2456,7 @@ static const FFlogo K[] = {
     // Kaisen
     {
         .names = {"Kaisen"},
-        .lines = FASTFETCH_DATATEXT_LOGO_KAISEN,
+        .lines = NEUROFETCH_DATATEXT_LOGO_KAISEN,
         .colors = {
             FF_COLOR_FG_RED,
             FF_COLOR_FG_WHITE,
@@ -2438,7 +2467,7 @@ static const FFlogo K[] = {
     // Kali
     {
         .names = {"Kali"},
-        .lines = FASTFETCH_DATATEXT_LOGO_KALI,
+        .lines = NEUROFETCH_DATATEXT_LOGO_KALI,
         .colors = {
             FF_COLOR_FG_BLUE,
             FF_COLOR_FG_LIGHT_BLACK,
@@ -2450,7 +2479,7 @@ static const FFlogo K[] = {
     {
         .names = {"Kali_small"},
         .type = FF_LOGO_LINE_TYPE_SMALL_BIT,
-        .lines = FASTFETCH_DATATEXT_LOGO_KALI_SMALL,
+        .lines = NEUROFETCH_DATATEXT_LOGO_KALI_SMALL,
         .colors = {
             FF_COLOR_FG_BLUE,
             FF_COLOR_FG_LIGHT_BLACK,
@@ -2461,7 +2490,7 @@ static const FFlogo K[] = {
     // Kalpa Desktop
     {
         .names = {"kalpa-desktop"},
-        .lines = FASTFETCH_DATATEXT_LOGO_KALPA_DESKTOP,
+        .lines = NEUROFETCH_DATATEXT_LOGO_KALPA_DESKTOP,
         .colors = {
             FF_COLOR_FG_GREEN,
         },
@@ -2471,7 +2500,7 @@ static const FFlogo K[] = {
     // KaOS
     {
         .names = {"KaOS"},
-        .lines = FASTFETCH_DATATEXT_LOGO_KAOS,
+        .lines = NEUROFETCH_DATATEXT_LOGO_KAOS,
         .colors = {
             FF_COLOR_FG_BLUE,
             FF_COLOR_FG_WHITE,
@@ -2482,7 +2511,7 @@ static const FFlogo K[] = {
     // KernelOS
     {
         .names = {"KernelOS"},
-        .lines = FASTFETCH_DATATEXT_LOGO_KERNELOS,
+        .lines = NEUROFETCH_DATATEXT_LOGO_KERNELOS,
         .colors = {
             FF_COLOR_FG_RED,
             FF_COLOR_FG_MAGENTA,
@@ -2491,7 +2520,7 @@ static const FFlogo K[] = {
     // KDELinux
     {
         .names = {"kdelinux", "kde-linux"},
-        .lines = FASTFETCH_DATATEXT_LOGO_KDELINUX,
+        .lines = NEUROFETCH_DATATEXT_LOGO_KDELINUX,
         .colors = {
             FF_COLOR_FG_YELLOW,
             FF_COLOR_FG_WHITE
@@ -2500,7 +2529,7 @@ static const FFlogo K[] = {
     // KDE Neon
     {
         .names = {"KDE Neon"}, // Distro ID is "neon"; Distro name is "KDE Neon"
-        .lines = FASTFETCH_DATATEXT_LOGO_KDENEON,
+        .lines = NEUROFETCH_DATATEXT_LOGO_KDENEON,
         .colors = {
             FF_COLOR_FG_GREEN,
             FF_COLOR_FG_DEFAULT,
@@ -2509,7 +2538,7 @@ static const FFlogo K[] = {
     // Kibojoe
     {
         .names = {"Kibojoe"},
-        .lines = FASTFETCH_DATATEXT_LOGO_KIBOJOE,
+        .lines = NEUROFETCH_DATATEXT_LOGO_KIBOJOE,
         .colors = {
             FF_COLOR_FG_GREEN,
             FF_COLOR_FG_WHITE,
@@ -2521,7 +2550,7 @@ static const FFlogo K[] = {
     // KISSLinux
     {
         .names = {"KISS", "kiss-linux", "kisslinux"},
-        .lines = FASTFETCH_DATATEXT_LOGO_KISS,
+        .lines = NEUROFETCH_DATATEXT_LOGO_KISS,
         .colors = {
             FF_COLOR_FG_MAGENTA,
             FF_COLOR_FG_WHITE,
@@ -2533,7 +2562,7 @@ static const FFlogo K[] = {
     // Kogaion
     {
         .names = {"Kogaion"},
-        .lines = FASTFETCH_DATATEXT_LOGO_KOGAION,
+        .lines = NEUROFETCH_DATATEXT_LOGO_KOGAION,
         .colors = {
             FF_COLOR_FG_BLUE,
             FF_COLOR_FG_WHITE,
@@ -2544,7 +2573,7 @@ static const FFlogo K[] = {
     // Korora
     {
         .names = {"Korora"},
-        .lines = FASTFETCH_DATATEXT_LOGO_KORORA,
+        .lines = NEUROFETCH_DATATEXT_LOGO_KORORA,
         .colors = {
             FF_COLOR_FG_BLUE,
             FF_COLOR_FG_WHITE,
@@ -2555,7 +2584,7 @@ static const FFlogo K[] = {
     // KrassOS
     {
         .names = {"KrassOS", "Krass"},
-        .lines = FASTFETCH_DATATEXT_LOGO_KRASSOS,
+        .lines = NEUROFETCH_DATATEXT_LOGO_KRASSOS,
         .colors = {
             FF_COLOR_FG_BLUE,
             FF_COLOR_FG_WHITE,
@@ -2566,7 +2595,7 @@ static const FFlogo K[] = {
     // KSLinux
     {
         .names = {"KSLinux"},
-        .lines = FASTFETCH_DATATEXT_LOGO_KSLINUX,
+        .lines = NEUROFETCH_DATATEXT_LOGO_KSLINUX,
         .colors = {
             FF_COLOR_FG_BLUE,
             FF_COLOR_FG_WHITE,
@@ -2577,7 +2606,7 @@ static const FFlogo K[] = {
     // Kubuntu
     {
         .names = {"Kubuntu", "kubuntu-linux", "kde-ubuntu"},
-        .lines = FASTFETCH_DATATEXT_LOGO_KUBUNTU,
+        .lines = NEUROFETCH_DATATEXT_LOGO_KUBUNTU,
         .colors = {
             FF_COLOR_FG_BLUE,
             FF_COLOR_FG_WHITE,
@@ -2588,7 +2617,7 @@ static const FFlogo K[] = {
     // Kylin
     {
         .names = {"Kylin", "kylin"},
-        .lines = FASTFETCH_DATATEXT_LOGO_KYLIN,
+        .lines = NEUROFETCH_DATATEXT_LOGO_KYLIN,
         .colors = {
             FF_COLOR_FG_BLUE,
             FF_COLOR_FG_CYAN,
@@ -2606,7 +2635,7 @@ static const FFlogo L[] = {
     // LainOS
     {
         .names = {"LainOS"},
-        .lines = FASTFETCH_DATATEXT_LOGO_LAINOS,
+        .lines = NEUROFETCH_DATATEXT_LOGO_LAINOS,
         .colors = {
             FF_COLOR_FG_BLUE,
             FF_COLOR_FG_256 "14",
@@ -2616,7 +2645,7 @@ static const FFlogo L[] = {
     // LangitKetujuh
     {
         .names = {"langitketujuh", "l7"},
-        .lines = FASTFETCH_DATATEXT_LOGO_LANGITKETUJUH,
+        .lines = NEUROFETCH_DATATEXT_LOGO_LANGITKETUJUH,
         .colors = {
             FF_COLOR_FG_BLUE,
             FF_COLOR_FG_WHITE,
@@ -2627,7 +2656,7 @@ static const FFlogo L[] = {
     // Laxeros
     {
         .names = {"Laxeros"},
-        .lines = FASTFETCH_DATATEXT_LOGO_LAXEROS,
+        .lines = NEUROFETCH_DATATEXT_LOGO_LAXEROS,
         .colors = {
             FF_COLOR_FG_BLUE,
             FF_COLOR_FG_WHITE,
@@ -2638,7 +2667,7 @@ static const FFlogo L[] = {
     // LEDE
     {
         .names = {"LEDE"},
-        .lines = FASTFETCH_DATATEXT_LOGO_LEDE,
+        .lines = NEUROFETCH_DATATEXT_LOGO_LEDE,
         .colors = {
             FF_COLOR_FG_BLUE,
             FF_COLOR_FG_WHITE,
@@ -2649,7 +2678,7 @@ static const FFlogo L[] = {
     // LibreELEC
     {
         .names = {"LibreELEC"},
-        .lines = FASTFETCH_DATATEXT_LOGO_LIBREELEC,
+        .lines = NEUROFETCH_DATATEXT_LOGO_LIBREELEC,
         .colors = {
             FF_COLOR_FG_GREEN,
             FF_COLOR_FG_YELLOW,
@@ -2663,7 +2692,7 @@ static const FFlogo L[] = {
     // Lilidog
     {
         .names = {"Lilidog"},
-        .lines = FASTFETCH_DATATEXT_LOGO_LILIDOG,
+        .lines = NEUROFETCH_DATATEXT_LOGO_LILIDOG,
         .colors = {
             FF_COLOR_FG_BLUE,
         },
@@ -2673,7 +2702,7 @@ static const FFlogo L[] = {
     // Lingmo OS
     {
         .names = {"Lingmo", "LingmoOS"},
-        .lines = FASTFETCH_DATATEXT_LOGO_LINGMO,
+        .lines = NEUROFETCH_DATATEXT_LOGO_LINGMO,
         .colors = {
             FF_COLOR_FG_BLUE,
             FF_COLOR_FG_WHITE,
@@ -2684,7 +2713,7 @@ static const FFlogo L[] = {
     // Linspire
     {
         .names = {"Linspire", "Lindows"},
-        .lines = FASTFETCH_DATATEXT_LOGO_LINSPIRE,
+        .lines = NEUROFETCH_DATATEXT_LOGO_LINSPIRE,
         .colors = {
             FF_COLOR_FG_BLUE,
             FF_COLOR_FG_GREEN,
@@ -2695,7 +2724,7 @@ static const FFlogo L[] = {
     // Linux
     {
         .names = {"Linux", "linux-generic"},
-        .lines = FASTFETCH_DATATEXT_LOGO_LINUX,
+        .lines = NEUROFETCH_DATATEXT_LOGO_LINUX,
         .colors = {
             FF_COLOR_FG_WHITE,
             FF_COLOR_FG_LIGHT_BLACK,
@@ -2707,7 +2736,7 @@ static const FFlogo L[] = {
     // LinuxFromScratch
     {
         .names = {"LinuxFromScratch", "lfs"},
-        .lines = FASTFETCH_DATATEXT_LOGO_LFS,
+        .lines = NEUROFETCH_DATATEXT_LOGO_LFS,
         .colors = {
             FF_COLOR_FG_WHITE,
             FF_COLOR_FG_BLACK,
@@ -2720,7 +2749,7 @@ static const FFlogo L[] = {
     {
         .names = {"Linux_small", "linux-generic_small"},
         .type = FF_LOGO_LINE_TYPE_SMALL_BIT,
-        .lines = FASTFETCH_DATATEXT_LOGO_LINUX_SMALL,
+        .lines = NEUROFETCH_DATATEXT_LOGO_LINUX_SMALL,
         .colors = {
             FF_COLOR_FG_BLACK,
             FF_COLOR_FG_WHITE,
@@ -2732,7 +2761,7 @@ static const FFlogo L[] = {
     // LinuxLight
     {
         .names = {"LinuxLite", "Linux Lite", "linux_lite"},
-        .lines = FASTFETCH_DATATEXT_LOGO_LINUXLITE,
+        .lines = NEUROFETCH_DATATEXT_LOGO_LINUXLITE,
         .colors = {
             FF_COLOR_FG_GREEN,
             FF_COLOR_FG_WHITE,
@@ -2744,7 +2773,7 @@ static const FFlogo L[] = {
     {
         .names = {"LinuxLite_small", "Linux Lite_small"},
         .type = FF_LOGO_LINE_TYPE_SMALL_BIT,
-        .lines = FASTFETCH_DATATEXT_LOGO_LINUXLITE_SMALL,
+        .lines = NEUROFETCH_DATATEXT_LOGO_LINUXLITE_SMALL,
         .colors = {
             FF_COLOR_FG_BLUE,
             FF_COLOR_FG_WHITE,
@@ -2755,7 +2784,7 @@ static const FFlogo L[] = {
     // LinuxMint
     {
         .names = {"linuxmint", "linux-mint"},
-        .lines = FASTFETCH_DATATEXT_LOGO_LINUXMINT,
+        .lines = NEUROFETCH_DATATEXT_LOGO_LINUXMINT,
         .colors = {
             FF_COLOR_FG_GREEN,
             FF_COLOR_FG_WHITE,
@@ -2767,7 +2796,7 @@ static const FFlogo L[] = {
     {
         .names = {"linuxmint_small", "linux-mint_small"},
         .type = FF_LOGO_LINE_TYPE_SMALL_BIT,
-        .lines = FASTFETCH_DATATEXT_LOGO_LINUXMINT_SMALL,
+        .lines = NEUROFETCH_DATATEXT_LOGO_LINUXMINT_SMALL,
         .colors = {
             FF_COLOR_FG_GREEN,
             FF_COLOR_FG_WHITE,
@@ -2779,7 +2808,7 @@ static const FFlogo L[] = {
     {
         .names = {"linuxmint_old", "linux-mint_old"},
         .type = FF_LOGO_LINE_TYPE_ALTER_BIT,
-        .lines = FASTFETCH_DATATEXT_LOGO_LINUXMINT_OLD,
+        .lines = NEUROFETCH_DATATEXT_LOGO_LINUXMINT_OLD,
         .colors = {
             FF_COLOR_FG_GREEN,
             FF_COLOR_FG_WHITE,
@@ -2790,7 +2819,7 @@ static const FFlogo L[] = {
     // Live_Raizo
     {
         .names = {"Live Raizo", "Live_Raizo"},
-        .lines = FASTFETCH_DATATEXT_LOGO_LIVE_RAIZO,
+        .lines = NEUROFETCH_DATATEXT_LOGO_LIVE_RAIZO,
         .colors = {
             FF_COLOR_FG_YELLOW,
         },
@@ -2800,7 +2829,7 @@ static const FFlogo L[] = {
     // LliureX
     {
         .names = {"LliureX"},
-        .lines = FASTFETCH_DATATEXT_LOGO_LLIUREX,
+        .lines = NEUROFETCH_DATATEXT_LOGO_LLIUREX,
         .colors = {
             FF_COLOR_FG_BLUE,
         },
@@ -2810,7 +2839,7 @@ static const FFlogo L[] = {
     // LMDE
     {
         .names = {"LMDE"},
-        .lines = FASTFETCH_DATATEXT_LOGO_LMDE,
+        .lines = NEUROFETCH_DATATEXT_LOGO_LMDE,
         .colors = {
             FF_COLOR_FG_GREEN,
             FF_COLOR_FG_WHITE,
@@ -2821,7 +2850,7 @@ static const FFlogo L[] = {
     // Loc-OS
     {
         .names = {"locos", "loc-os", "Loc-OS Linux"},
-        .lines = FASTFETCH_DATATEXT_LOGO_LOCOS,
+        .lines = NEUROFETCH_DATATEXT_LOGO_LOCOS,
         .colors = {
             FF_COLOR_FG_BLACK,
             FF_COLOR_FG_YELLOW,
@@ -2833,7 +2862,7 @@ static const FFlogo L[] = {
     // Lubuntu
     {
         .names = {"lubuntu"},
-        .lines = FASTFETCH_DATATEXT_LOGO_LUBUNTU,
+        .lines = NEUROFETCH_DATATEXT_LOGO_LUBUNTU,
         .colors = {
             FF_COLOR_FG_BLUE,
             FF_COLOR_FG_WHITE,
@@ -2842,7 +2871,7 @@ static const FFlogo L[] = {
     // Lunar
     {
         .names = {"Lunar"},
-        .lines = FASTFETCH_DATATEXT_LOGO_LUNAR,
+        .lines = NEUROFETCH_DATATEXT_LOGO_LUNAR,
         .colors = {
             FF_COLOR_FG_BLUE,
             FF_COLOR_FG_WHITE,
@@ -2859,7 +2888,7 @@ static const FFlogo M[] = {
     // MacOS
     {
         .names = {"macos", "mac"},
-        .lines = FASTFETCH_DATATEXT_LOGO_MACOS,
+        .lines = NEUROFETCH_DATATEXT_LOGO_MACOS,
         .colors = {
             FF_COLOR_FG_GREEN,
             FF_COLOR_FG_YELLOW,
@@ -2874,7 +2903,7 @@ static const FFlogo M[] = {
     {
         .names = {"macos_small", "mac_small"},
         .type = FF_LOGO_LINE_TYPE_SMALL_BIT,
-        .lines = FASTFETCH_DATATEXT_LOGO_MACOS_SMALL,
+        .lines = NEUROFETCH_DATATEXT_LOGO_MACOS_SMALL,
         .colors = {
             FF_COLOR_FG_GREEN,
             FF_COLOR_FG_YELLOW,
@@ -2889,7 +2918,7 @@ static const FFlogo M[] = {
     {
         .names = {"macos2", "mac2"},
         .type = FF_LOGO_LINE_TYPE_ALTER_BIT,
-        .lines = FASTFETCH_DATATEXT_LOGO_MACOS2,
+        .lines = NEUROFETCH_DATATEXT_LOGO_MACOS2,
         .colors = {
             FF_COLOR_FG_GREEN,
             FF_COLOR_FG_YELLOW,
@@ -2904,7 +2933,7 @@ static const FFlogo M[] = {
     {
         .names = {"macos2_small", "mac2_small"},
         .type = FF_LOGO_LINE_TYPE_SMALL_BIT | FF_LOGO_LINE_TYPE_ALTER_BIT,
-        .lines = FASTFETCH_DATATEXT_LOGO_MACOS2_SMALL,
+        .lines = NEUROFETCH_DATATEXT_LOGO_MACOS2_SMALL,
         .colors = {
             FF_COLOR_FG_GREEN,
             FF_COLOR_FG_YELLOW,
@@ -2919,7 +2948,7 @@ static const FFlogo M[] = {
     {
         .names = {"macos3", "mac3"},
         .type = FF_LOGO_LINE_TYPE_ALTER_BIT,
-        .lines = FASTFETCH_DATATEXT_LOGO_MACOS3,
+        .lines = NEUROFETCH_DATATEXT_LOGO_MACOS3,
         .colors = {
             FF_COLOR_FG_GREEN,
             FF_COLOR_FG_YELLOW,
@@ -2933,7 +2962,7 @@ static const FFlogo M[] = {
     // MainsailOS
     {
         .names = {"MainsailOS"},
-        .lines = FASTFETCH_DATATEXT_LOGO_MAINSAILOS,
+        .lines = NEUROFETCH_DATATEXT_LOGO_MAINSAILOS,
         .colors = {
             FF_COLOR_FG_RED,
         },
@@ -2942,7 +2971,7 @@ static const FFlogo M[] = {
     {
         .names = {"MainsailOS_small"},
         .type = FF_LOGO_LINE_TYPE_SMALL_BIT,
-        .lines = FASTFETCH_DATATEXT_LOGO_MAINSAILOS_SMALL,
+        .lines = NEUROFETCH_DATATEXT_LOGO_MAINSAILOS_SMALL,
         .colors = {
             FF_COLOR_FG_RED,
         },
@@ -2950,7 +2979,7 @@ static const FFlogo M[] = {
     // Mageia
     {
         .names = {"Mageia"},
-        .lines = FASTFETCH_DATATEXT_LOGO_MAGEIA,
+        .lines = NEUROFETCH_DATATEXT_LOGO_MAGEIA,
         .colors = {
             FF_COLOR_FG_CYAN,
             FF_COLOR_FG_WHITE,
@@ -2962,7 +2991,7 @@ static const FFlogo M[] = {
     {
         .names = {"Mageia_small"},
         .type = FF_LOGO_LINE_TYPE_SMALL_BIT,
-        .lines = FASTFETCH_DATATEXT_LOGO_MAGEIA_SMALL,
+        .lines = NEUROFETCH_DATATEXT_LOGO_MAGEIA_SMALL,
         .colors = {
             FF_COLOR_FG_CYAN,
             FF_COLOR_FG_WHITE,
@@ -2973,7 +3002,7 @@ static const FFlogo M[] = {
     // Magix
     {
         .names = {"Magix","MagixOS"},
-        .lines = FASTFETCH_DATATEXT_LOGO_MAGIX,
+        .lines = NEUROFETCH_DATATEXT_LOGO_MAGIX,
         .colors = {
             FF_COLOR_FG_LIGHT_MAGENTA,
             FF_COLOR_FG_CYAN,
@@ -2984,7 +3013,7 @@ static const FFlogo M[] = {
     // MagpieOS
     {
         .names = {"MagpieOS", "Magpie"},
-        .lines = FASTFETCH_DATATEXT_LOGO_MAGPIEOS,
+        .lines = NEUROFETCH_DATATEXT_LOGO_MAGPIEOS,
         .colors = {
             FF_COLOR_FG_GREEN,
             FF_COLOR_FG_RED,
@@ -2997,7 +3026,7 @@ static const FFlogo M[] = {
     // Mandriva
     {
         .names = {"mandriva", "mandrake"},
-        .lines = FASTFETCH_DATATEXT_LOGO_MANDRIVA,
+        .lines = NEUROFETCH_DATATEXT_LOGO_MANDRIVA,
         .colors = {
             FF_COLOR_FG_BLUE,
             FF_COLOR_FG_YELLOW,
@@ -3008,7 +3037,7 @@ static const FFlogo M[] = {
     // Manjaro
     {
         .names = {"manjaro", "manjaro-arm"},
-        .lines = FASTFETCH_DATATEXT_LOGO_MANJARO,
+        .lines = NEUROFETCH_DATATEXT_LOGO_MANJARO,
         .colors = {
             FF_COLOR_FG_GREEN,
         },
@@ -3019,7 +3048,7 @@ static const FFlogo M[] = {
     {
         .names = {"manjaro_small", "manjaro-arm_small"},
         .type = FF_LOGO_LINE_TYPE_SMALL_BIT,
-        .lines = FASTFETCH_DATATEXT_LOGO_MANJARO_SMALL,
+        .lines = NEUROFETCH_DATATEXT_LOGO_MANJARO_SMALL,
         .colors = {
             FF_COLOR_FG_GREEN,
         },
@@ -3029,7 +3058,7 @@ static const FFlogo M[] = {
     // MassOS
     {
         .names = {"MassOS", "mass"},
-        .lines = FASTFETCH_DATATEXT_LOGO_MASSOS,
+        .lines = NEUROFETCH_DATATEXT_LOGO_MASSOS,
         .colors = {
             FF_COLOR_FG_DEFAULT,
         },
@@ -3039,7 +3068,7 @@ static const FFlogo M[] = {
     // MatuusOS
     {
         .names = {"MatuusOS", "Matuus"},
-        .lines = FASTFETCH_DATATEXT_LOGO_MATUUSOS,
+        .lines = NEUROFETCH_DATATEXT_LOGO_MATUUSOS,
         .colors = {
             FF_COLOR_FG_YELLOW,
             FF_COLOR_FG_RED,
@@ -3050,7 +3079,7 @@ static const FFlogo M[] = {
     // MaUI
     {
         .names = {"MaUI"},
-        .lines = FASTFETCH_DATATEXT_LOGO_MAUI,
+        .lines = NEUROFETCH_DATATEXT_LOGO_MAUI,
         .colors = {
             FF_COLOR_FG_CYAN,
         },
@@ -3060,7 +3089,7 @@ static const FFlogo M[] = {
     // Mauna
     {
         .names = {"Mauna"},
-        .lines = FASTFETCH_DATATEXT_LOGO_MAUNA,
+        .lines = NEUROFETCH_DATATEXT_LOGO_MAUNA,
         .colors = {
             FF_COLOR_FG_BLUE,
             FF_COLOR_FG_CYAN,
@@ -3069,7 +3098,7 @@ static const FFlogo M[] = {
     // Meowix
     {
         .names = {"Meowix"},
-        .lines = FASTFETCH_DATATEXT_LOGO_MEOWIX,
+        .lines = NEUROFETCH_DATATEXT_LOGO_MEOWIX,
         .colors = {
             FF_COLOR_FG_RED,
             FF_COLOR_FG_YELLOW,
@@ -3082,7 +3111,7 @@ static const FFlogo M[] = {
     // Mer
     {
         .names = {"Mer"},
-        .lines = FASTFETCH_DATATEXT_LOGO_MER,
+        .lines = NEUROFETCH_DATATEXT_LOGO_MER,
         .colors = {
             FF_COLOR_FG_BLUE,
         },
@@ -3092,7 +3121,7 @@ static const FFlogo M[] = {
     // MidnightBSD
     {
         .names = {"MidnightBSD"},
-        .lines = FASTFETCH_DATATEXT_LOGO_MIDNIGHTBSD,
+        .lines = NEUROFETCH_DATATEXT_LOGO_MIDNIGHTBSD,
         .colors = {
             FF_COLOR_FG_DEFAULT,
         },
@@ -3102,7 +3131,7 @@ static const FFlogo M[] = {
     // MidOS
     {
         .names = {"MidOS"},
-        .lines = FASTFETCH_DATATEXT_LOGO_MIDOS,
+        .lines = NEUROFETCH_DATATEXT_LOGO_MIDOS,
         .colors = {
             FF_COLOR_FG_LIGHT_BLACK,
         },
@@ -3112,7 +3141,7 @@ static const FFlogo M[] = {
     // MidOSOld
     {
         .names = {"MidOS_old"},
-        .lines = FASTFETCH_DATATEXT_LOGO_MIDOS_OLD,
+        .lines = NEUROFETCH_DATATEXT_LOGO_MIDOS_OLD,
         .type = FF_LOGO_LINE_TYPE_ALTER_BIT,
         .colors = {
             FF_COLOR_FG_LIGHT_BLACK,
@@ -3124,7 +3153,7 @@ static const FFlogo M[] = {
     // Minimal System
     {
         .names = {"Minimal_System"},
-        .lines = FASTFETCH_DATATEXT_LOGO_MINIMAL,
+        .lines = NEUROFETCH_DATATEXT_LOGO_MINIMAL,
         .colors = {
             FF_COLOR_FG_RED,
         },
@@ -3134,7 +3163,7 @@ static const FFlogo M[] = {
     // Minix
     {
         .names = {"Minix"},
-        .lines = FASTFETCH_DATATEXT_LOGO_MINIX,
+        .lines = NEUROFETCH_DATATEXT_LOGO_MINIX,
         .colors = {
             FF_COLOR_FG_RED,
             FF_COLOR_FG_WHITE,
@@ -3146,7 +3175,7 @@ static const FFlogo M[] = {
     // MiracleLinux
     {
         .names = {"MIRACLE LINUX", "miracle_linux"},
-        .lines = FASTFETCH_DATATEXT_LOGO_MIRACLE_LINUX,
+        .lines = NEUROFETCH_DATATEXT_LOGO_MIRACLE_LINUX,
         .colors = {
             FF_COLOR_FG_256 "29",
         },
@@ -3156,7 +3185,7 @@ static const FFlogo M[] = {
     // MOS
     {
         .names = {"MOS"},
-        .lines = FASTFETCH_DATATEXT_LOGO_MOS,
+        .lines = NEUROFETCH_DATATEXT_LOGO_MOS,
         .colors = {
             FF_COLOR_FG_CYAN,
             FF_COLOR_FG_BLUE,
@@ -3165,7 +3194,7 @@ static const FFlogo M[] = {
     // Msys2
     {
         .names = {"Msys2"},
-        .lines = FASTFETCH_DATATEXT_LOGO_MSYS2,
+        .lines = NEUROFETCH_DATATEXT_LOGO_MSYS2,
         .colors = {
             FF_COLOR_FG_MAGENTA,
             FF_COLOR_FG_WHITE,
@@ -3177,7 +3206,7 @@ static const FFlogo M[] = {
     // MX
     {
         .names = {"MX", "MX Linux"},
-        .lines = FASTFETCH_DATATEXT_LOGO_MX,
+        .lines = NEUROFETCH_DATATEXT_LOGO_MX,
         .colors = {
             FF_COLOR_FG_DEFAULT,
         },
@@ -3188,7 +3217,7 @@ static const FFlogo M[] = {
     {
         .names = {"MX_small", "mx linux_small"},
         .type = FF_LOGO_LINE_TYPE_SMALL_BIT,
-        .lines = FASTFETCH_DATATEXT_LOGO_MX_SMALL,
+        .lines = NEUROFETCH_DATATEXT_LOGO_MX_SMALL,
         .colors = {
             FF_COLOR_FG_DEFAULT,
         },
@@ -3199,7 +3228,7 @@ static const FFlogo M[] = {
     {
         .names = {"MX2"},
         .type = FF_LOGO_LINE_TYPE_ALTER_BIT,
-        .lines = FASTFETCH_DATATEXT_LOGO_MX2,
+        .lines = NEUROFETCH_DATATEXT_LOGO_MX2,
         .colors = {
             FF_COLOR_FG_DEFAULT,
         },
@@ -3214,7 +3243,7 @@ static const FFlogo N[] = {
     // Namib
     {
         .names = {"Namib"},
-        .lines = FASTFETCH_DATATEXT_LOGO_NAMIB,
+        .lines = NEUROFETCH_DATATEXT_LOGO_NAMIB,
         .colors = {
             FF_COLOR_FG_RED,
             FF_COLOR_FG_WHITE,
@@ -3223,17 +3252,28 @@ static const FFlogo N[] = {
     // Nekos
     {
         .names = {"Nekos"},
-        .lines = FASTFETCH_DATATEXT_LOGO_NEKOS,
+        .lines = NEUROFETCH_DATATEXT_LOGO_NEKOS,
         .colors = {
             FF_COLOR_FG_YELLOW,
             FF_COLOR_FG_WHITE,
             FF_COLOR_FG_RED,
         },
     },
+    // Neurosama
+    {
+        .names = {"Neurosama", "Neuro"},
+        .lines = NEUROFETCH_DATATEXT_LOGO_NEUROSAMA,
+        .colors = {
+            FF_COLOR_FG_CYAN,
+            FF_COLOR_FG_WHITE,
+        },
+        .colorKeys = FF_COLOR_FG_CYAN,
+        .colorTitle = FF_COLOR_FG_CYAN,
+    },
     // Neptune
     {
         .names = {"Neptune"},
-        .lines = FASTFETCH_DATATEXT_LOGO_NEPTUNE,
+        .lines = NEUROFETCH_DATATEXT_LOGO_NEPTUNE,
         .colors = {
             FF_COLOR_FG_WHITE,
             FF_COLOR_FG_WHITE,
@@ -3242,7 +3282,7 @@ static const FFlogo N[] = {
     // NetRunner
     {
         .names = {"NetRunner"},
-        .lines = FASTFETCH_DATATEXT_LOGO_NETRUNNER,
+        .lines = NEUROFETCH_DATATEXT_LOGO_NETRUNNER,
         .colors = {
             FF_COLOR_FG_BLUE,
             FF_COLOR_FG_WHITE,
@@ -3251,7 +3291,7 @@ static const FFlogo N[] = {
     // NexaLinux
     {
         .names = {"nexalinux"},
-        .lines = FASTFETCH_DATATEXT_LOGO_NEXALINUX,
+        .lines = NEUROFETCH_DATATEXT_LOGO_NEXALINUX,
         .colors = {
             FF_COLOR_FG_LIGHT_BLUE,
             FF_COLOR_FG_LIGHT_BLUE,
@@ -3260,7 +3300,7 @@ static const FFlogo N[] = {
     // Nitrux
     {
         .names = {"Nitrux"},
-        .lines = FASTFETCH_DATATEXT_LOGO_NITRUX,
+        .lines = NEUROFETCH_DATATEXT_LOGO_NITRUX,
         .colors = {
             FF_COLOR_FG_BLUE,
             FF_COLOR_FG_WHITE,
@@ -3269,7 +3309,7 @@ static const FFlogo N[] = {
     // NixOS
     {
         .names = {"NixOS"},
-        .lines = FASTFETCH_DATATEXT_LOGO_NIXOS,
+        .lines = NEUROFETCH_DATATEXT_LOGO_NIXOS,
         .colors = {
             FF_COLOR_FG_BLUE,
             FF_COLOR_FG_CYAN,
@@ -3279,7 +3319,7 @@ static const FFlogo N[] = {
     {
         .names = {"NixOS_small"},
         .type = FF_LOGO_LINE_TYPE_SMALL_BIT,
-        .lines = FASTFETCH_DATATEXT_LOGO_NIXOS_SMALL,
+        .lines = NEUROFETCH_DATATEXT_LOGO_NIXOS_SMALL,
         .colors = {
             FF_COLOR_FG_BLUE,
             FF_COLOR_FG_CYAN,
@@ -3289,7 +3329,7 @@ static const FFlogo N[] = {
     {
         .names = {"nixos_old"},
         .type = FF_LOGO_LINE_TYPE_ALTER_BIT,
-        .lines = FASTFETCH_DATATEXT_LOGO_NIXOS_OLD,
+        .lines = NEUROFETCH_DATATEXT_LOGO_NIXOS_OLD,
         .colors = {
             FF_COLOR_FG_BLUE,
             FF_COLOR_FG_CYAN,
@@ -3299,7 +3339,7 @@ static const FFlogo N[] = {
     {
         .names = {"nixos_old_small"},
         .type = FF_LOGO_LINE_TYPE_SMALL_BIT | FF_LOGO_LINE_TYPE_ALTER_BIT,
-        .lines = FASTFETCH_DATATEXT_LOGO_NIXOS_OLD_SMALL,
+        .lines = NEUROFETCH_DATATEXT_LOGO_NIXOS_OLD_SMALL,
         .colors = {
             FF_COLOR_FG_BLUE,
             FF_COLOR_FG_CYAN,
@@ -3308,7 +3348,7 @@ static const FFlogo N[] = {
     // NetBSD
     {
         .names = {"NetBSD"},
-        .lines = FASTFETCH_DATATEXT_LOGO_NETBSD,
+        .lines = NEUROFETCH_DATATEXT_LOGO_NETBSD,
         .colors = {
             FF_COLOR_FG_RED,
             FF_COLOR_FG_WHITE,
@@ -3319,7 +3359,7 @@ static const FFlogo N[] = {
     // NetBSD2
     {
         .names = {"NetBSD2"},
-        .lines = FASTFETCH_DATATEXT_LOGO_NETBSD2,
+        .lines = NEUROFETCH_DATATEXT_LOGO_NETBSD2,
         .type = FF_LOGO_LINE_TYPE_ALTER_BIT,
         .colors = {
             FF_COLOR_FG_RED,
@@ -3331,7 +3371,7 @@ static const FFlogo N[] = {
     // NetBSD Small
     {
         .names = {"NetBSD_small"},
-        .lines = FASTFETCH_DATATEXT_LOGO_NETBSD_SMALL,
+        .lines = NEUROFETCH_DATATEXT_LOGO_NETBSD_SMALL,
         .type = FF_LOGO_LINE_TYPE_SMALL_BIT,
         .colors = {
             FF_COLOR_FG_RED,
@@ -3343,7 +3383,7 @@ static const FFlogo N[] = {
     // Nobara
     {
         .names = {"nobara", "nobara-linux"},
-        .lines = FASTFETCH_DATATEXT_LOGO_NOBARA,
+        .lines = NEUROFETCH_DATATEXT_LOGO_NOBARA,
         .colors = {
             FF_COLOR_FG_DEFAULT,
         },
@@ -3353,7 +3393,7 @@ static const FFlogo N[] = {
     // NomadBSD
     {
         .names = {"nomadbsd"},
-        .lines = FASTFETCH_DATATEXT_LOGO_NOMADBSD,
+        .lines = NEUROFETCH_DATATEXT_LOGO_NOMADBSD,
         .colors = {
             FF_COLOR_FG_BLUE,
         },
@@ -3363,7 +3403,7 @@ static const FFlogo N[] = {
     // NurOS
     {
         .names = {"NurOS"},
-        .lines = FASTFETCH_DATATEXT_LOGO_NUROS,
+        .lines = NEUROFETCH_DATATEXT_LOGO_NUROS,
         .colors = {
             FF_COLOR_FG_BLUE,
             FF_COLOR_FG_WHITE,
@@ -3372,7 +3412,7 @@ static const FFlogo N[] = {
     // Nurunner
     {
         .names = {"Nurunner"},
-        .lines = FASTFETCH_DATATEXT_LOGO_NURUNNER,
+        .lines = NEUROFETCH_DATATEXT_LOGO_NURUNNER,
         .colors = {
             FF_COLOR_FG_BLUE,
             FF_COLOR_FG_WHITE,
@@ -3381,7 +3421,7 @@ static const FFlogo N[] = {
     // NuTyX
     {
         .names = {"NuTyX"},
-        .lines = FASTFETCH_DATATEXT_LOGO_NUTYX,
+        .lines = NEUROFETCH_DATATEXT_LOGO_NUTYX,
         .colors = {
             FF_COLOR_FG_BLUE,
             FF_COLOR_FG_RED,
@@ -3395,7 +3435,7 @@ static const FFlogo O[] = {
     // Obarun
     {
         .names = {"Obarun"},
-        .lines = FASTFETCH_DATATEXT_LOGO_OBARUN,
+        .lines = NEUROFETCH_DATATEXT_LOGO_OBARUN,
         .colors = {
             FF_COLOR_FG_CYAN,
             FF_COLOR_FG_WHITE,
@@ -3404,7 +3444,7 @@ static const FFlogo O[] = {
     // OBRevenge
     {
         .names = {"OBRevenge"},
-        .lines = FASTFETCH_DATATEXT_LOGO_OBREVENGE,
+        .lines = NEUROFETCH_DATATEXT_LOGO_OBREVENGE,
         .colors = {
             FF_COLOR_FG_RED,
             FF_COLOR_FG_WHITE,
@@ -3413,7 +3453,7 @@ static const FFlogo O[] = {
     // ObsidianOS
     {
         .names = {"ObsidianOS"},
-        .lines = FASTFETCH_DATATEXT_LOGO_OBSIDIANOS,
+        .lines = NEUROFETCH_DATATEXT_LOGO_OBSIDIANOS,
         .colors = {
             FF_COLOR_FG_MAGENTA,
             FF_COLOR_FG_CYAN,
@@ -3423,7 +3463,7 @@ static const FFlogo O[] = {
     // OmniOS
     {
         .names = {"OmniOS"},
-        .lines = FASTFETCH_DATATEXT_LOGO_OMNIOS,
+        .lines = NEUROFETCH_DATATEXT_LOGO_OMNIOS,
         .colors = {
             FF_COLOR_FG_WHITE,
             FF_COLOR_FG_YELLOW,
@@ -3433,13 +3473,13 @@ static const FFlogo O[] = {
     // Opak
     {
         .names = {"Opak"},
-        .lines = FASTFETCH_DATATEXT_LOGO_OPAK,
+        .lines = NEUROFETCH_DATATEXT_LOGO_OPAK,
         .colors = {}, // #1070
     },
     // OpenKylin
     {
         .names = {"openkylin", "open-kylin"},
-        .lines = FASTFETCH_DATATEXT_LOGO_OPENKYLIN,
+        .lines = NEUROFETCH_DATATEXT_LOGO_OPENKYLIN,
         .colors = {
             FF_COLOR_FG_GREEN,
             FF_COLOR_FG_WHITE,
@@ -3450,7 +3490,7 @@ static const FFlogo O[] = {
     // OpenBSD
     {
         .names = {"openbsd"},
-        .lines = FASTFETCH_DATATEXT_LOGO_OPENBSD,
+        .lines = NEUROFETCH_DATATEXT_LOGO_OPENBSD,
         .colors = {
             FF_COLOR_FG_YELLOW,
             FF_COLOR_FG_WHITE,
@@ -3465,7 +3505,7 @@ static const FFlogo O[] = {
     {
         .names = {"openbsd_small"},
         .type = FF_LOGO_LINE_TYPE_SMALL_BIT,
-        .lines = FASTFETCH_DATATEXT_LOGO_OPENBSD_SMALL,
+        .lines = NEUROFETCH_DATATEXT_LOGO_OPENBSD_SMALL,
         .colors = {
             FF_COLOR_FG_YELLOW,
             FF_COLOR_FG_WHITE,
@@ -3476,7 +3516,7 @@ static const FFlogo O[] = {
     // OpenEuler
     {
         .names = {"OpenEuler"},
-        .lines = FASTFETCH_DATATEXT_LOGO_OPENEULER,
+        .lines = NEUROFETCH_DATATEXT_LOGO_OPENEULER,
         .colors = {
             FF_COLOR_FG_BLUE,
             FF_COLOR_FG_WHITE,
@@ -3485,7 +3525,7 @@ static const FFlogo O[] = {
     // OpenIndiana
     {
         .names = {"OpenIndiana"},
-        .lines = FASTFETCH_DATATEXT_LOGO_OPENINDIANA,
+        .lines = NEUROFETCH_DATATEXT_LOGO_OPENINDIANA,
         .colors = {
             FF_COLOR_FG_BLUE,
             FF_COLOR_FG_DEFAULT,
@@ -3494,7 +3534,7 @@ static const FFlogo O[] = {
     // OpenMamba
     {
         .names = {"OpenMamba"},
-        .lines = FASTFETCH_DATATEXT_LOGO_OPENMAMBA,
+        .lines = NEUROFETCH_DATATEXT_LOGO_OPENMAMBA,
         .colors = {
             FF_COLOR_FG_WHITE,
             FF_COLOR_FG_GREEN,
@@ -3503,7 +3543,7 @@ static const FFlogo O[] = {
     // OpenStage
     {
         .names = {"OpenStage"},
-        .lines = FASTFETCH_DATATEXT_LOGO_OPENSTAGE,
+        .lines = NEUROFETCH_DATATEXT_LOGO_OPENSTAGE,
         .colors = {
             FF_COLOR_FG_GREEN,
             FF_COLOR_FG_WHITE,
@@ -3512,7 +3552,7 @@ static const FFlogo O[] = {
     // OpenSuse
     {
         .names = {"opensuse"},
-        .lines = FASTFETCH_DATATEXT_LOGO_OPENSUSE,
+        .lines = NEUROFETCH_DATATEXT_LOGO_OPENSUSE,
         .colors = {
             FF_COLOR_FG_GREEN,
             FF_COLOR_FG_WHITE,
@@ -3524,7 +3564,7 @@ static const FFlogo O[] = {
     {
         .names = {"opensuse_small"},
         .type = FF_LOGO_LINE_TYPE_SMALL_BIT,
-        .lines = FASTFETCH_DATATEXT_LOGO_OPENSUSE_SMALL,
+        .lines = NEUROFETCH_DATATEXT_LOGO_OPENSUSE_SMALL,
         .colors = {
             FF_COLOR_FG_GREEN,
         },
@@ -3534,7 +3574,7 @@ static const FFlogo O[] = {
     // openSuseMicroOS
     {
         .names = {"opensuse-microos"},
-        .lines = FASTFETCH_DATATEXT_LOGO_OPENSUSE_MICROOS,
+        .lines = NEUROFETCH_DATATEXT_LOGO_OPENSUSE_MICROOS,
         .colors = {
             FF_COLOR_FG_GREEN,
         },
@@ -3542,7 +3582,7 @@ static const FFlogo O[] = {
     // OpenSuseLeap
     {
         .names = {"opensuse-leap"},
-        .lines = FASTFETCH_DATATEXT_LOGO_OPENSUSE_LEAP,
+        .lines = NEUROFETCH_DATATEXT_LOGO_OPENSUSE_LEAP,
         .colors = {
             FF_COLOR_FG_DEFAULT,
         },
@@ -3552,7 +3592,7 @@ static const FFlogo O[] = {
     // OpenSuseLeapOld
     {
         .names = {"opensuse-leap_old"},
-        .lines = FASTFETCH_DATATEXT_LOGO_OPENSUSE_LEAP_OLD,
+        .lines = NEUROFETCH_DATATEXT_LOGO_OPENSUSE_LEAP_OLD,
         .type = FF_LOGO_LINE_TYPE_ALTER_BIT,
         .colors = {
             FF_COLOR_FG_DEFAULT,
@@ -3563,7 +3603,7 @@ static const FFlogo O[] = {
     // OpenSuseTumbleweed
     {
         .names = {"opensuse-tumbleweed"},
-        .lines = FASTFETCH_DATATEXT_LOGO_OPENSUSE_TUMBLEWEED,
+        .lines = NEUROFETCH_DATATEXT_LOGO_OPENSUSE_TUMBLEWEED,
         .colors = {
             FF_COLOR_FG_DEFAULT,
         },
@@ -3573,7 +3613,7 @@ static const FFlogo O[] = {
     // OpenSuseTumbleweedSmall
     {
         .names = {"opensuse-tumbleweed_small"},
-        .lines = FASTFETCH_DATATEXT_LOGO_OPENSUSE_TUMBLEWEED_SMALL,
+        .lines = NEUROFETCH_DATATEXT_LOGO_OPENSUSE_TUMBLEWEED_SMALL,
         .type = FF_LOGO_LINE_TYPE_SMALL_BIT,
         .colors = {
             FF_COLOR_FG_DEFAULT,
@@ -3584,7 +3624,7 @@ static const FFlogo O[] = {
     // OpenSuseTumbleweedOld
     {
         .names = {"opensuse-tumbleweed_old"},
-        .lines = FASTFETCH_DATATEXT_LOGO_OPENSUSE_TUMBLEWEED_OLD,
+        .lines = NEUROFETCH_DATATEXT_LOGO_OPENSUSE_TUMBLEWEED_OLD,
         .type = FF_LOGO_LINE_TYPE_ALTER_BIT,
         .colors = {
             FF_COLOR_FG_DEFAULT,
@@ -3595,7 +3635,7 @@ static const FFlogo O[] = {
     // openSUSESlowroll
     {
         .names = {"opensuse-slowroll", "opensuse-tumbleweed-slowroll"},
-        .lines = FASTFETCH_DATATEXT_LOGO_OPENSUSE_SLOWROLL,
+        .lines = NEUROFETCH_DATATEXT_LOGO_OPENSUSE_SLOWROLL,
         .colors = {
             FF_COLOR_FG_DEFAULT,
         },
@@ -3605,7 +3645,7 @@ static const FFlogo O[] = {
     // OpenMandriva
     {
         .names = {"openmandriva", "open-mandriva", "open_mandriva", "openmandriva lx"},
-        .lines = FASTFETCH_DATATEXT_LOGO_OPENMANDRIVA,
+        .lines = NEUROFETCH_DATATEXT_LOGO_OPENMANDRIVA,
         .colors = {
             FF_COLOR_FG_BLUE,
         },
@@ -3615,7 +3655,7 @@ static const FFlogo O[] = {
     // OpenWrt
     {
         .names = {"openwrt"},
-        .lines = FASTFETCH_DATATEXT_LOGO_OPENWRT,
+        .lines = NEUROFETCH_DATATEXT_LOGO_OPENWRT,
         .colors = {
             FF_COLOR_FG_BLUE,
         },
@@ -3625,7 +3665,7 @@ static const FFlogo O[] = {
     // OPNsense
     {
         .names = {"OPNsense"},
-        .lines = FASTFETCH_DATATEXT_LOGO_OPNSENSE,
+        .lines = NEUROFETCH_DATATEXT_LOGO_OPNSENSE,
         .colors = {
             FF_COLOR_FG_WHITE,
             FF_COLOR_FG_256 "202",
@@ -3634,7 +3674,7 @@ static const FFlogo O[] = {
     // Oracle
     {
         .names = {"oracle", "oracle linux", "oracle linux server"},
-        .lines = FASTFETCH_DATATEXT_LOGO_ORACLE,
+        .lines = NEUROFETCH_DATATEXT_LOGO_ORACLE,
         .colors = {
             FF_COLOR_FG_RED,
         },
@@ -3644,7 +3684,7 @@ static const FFlogo O[] = {
     // Orchid
     {
         .names = {"orchid"},
-        .lines = FASTFETCH_DATATEXT_LOGO_ORCHID,
+        .lines = NEUROFETCH_DATATEXT_LOGO_ORCHID,
         .colors = {
             FF_COLOR_FG_WHITE,
             FF_COLOR_FG_MAGENTA,
@@ -3657,7 +3697,7 @@ static const FFlogo O[] = {
     {
         .names = {"orchid_small"},
         .type = FF_LOGO_LINE_TYPE_SMALL_BIT,
-        .lines = FASTFETCH_DATATEXT_LOGO_ORCHID_SMALL,
+        .lines = NEUROFETCH_DATATEXT_LOGO_ORCHID_SMALL,
         .colors = {
             FF_COLOR_FG_WHITE,
             FF_COLOR_FG_MAGENTA,
@@ -3669,7 +3709,7 @@ static const FFlogo O[] = {
     // Oreon
     {
         .names = {"Oreon"},
-        .lines = FASTFETCH_DATATEXT_LOGO_OREON,
+        .lines = NEUROFETCH_DATATEXT_LOGO_OREON,
         .colors = {
             FF_COLOR_FG_DEFAULT,
             FF_COLOR_FG_DEFAULT,
@@ -3678,7 +3718,7 @@ static const FFlogo O[] = {
     // OS_Elbrus
     {
         .names = {"OS Elbrus"},
-        .lines = FASTFETCH_DATATEXT_LOGO_OS_ELBRUS,
+        .lines = NEUROFETCH_DATATEXT_LOGO_OS_ELBRUS,
         .colors = {
             FF_COLOR_FG_BLUE,
             FF_COLOR_FG_WHITE,
@@ -3687,7 +3727,7 @@ static const FFlogo O[] = {
     // OSMC
     {
         .names = {"OSMC", "Open Source Media Center"},
-        .lines = FASTFETCH_DATATEXT_LOGO_OSMC,
+        .lines = NEUROFETCH_DATATEXT_LOGO_OSMC,
         .colors = {
             FF_COLOR_FG_BLUE,
             FF_COLOR_FG_WHITE,
@@ -3696,7 +3736,7 @@ static const FFlogo O[] = {
     // OSX
     {
         .names = {"OSX"},
-        .lines = FASTFETCH_DATATEXT_LOGO_MACOS,
+        .lines = NEUROFETCH_DATATEXT_LOGO_MACOS,
         .colors = {
             FF_COLOR_FG_GREEN,
             FF_COLOR_FG_YELLOW,
@@ -3711,7 +3751,7 @@ static const FFlogo O[] = {
     {
         .names = {"OSX_small"},
         .type = FF_LOGO_LINE_TYPE_SMALL_BIT,
-        .lines = FASTFETCH_DATATEXT_LOGO_MACOS_SMALL,
+        .lines = NEUROFETCH_DATATEXT_LOGO_MACOS_SMALL,
         .colors = {
             FF_COLOR_FG_GREEN,
             FF_COLOR_FG_YELLOW,
@@ -3730,7 +3770,7 @@ static const FFlogo P[] = {
     // PacBSD
     {
         .names = {"PacBSD"},
-        .lines = FASTFETCH_DATATEXT_LOGO_PACBSD,
+        .lines = NEUROFETCH_DATATEXT_LOGO_PACBSD,
         .colors = {
             FF_COLOR_FG_RED,
             FF_COLOR_FG_WHITE,
@@ -3739,7 +3779,7 @@ static const FFlogo P[] = {
     // Panwah
     {
         .names = {"Panwah"},
-        .lines = FASTFETCH_DATATEXT_LOGO_PANWAH,
+        .lines = NEUROFETCH_DATATEXT_LOGO_PANWAH,
         .colors = {
             FF_COLOR_FG_WHITE,
             FF_COLOR_FG_RED,
@@ -3749,7 +3789,7 @@ static const FFlogo P[] = {
     // Parabola
     {
         .names = {"parabola", "parabola-gnulinux"},
-        .lines = FASTFETCH_DATATEXT_LOGO_PARABOLA,
+        .lines = NEUROFETCH_DATATEXT_LOGO_PARABOLA,
         .colors = {
             FF_COLOR_FG_MAGENTA,
         },
@@ -3760,7 +3800,7 @@ static const FFlogo P[] = {
     {
         .names = {"parabola_small", "parabola-gnulinux_small"},
         .type = FF_LOGO_LINE_TYPE_SMALL_BIT,
-        .lines = FASTFETCH_DATATEXT_LOGO_PARABOLA_SMALL,
+        .lines = NEUROFETCH_DATATEXT_LOGO_PARABOLA_SMALL,
         .colors = {
             FF_COLOR_FG_MAGENTA,
         },
@@ -3770,7 +3810,7 @@ static const FFlogo P[] = {
     // Parch
     {
         .names = {"Parch"},
-        .lines = FASTFETCH_DATATEXT_LOGO_PARCH,
+        .lines = NEUROFETCH_DATATEXT_LOGO_PARCH,
         .colors = {
             FF_COLOR_FG_BLUE,
             FF_COLOR_FG_WHITE,
@@ -3780,7 +3820,7 @@ static const FFlogo P[] = {
     // Pardus
     {
         .names = {"Pardus"},
-        .lines = FASTFETCH_DATATEXT_LOGO_PARDUS,
+        .lines = NEUROFETCH_DATATEXT_LOGO_PARDUS,
         .colors = {
             FF_COLOR_FG_BLUE,
             FF_COLOR_FG_CYAN,
@@ -3789,7 +3829,7 @@ static const FFlogo P[] = {
     // Parrot
     {
         .names = {"Parrot"},
-        .lines = FASTFETCH_DATATEXT_LOGO_PARROT,
+        .lines = NEUROFETCH_DATATEXT_LOGO_PARROT,
         .colors = {
             FF_COLOR_FG_CYAN,
             FF_COLOR_FG_WHITE,
@@ -3798,7 +3838,7 @@ static const FFlogo P[] = {
     // Parsix
     {
         .names = {"Parsix"},
-        .lines = FASTFETCH_DATATEXT_LOGO_PARSIX,
+        .lines = NEUROFETCH_DATATEXT_LOGO_PARSIX,
         .colors = {
             FF_COLOR_FG_YELLOW,
             FF_COLOR_FG_RED,
@@ -3809,7 +3849,7 @@ static const FFlogo P[] = {
     // PCBSD
     {
         .names = {"PCBSD", "TrueOS"},
-        .lines = FASTFETCH_DATATEXT_LOGO_PCBSD,
+        .lines = NEUROFETCH_DATATEXT_LOGO_PCBSD,
         .colors = {
             FF_COLOR_FG_RED,
             FF_COLOR_FG_WHITE,
@@ -3818,7 +3858,7 @@ static const FFlogo P[] = {
     // PCLinuxOS
     {
         .names = {"PCLinuxOS"},
-        .lines = FASTFETCH_DATATEXT_LOGO_PCLINUXOS,
+        .lines = NEUROFETCH_DATATEXT_LOGO_PCLINUXOS,
         .colors = {
             FF_COLOR_FG_BLUE,
             FF_COLOR_FG_WHITE,
@@ -3827,7 +3867,7 @@ static const FFlogo P[] = {
     // PearOS
     {
         .names = {"PearOS"},
-        .lines = FASTFETCH_DATATEXT_LOGO_PEAROS,
+        .lines = NEUROFETCH_DATATEXT_LOGO_PEAROS,
         .colors = {
             FF_COLOR_FG_GREEN,
             FF_COLOR_FG_YELLOW,
@@ -3839,7 +3879,7 @@ static const FFlogo P[] = {
     // Pengwin
     {
         .names = {"Pengwin"},
-        .lines = FASTFETCH_DATATEXT_LOGO_PENGWIN,
+        .lines = NEUROFETCH_DATATEXT_LOGO_PENGWIN,
         .colors = {
             FF_COLOR_FG_MAGENTA,
             FF_COLOR_FG_LIGHT_MAGENTA,
@@ -3849,7 +3889,7 @@ static const FFlogo P[] = {
     // Pentoo
     {
         .names = {"Pentoo"},
-        .lines = FASTFETCH_DATATEXT_LOGO_PENTOO,
+        .lines = NEUROFETCH_DATATEXT_LOGO_PENTOO,
         .colors = {
             FF_COLOR_FG_MAGENTA,
             FF_COLOR_FG_WHITE,
@@ -3858,7 +3898,7 @@ static const FFlogo P[] = {
     // Peppermint
     {
         .names = {"Peppermint"},
-        .lines = FASTFETCH_DATATEXT_LOGO_PEPPERMINT,
+        .lines = NEUROFETCH_DATATEXT_LOGO_PEPPERMINT,
         .colors = {
             FF_COLOR_FG_RED,
             FF_COLOR_FG_WHITE,
@@ -3867,7 +3907,7 @@ static const FFlogo P[] = {
     // Peropesis
     {
         .names = {"Peropesis", "Peropesis Linux"},
-        .lines = FASTFETCH_DATATEXT_LOGO_PEROPESIS,
+        .lines = NEUROFETCH_DATATEXT_LOGO_PEROPESIS,
         .colors = {
             FF_COLOR_FG_WHITE
         },
@@ -3875,7 +3915,7 @@ static const FFlogo P[] = {
     // PhyOS
     {
         .names = {"PhyOS"},
-        .lines = FASTFETCH_DATATEXT_LOGO_PHYOS,
+        .lines = NEUROFETCH_DATATEXT_LOGO_PHYOS,
         .colors = {
             FF_COLOR_FG_BLUE,
             FF_COLOR_FG_WHITE,
@@ -3884,7 +3924,7 @@ static const FFlogo P[] = {
     // PikaOS
     {
         .names = {"PikaOS"},
-        .lines = FASTFETCH_DATATEXT_LOGO_PIKAOS,
+        .lines = NEUROFETCH_DATATEXT_LOGO_PIKAOS,
         .colors = {
             FF_COLOR_FG_YELLOW,
         },
@@ -3892,7 +3932,7 @@ static const FFlogo P[] = {
     // PisiLinux
     {
         .names = {"PisiLinux"},
-        .lines = FASTFETCH_DATATEXT_LOGO_PISI,
+        .lines = NEUROFETCH_DATATEXT_LOGO_PISI,
         .colors = {
             FF_COLOR_FG_BLUE,
             FF_COLOR_FG_WHITE,
@@ -3901,7 +3941,7 @@ static const FFlogo P[] = {
     // PNMLinux
     {
         .names = {"PNM Linux"},
-        .lines = FASTFETCH_DATATEXT_LOGO_PNM_LINUX,
+        .lines = NEUROFETCH_DATATEXT_LOGO_PNM_LINUX,
         .colors = {
             FF_COLOR_FG_BLUE,
             FF_COLOR_FG_RED,
@@ -3912,7 +3952,7 @@ static const FFlogo P[] = {
     // Pop
     {
         .names = {"pop", "popos"},
-        .lines = FASTFETCH_DATATEXT_LOGO_POP,
+        .lines = NEUROFETCH_DATATEXT_LOGO_POP,
         .colors = {
             FF_COLOR_FG_CYAN,
             FF_COLOR_FG_WHITE,
@@ -3924,7 +3964,7 @@ static const FFlogo P[] = {
     {
         .names = {"pop_small", "popos_small"},
         .type = FF_LOGO_LINE_TYPE_SMALL_BIT,
-        .lines = FASTFETCH_DATATEXT_LOGO_POP_SMALL,
+        .lines = NEUROFETCH_DATATEXT_LOGO_POP_SMALL,
         .colors = {
             FF_COLOR_FG_CYAN,
         },
@@ -3934,7 +3974,7 @@ static const FFlogo P[] = {
     // Porteus
     {
         .names = {"Porteus"},
-        .lines = FASTFETCH_DATATEXT_LOGO_PORTEUS,
+        .lines = NEUROFETCH_DATATEXT_LOGO_PORTEUS,
         .colors = {
             FF_COLOR_FG_CYAN,
             FF_COLOR_FG_WHITE,
@@ -3943,7 +3983,7 @@ static const FFlogo P[] = {
     // PostMarketOS
     {
         .names = {"PostMarketOS"},
-        .lines = FASTFETCH_DATATEXT_LOGO_POSTMARKETOS,
+        .lines = NEUROFETCH_DATATEXT_LOGO_POSTMARKETOS,
         .colors = {
             FF_COLOR_FG_GREEN,
             FF_COLOR_FG_WHITE,
@@ -3953,7 +3993,7 @@ static const FFlogo P[] = {
     {
         .names = {"PostMarketOS_small"},
         .type = FF_LOGO_LINE_TYPE_SMALL_BIT,
-        .lines = FASTFETCH_DATATEXT_LOGO_POSTMARKETOS_SMALL,
+        .lines = NEUROFETCH_DATATEXT_LOGO_POSTMARKETOS_SMALL,
         .colors = {
             FF_COLOR_FG_GREEN,
             FF_COLOR_FG_WHITE,
@@ -3962,7 +4002,7 @@ static const FFlogo P[] = {
     // Proxmox
     {
         .names = {"Proxmox", "pve"},
-        .lines = FASTFETCH_DATATEXT_LOGO_PROXMOX,
+        .lines = NEUROFETCH_DATATEXT_LOGO_PROXMOX,
         .colors = {
             FF_COLOR_FG_WHITE,
             FF_COLOR_FG_256 "202"
@@ -3973,7 +4013,7 @@ static const FFlogo P[] = {
     // PuffOS
     {
         .names = {"PuffOS"},
-        .lines = FASTFETCH_DATATEXT_LOGO_PUFFOS,
+        .lines = NEUROFETCH_DATATEXT_LOGO_PUFFOS,
         .colors = {
             FF_COLOR_FG_YELLOW,
             FF_COLOR_FG_WHITE,
@@ -3982,7 +4022,7 @@ static const FFlogo P[] = {
     // Puppy
     {
         .names = {"Puppy"},
-        .lines = FASTFETCH_DATATEXT_LOGO_PUPPY,
+        .lines = NEUROFETCH_DATATEXT_LOGO_PUPPY,
         .colors = {
             FF_COLOR_FG_BLUE,
             FF_COLOR_FG_WHITE,
@@ -3991,7 +4031,7 @@ static const FFlogo P[] = {
     // PureOS
     {
         .names = {"PureOS"},
-        .lines = FASTFETCH_DATATEXT_LOGO_PUREOS,
+        .lines = NEUROFETCH_DATATEXT_LOGO_PUREOS,
         .colors = {
             FF_COLOR_FG_GREEN,
             FF_COLOR_FG_WHITE,
@@ -4001,7 +4041,7 @@ static const FFlogo P[] = {
     {
         .names = {"PureOS_small"},
         .type = FF_LOGO_LINE_TYPE_SMALL_BIT,
-        .lines = FASTFETCH_DATATEXT_LOGO_PUREOS_SMALL,
+        .lines = NEUROFETCH_DATATEXT_LOGO_PUREOS_SMALL,
         .colors = {
             FF_COLOR_FG_GREEN,
             FF_COLOR_FG_WHITE,
@@ -4010,7 +4050,7 @@ static const FFlogo P[] = {
     // PrismLinux
     {
         .names = {"PrismLinux"},
-        .lines = FASTFETCH_DATATEXT_LOGO_PRISMLINUX,
+        .lines = NEUROFETCH_DATATEXT_LOGO_PRISMLINUX,
         .colors = {
             FF_COLOR_FG_BLUE,
             FF_COLOR_FG_BLUE,
@@ -4024,7 +4064,7 @@ static const FFlogo Q[] = {
     // QTS
     {
         .names = {"qts"},
-        .lines = FASTFETCH_DATATEXT_LOGO_QTS,
+        .lines = NEUROFETCH_DATATEXT_LOGO_QTS,
         .colors = {
             FF_COLOR_FG_BLUE,
             FF_COLOR_FG_RED,
@@ -4035,7 +4075,7 @@ static const FFlogo Q[] = {
     // Q4OS
     {
         .names = {"Q4OS"},
-        .lines = FASTFETCH_DATATEXT_LOGO_Q4OS,
+        .lines = NEUROFETCH_DATATEXT_LOGO_Q4OS,
         .colors = {
             FF_COLOR_FG_BLUE,
             FF_COLOR_FG_RED,
@@ -4044,7 +4084,7 @@ static const FFlogo Q[] = {
     // Qubes
     {
         .names = {"Qubes"},
-        .lines = FASTFETCH_DATATEXT_LOGO_QUBES,
+        .lines = NEUROFETCH_DATATEXT_LOGO_QUBES,
         .colors = {
             FF_COLOR_FG_BLUE,
             FF_COLOR_FG_MAGENTA,
@@ -4053,7 +4093,7 @@ static const FFlogo Q[] = {
     // Qubyt
     {
         .names = {"Qubyt"},
-        .lines = FASTFETCH_DATATEXT_LOGO_QUBYT,
+        .lines = NEUROFETCH_DATATEXT_LOGO_QUBYT,
         .colors = {
             FF_COLOR_FG_BLUE,
             FF_COLOR_FG_MAGENTA,
@@ -4063,7 +4103,7 @@ static const FFlogo Q[] = {
     // Quibian
     {
         .names = {"Quibian"},
-        .lines = FASTFETCH_DATATEXT_LOGO_QUIBIAN,
+        .lines = NEUROFETCH_DATATEXT_LOGO_QUIBIAN,
         .colors = {
             FF_COLOR_FG_YELLOW,
             FF_COLOR_FG_WHITE,
@@ -4072,7 +4112,7 @@ static const FFlogo Q[] = {
     // Quirinux
     {
         .names = {"Quirinux"},
-        .lines = FASTFETCH_DATATEXT_LOGO_QUIRINUX,
+        .lines = NEUROFETCH_DATATEXT_LOGO_QUIRINUX,
         .colors = {
             FF_COLOR_FG_WHITE,
             FF_COLOR_FG_MAGENTA,
@@ -4086,7 +4126,7 @@ static const FFlogo R[] = {
     // Radix
     {
         .names = {"Radix"},
-        .lines = FASTFETCH_DATATEXT_LOGO_RADIX,
+        .lines = NEUROFETCH_DATATEXT_LOGO_RADIX,
         .colors = {
             FF_COLOR_FG_GREEN,
             FF_COLOR_FG_RED,
@@ -4095,7 +4135,7 @@ static const FFlogo R[] = {
     // Raspbian
     {
         .names = {"raspbian", "raspi", "raspberrypi", "raspberrypios"},
-        .lines = FASTFETCH_DATATEXT_LOGO_RASPBIAN,
+        .lines = NEUROFETCH_DATATEXT_LOGO_RASPBIAN,
         .colors = {
             FF_COLOR_FG_RED,
             FF_COLOR_FG_GREEN,
@@ -4107,7 +4147,7 @@ static const FFlogo R[] = {
     {
         .names = {"raspbian_small", "raspi_small", "raspberrypi_small", "raspberrypios_small"},
         .type = FF_LOGO_LINE_TYPE_SMALL_BIT,
-        .lines = FASTFETCH_DATATEXT_LOGO_RASPBIAN_SMALL,
+        .lines = NEUROFETCH_DATATEXT_LOGO_RASPBIAN_SMALL,
         .colors = {
             FF_COLOR_FG_RED,
             FF_COLOR_FG_GREEN,
@@ -4118,7 +4158,7 @@ static const FFlogo R[] = {
     // RavynOS
     {
         .names = {"RavynOS"},
-        .lines = FASTFETCH_DATATEXT_LOGO_RAVYNOS,
+        .lines = NEUROFETCH_DATATEXT_LOGO_RAVYNOS,
         .colors = {
             FF_COLOR_FG_256 "15",
             FF_COLOR_FG_WHITE,
@@ -4127,7 +4167,7 @@ static const FFlogo R[] = {
     // RebornOS
     {
         .names = {"RebornOS"},
-        .lines = FASTFETCH_DATATEXT_LOGO_REBORNOS,
+        .lines = NEUROFETCH_DATATEXT_LOGO_REBORNOS,
         .colors = {
             FF_COLOR_FG_BLACK,
             FF_COLOR_FG_BLUE,
@@ -4140,7 +4180,7 @@ static const FFlogo R[] = {
     {
         .names = {"RebornOS_small"},
         .type = FF_LOGO_LINE_TYPE_SMALL_BIT,
-        .lines = FASTFETCH_DATATEXT_LOGO_REBORNOS_SMALL,
+        .lines = NEUROFETCH_DATATEXT_LOGO_REBORNOS_SMALL,
         .colors = {
             FF_COLOR_FG_BLUE,
         },
@@ -4150,7 +4190,7 @@ static const FFlogo R[] = {
     // RedCore
     {
         .names = {"RedCore"},
-        .lines = FASTFETCH_DATATEXT_LOGO_REDCORE,
+        .lines = NEUROFETCH_DATATEXT_LOGO_REDCORE,
         .colors = {
             FF_COLOR_FG_RED,
             FF_COLOR_FG_WHITE,
@@ -4159,7 +4199,7 @@ static const FFlogo R[] = {
     // RedHatEnterpriseLinux
     {
         .names = {"rhel", "redhat"},
-        .lines = FASTFETCH_DATATEXT_LOGO_RHEL,
+        .lines = NEUROFETCH_DATATEXT_LOGO_RHEL,
         .colors = {
             FF_COLOR_FG_RED,
         },
@@ -4170,7 +4210,7 @@ static const FFlogo R[] = {
     {
         .names = {"rhel_small", "redhat_small"},
         .type = FF_LOGO_LINE_TYPE_SMALL_BIT,
-        .lines = FASTFETCH_DATATEXT_LOGO_RHEL_SMALL,
+        .lines = NEUROFETCH_DATATEXT_LOGO_RHEL_SMALL,
         .colors = {
             FF_COLOR_FG_RED,
         },
@@ -4181,7 +4221,7 @@ static const FFlogo R[] = {
     {
         .names = {"rhel_old", "redhat_old"},
         .type = FF_LOGO_LINE_TYPE_ALTER_BIT,
-        .lines = FASTFETCH_DATATEXT_LOGO_RHEL_OLD,
+        .lines = NEUROFETCH_DATATEXT_LOGO_RHEL_OLD,
         .colors = {
             FF_COLOR_FG_RED,
             FF_COLOR_FG_WHITE,
@@ -4190,7 +4230,7 @@ static const FFlogo R[] = {
     // RedOS
     {
         .names = {"RedOS", "RED OS", "red-os", "redos"},
-        .lines = FASTFETCH_DATATEXT_LOGO_REDOS,
+        .lines = NEUROFETCH_DATATEXT_LOGO_REDOS,
         .colors = {
             FF_COLOR_FG_RED,
             FF_COLOR_FG_WHITE,
@@ -4202,7 +4242,7 @@ static const FFlogo R[] = {
     {
         .names = {"RedOS_small", "RED OS_small", "red-os_small", "redos_small"},
         .type = FF_LOGO_LINE_TYPE_SMALL_BIT,
-        .lines = FASTFETCH_DATATEXT_LOGO_REDOS_SMALL,
+        .lines = NEUROFETCH_DATATEXT_LOGO_REDOS_SMALL,
         .colors = {
             FF_COLOR_FG_RED,
             FF_COLOR_FG_WHITE,
@@ -4213,7 +4253,7 @@ static const FFlogo R[] = {
     // RedstarOS
     {
         .names = {"redstar", "redstar-os", "redstaros"},
-        .lines = FASTFETCH_DATATEXT_LOGO_REDSTAR,
+        .lines = NEUROFETCH_DATATEXT_LOGO_REDSTAR,
         .colors = {
             FF_COLOR_FG_RED,
         },
@@ -4223,7 +4263,7 @@ static const FFlogo R[] = {
     // Refracted Devuan
     {
         .names = {"Refracted Devuan", "refracted-devuan"},
-        .lines = FASTFETCH_DATATEXT_LOGO_REFRACTED_DEVUAN,
+        .lines = NEUROFETCH_DATATEXT_LOGO_REFRACTED_DEVUAN,
         .colors = {
             FF_COLOR_FG_WHITE,
             FF_COLOR_FG_LIGHT_BLACK,
@@ -4234,7 +4274,7 @@ static const FFlogo R[] = {
     // Regata
     {
         .names = {"Regata"},
-        .lines = FASTFETCH_DATATEXT_LOGO_REGATA,
+        .lines = NEUROFETCH_DATATEXT_LOGO_REGATA,
         .colors = {
             FF_COLOR_FG_WHITE,
             FF_COLOR_FG_RED,
@@ -4247,7 +4287,7 @@ static const FFlogo R[] = {
     // Regolith
     {
         .names = {"Regolith"},
-        .lines = FASTFETCH_DATATEXT_LOGO_REGOLITH,
+        .lines = NEUROFETCH_DATATEXT_LOGO_REGOLITH,
         .colors = {
             FF_COLOR_FG_RED,
             FF_COLOR_FG_WHITE,
@@ -4256,7 +4296,7 @@ static const FFlogo R[] = {
     // RhaymOS
     {
         .names = {"RhaymOS"},
-        .lines = FASTFETCH_DATATEXT_LOGO_RHAYMOS,
+        .lines = NEUROFETCH_DATATEXT_LOGO_RHAYMOS,
         .colors = {
             FF_COLOR_FG_RED,
             FF_COLOR_FG_WHITE,
@@ -4265,7 +4305,7 @@ static const FFlogo R[] = {
     // RockyLinux
     {
         .names = {"rocky", "rocky-linux", "rockylinux"},
-        .lines = FASTFETCH_DATATEXT_LOGO_ROCKY,
+        .lines = NEUROFETCH_DATATEXT_LOGO_ROCKY,
         .colors = {
             FF_COLOR_FG_GREEN,
         },
@@ -4276,7 +4316,7 @@ static const FFlogo R[] = {
     {
         .names = {"rocky_small", "rocky-linux_small", "rockylinux_small"},
         .type = FF_LOGO_LINE_TYPE_SMALL_BIT,
-        .lines = FASTFETCH_DATATEXT_LOGO_ROCKY_SMALL,
+        .lines = NEUROFETCH_DATATEXT_LOGO_ROCKY_SMALL,
         .colors = {
             FF_COLOR_FG_GREEN,
         },
@@ -4286,7 +4326,7 @@ static const FFlogo R[] = {
     // RosaLinux
     {
         .names = {"rosa", "rosa-linux", "rosalinux"},
-        .lines = FASTFETCH_DATATEXT_LOGO_ROSA,
+        .lines = NEUROFETCH_DATATEXT_LOGO_ROSA,
         .colors = {
             FF_COLOR_FG_RGB "250;250;250",
             FF_COLOR_FG_RGB "100;165;225",
@@ -4297,7 +4337,7 @@ static const FFlogo R[] = {
     // RhinoLinux
     {
         .names = {"Rhino Linux"},
-        .lines = FASTFETCH_DATATEXT_LOGO_RHINO,
+        .lines = NEUROFETCH_DATATEXT_LOGO_RHINO,
         .colors = {
             FF_COLOR_FG_MAGENTA,
             FF_COLOR_FG_LIGHT_BLUE,
@@ -4315,7 +4355,7 @@ static const FFlogo S[] = {
     // Sabayon
     {
         .names = {"Sabayon"},
-        .lines = FASTFETCH_DATATEXT_LOGO_SABAYON,
+        .lines = NEUROFETCH_DATATEXT_LOGO_SABAYON,
         .colors = {
             FF_COLOR_FG_BLUE,
             FF_COLOR_FG_WHITE,
@@ -4324,7 +4364,7 @@ static const FFlogo S[] = {
     // Sabotage
     {
         .names = {"Sabotage"},
-        .lines = FASTFETCH_DATATEXT_LOGO_SABOTAGE,
+        .lines = NEUROFETCH_DATATEXT_LOGO_SABOTAGE,
         .colors = {
             FF_COLOR_FG_DEFAULT,
         },
@@ -4334,7 +4374,7 @@ static const FFlogo S[] = {
     // Sailfish
     {
         .names = {"Sailfish"},
-        .lines = FASTFETCH_DATATEXT_LOGO_SAILFISH,
+        .lines = NEUROFETCH_DATATEXT_LOGO_SAILFISH,
         .colors = {
             FF_COLOR_FG_BLUE,
             FF_COLOR_FG_MAGENTA,
@@ -4343,7 +4383,7 @@ static const FFlogo S[] = {
     // SalentOS
     {
         .names = {"SalentOS"},
-        .lines = FASTFETCH_DATATEXT_LOGO_SALENTOS,
+        .lines = NEUROFETCH_DATATEXT_LOGO_SALENTOS,
         .colors = {
             FF_COLOR_FG_GREEN,
             FF_COLOR_FG_RED,
@@ -4354,7 +4394,7 @@ static const FFlogo S[] = {
     // SalientOS
     {
         .names = {"Salient OS", "SalientOS"},
-        .lines = FASTFETCH_DATATEXT_LOGO_SALIENTOS,
+        .lines = NEUROFETCH_DATATEXT_LOGO_SALIENTOS,
         .colors = {
             FF_COLOR_FG_CYAN,
             FF_COLOR_FG_WHITE,
@@ -4363,7 +4403,7 @@ static const FFlogo S[] = {
     // Salix
     {
         .names = {"Salix"},
-        .lines = FASTFETCH_DATATEXT_LOGO_SALIX,
+        .lines = NEUROFETCH_DATATEXT_LOGO_SALIX,
         .colors = {
             FF_COLOR_FG_GREEN,
             FF_COLOR_FG_GREEN,
@@ -4372,7 +4412,7 @@ static const FFlogo S[] = {
     // SambaBOX
     {
         .names = {"SambaBOX", "Profelis SambaBOX"},
-        .lines = FASTFETCH_DATATEXT_LOGO_SAMBABOX,
+        .lines = NEUROFETCH_DATATEXT_LOGO_SAMBABOX,
         .colors = {
             FF_COLOR_FG_YELLOW,
             FF_COLOR_FG_CYAN,
@@ -4381,7 +4421,7 @@ static const FFlogo S[] = {
     // Sasanqua
     {
         .names = {"Sasanqua"},
-        .lines = FASTFETCH_DATATEXT_LOGO_SASANQUA,
+        .lines = NEUROFETCH_DATATEXT_LOGO_SASANQUA,
         .colors = {
             FF_COLOR_FG_MAGENTA,
             FF_COLOR_FG_RED,
@@ -4390,7 +4430,7 @@ static const FFlogo S[] = {
     // Scientific
     {
         .names = {"Scientific"},
-        .lines = FASTFETCH_DATATEXT_LOGO_SCIENTIFIC,
+        .lines = NEUROFETCH_DATATEXT_LOGO_SCIENTIFIC,
         .colors = {
             FF_COLOR_FG_BLUE,
             FF_COLOR_FG_WHITE,
@@ -4400,7 +4440,7 @@ static const FFlogo S[] = {
     // Secureblue
     {
         .names = {"secureblue"},
-        .lines = FASTFETCH_DATATEXT_LOGO_SECUREBLUE,
+        .lines = NEUROFETCH_DATATEXT_LOGO_SECUREBLUE,
         .colors = {
             FF_COLOR_FG_BLUE,
             FF_COLOR_FG_MAGENTA,
@@ -4410,7 +4450,7 @@ static const FFlogo S[] = {
     // Serpent OS
     {
         .names = {"Serpent OS"},
-        .lines = FASTFETCH_DATATEXT_LOGO_SERPENT_OS,
+        .lines = NEUROFETCH_DATATEXT_LOGO_SERPENT_OS,
         .colors = {
             FF_COLOR_FG_DEFAULT,
         },
@@ -4418,7 +4458,7 @@ static const FFlogo S[] = {
     // Semc
     {
         .names = {"semc"},
-        .lines = FASTFETCH_DATATEXT_LOGO_SEMC,
+        .lines = NEUROFETCH_DATATEXT_LOGO_SEMC,
         .colors = {
             FF_COLOR_FG_GREEN,
             FF_COLOR_FG_LIGHT_BLACK,
@@ -4428,7 +4468,7 @@ static const FFlogo S[] = {
     // Septor
     {
         .names = {"Septor"},
-        .lines = FASTFETCH_DATATEXT_LOGO_SEPTOR,
+        .lines = NEUROFETCH_DATATEXT_LOGO_SEPTOR,
         .colors = {
             FF_COLOR_FG_BLUE,
             FF_COLOR_FG_WHITE,
@@ -4438,7 +4478,7 @@ static const FFlogo S[] = {
     // Serene
     {
         .names = {"Serene"},
-        .lines = FASTFETCH_DATATEXT_LOGO_SERENE,
+        .lines = NEUROFETCH_DATATEXT_LOGO_SERENE,
         .colors = {
             FF_COLOR_FG_CYAN,
             FF_COLOR_FG_CYAN,
@@ -4447,7 +4487,7 @@ static const FFlogo S[] = {
     // SharkLinux
     {
         .names = {"SharkLinux"},
-        .lines = FASTFETCH_DATATEXT_LOGO_SHARKLINUX,
+        .lines = NEUROFETCH_DATATEXT_LOGO_SHARKLINUX,
         .colors = {
             FF_COLOR_FG_BLUE,
             FF_COLOR_FG_WHITE,
@@ -4456,7 +4496,7 @@ static const FFlogo S[] = {
     // ShastraOS
     {
         .names = {"ShastraOS"},
-        .lines = FASTFETCH_DATATEXT_LOGO_SHASTRAOS,
+        .lines = NEUROFETCH_DATATEXT_LOGO_SHASTRAOS,
         .colors = {
             FF_COLOR_FG_CYAN,
             FF_COLOR_FG_WHITE,
@@ -4465,7 +4505,7 @@ static const FFlogo S[] = {
     // Shebang
     {
         .names = {"Shebang"},
-        .lines = FASTFETCH_DATATEXT_LOGO_SHEBANG,
+        .lines = NEUROFETCH_DATATEXT_LOGO_SHEBANG,
         .colors = {
             FF_COLOR_FG_WHITE,
             FF_COLOR_FG_WHITE,
@@ -4474,7 +4514,7 @@ static const FFlogo S[] = {
     // Siduction
     {
         .names = {"Siduction"},
-        .lines = FASTFETCH_DATATEXT_LOGO_SIDUCTION,
+        .lines = NEUROFETCH_DATATEXT_LOGO_SIDUCTION,
         .colors = {
             FF_COLOR_FG_BLUE,
             FF_COLOR_FG_WHITE,
@@ -4483,7 +4523,7 @@ static const FFlogo S[] = {
     // SkiffOS
     {
         .names = {"SkiffOS"},
-        .lines = FASTFETCH_DATATEXT_LOGO_SKIFFOS,
+        .lines = NEUROFETCH_DATATEXT_LOGO_SKIFFOS,
         .colors = {
             FF_COLOR_FG_BLUE,
             FF_COLOR_FG_WHITE,
@@ -4492,7 +4532,7 @@ static const FFlogo S[] = {
     // SleeperOS
     {
         .names = {"SleeperOS"},
-        .lines = FASTFETCH_DATATEXT_LOGO_SLEEPEROS,
+        .lines = NEUROFETCH_DATATEXT_LOGO_SLEEPEROS,
         .colors = {
             FF_COLOR_FG_CYAN,
             FF_COLOR_FG_WHITE,
@@ -4502,7 +4542,7 @@ static const FFlogo S[] = {
     {
         .names = {"SleeperOS_small"},
         .type = FF_LOGO_LINE_TYPE_SMALL_BIT,
-        .lines = FASTFETCH_DATATEXT_LOGO_SLEEPEROS_SMALL,
+        .lines = NEUROFETCH_DATATEXT_LOGO_SLEEPEROS_SMALL,
         .colors = {
             FF_COLOR_FG_CYAN,
             FF_COLOR_FG_WHITE,
@@ -4511,7 +4551,7 @@ static const FFlogo S[] = {
     // Slitaz
     {
         .names = {"Slitaz"},
-        .lines = FASTFETCH_DATATEXT_LOGO_SLITAZ,
+        .lines = NEUROFETCH_DATATEXT_LOGO_SLITAZ,
         .colors = {
             FF_COLOR_FG_YELLOW,
             FF_COLOR_FG_YELLOW,
@@ -4520,7 +4560,7 @@ static const FFlogo S[] = {
     // SpoinkOS
     {
         .names = {"SpoinkOS", "spoink-os"},
-        .lines = FASTFETCH_DATATEXT_LOGO_SPOINKOS,
+        .lines = NEUROFETCH_DATATEXT_LOGO_SPOINKOS,
         .colors = {
             FF_COLOR_FG_GREEN,
         },
@@ -4528,7 +4568,7 @@ static const FFlogo S[] = {
     // Slackel
     {
         .names = {"Slackel"},
-        .lines = FASTFETCH_DATATEXT_LOGO_SLACKEL,
+        .lines = NEUROFETCH_DATATEXT_LOGO_SLACKEL,
         .colors = {
             FF_COLOR_FG_YELLOW,
             FF_COLOR_FG_YELLOW,
@@ -4537,7 +4577,7 @@ static const FFlogo S[] = {
     // Slackware
     {
         .names = {"Slackware"},
-        .lines = FASTFETCH_DATATEXT_LOGO_SLACKWARE,
+        .lines = NEUROFETCH_DATATEXT_LOGO_SLACKWARE,
         .colors = {
             FF_COLOR_FG_BLUE,
             FF_COLOR_FG_WHITE,
@@ -4549,7 +4589,7 @@ static const FFlogo S[] = {
     {
         .names = {"Slackware_small"},
         .type = FF_LOGO_LINE_TYPE_SMALL_BIT,
-        .lines = FASTFETCH_DATATEXT_LOGO_SLACKWARE_SMALL,
+        .lines = NEUROFETCH_DATATEXT_LOGO_SLACKWARE_SMALL,
         .colors = {
             FF_COLOR_FG_BLUE,
             FF_COLOR_FG_WHITE,
@@ -4560,7 +4600,7 @@ static const FFlogo S[] = {
     // SmartOS
     {
         .names = {"SmartOS"},
-        .lines = FASTFETCH_DATATEXT_LOGO_SMARTOS,
+        .lines = NEUROFETCH_DATATEXT_LOGO_SMARTOS,
         .colors = {
             FF_COLOR_FG_CYAN,
             FF_COLOR_FG_WHITE,
@@ -4569,7 +4609,7 @@ static const FFlogo S[] = {
     // SnigdhaOS
     {
         .names = {"SnigdhaOS", "Snigdha"},
-        .lines = FASTFETCH_DATATEXT_LOGO_SNIGDHAOS,
+        .lines = NEUROFETCH_DATATEXT_LOGO_SNIGDHAOS,
         .colors = {
             FF_COLOR_FG_CYAN,
             FF_COLOR_FG_WHITE,
@@ -4578,7 +4618,7 @@ static const FFlogo S[] = {
     // Soda
     {
         .names = {"Soda"},
-        .lines = FASTFETCH_DATATEXT_LOGO_SODA,
+        .lines = NEUROFETCH_DATATEXT_LOGO_SODA,
         .colors = {
             FF_COLOR_FG_RED,
             FF_COLOR_FG_WHITE,
@@ -4587,7 +4627,7 @@ static const FFlogo S[] = {
     // Source Mage
     {
         .names = {"Source Mage", "Source Mage GNU/Linux", "source_mage", "sourcemage"},
-        .lines = FASTFETCH_DATATEXT_LOGO_SOURCE_MAGE,
+        .lines = NEUROFETCH_DATATEXT_LOGO_SOURCE_MAGE,
         .colors = {
             FF_COLOR_FG_DEFAULT,
         },
@@ -4597,7 +4637,7 @@ static const FFlogo S[] = {
     // Solaris
     {
         .names = {"solaris", "sunos"},
-        .lines = FASTFETCH_DATATEXT_LOGO_SOLARIS,
+        .lines = NEUROFETCH_DATATEXT_LOGO_SOLARIS,
         .colors = {
             FF_COLOR_FG_YELLOW,
         },
@@ -4608,7 +4648,7 @@ static const FFlogo S[] = {
     {
         .names = {"solaris_small", "sunos_small"},
         .type = FF_LOGO_LINE_TYPE_SMALL_BIT,
-        .lines = FASTFETCH_DATATEXT_LOGO_SOLARIS_SMALL,
+        .lines = NEUROFETCH_DATATEXT_LOGO_SOLARIS_SMALL,
         .colors = {
             FF_COLOR_FG_YELLOW,
         },
@@ -4618,7 +4658,7 @@ static const FFlogo S[] = {
     // Solus
     {
         .names = {"Solus", "solus-linux"},
-        .lines = FASTFETCH_DATATEXT_LOGO_SOLUS,
+        .lines = NEUROFETCH_DATATEXT_LOGO_SOLUS,
         .colors = {
             FF_COLOR_FG_BLUE,
             FF_COLOR_FG_WHITE,
@@ -4629,7 +4669,7 @@ static const FFlogo S[] = {
     // Sparky
     {
         .names = {"Sparky"},
-        .lines = FASTFETCH_DATATEXT_LOGO_SPARKY,
+        .lines = NEUROFETCH_DATATEXT_LOGO_SPARKY,
         .colors = {
             FF_COLOR_FG_RED,
             FF_COLOR_FG_WHITE
@@ -4638,7 +4678,7 @@ static const FFlogo S[] = {
     // Star
     {
         .names = {"Star"},
-        .lines = FASTFETCH_DATATEXT_LOGO_STAR,
+        .lines = NEUROFETCH_DATATEXT_LOGO_STAR,
         .colors = {
             FF_COLOR_FG_WHITE,
             FF_COLOR_FG_WHITE,
@@ -4647,7 +4687,7 @@ static const FFlogo S[] = {
     // StockLinux
     {
         .names = {"Stock Linux"},
-        .lines = FASTFETCH_DATATEXT_LOGO_STOCK_LINUX,
+        .lines = NEUROFETCH_DATATEXT_LOGO_STOCK_LINUX,
         .colors = {
             FF_COLOR_FG_BLUE,
             FF_COLOR_FG_WHITE,
@@ -4656,7 +4696,7 @@ static const FFlogo S[] = {
     // SteamOS
     {
         .names = {"SteamOS"},
-        .lines = FASTFETCH_DATATEXT_LOGO_STEAMOS,
+        .lines = NEUROFETCH_DATATEXT_LOGO_STEAMOS,
         .colors = {
             FF_COLOR_FG_BLUE,
             FF_COLOR_FG_WHITE,
@@ -4667,7 +4707,7 @@ static const FFlogo S[] = {
     // Steam Deck
     {
         .names = {"SteamDeck"},
-        .lines = FASTFETCH_DATATEXT_LOGO_STEAMDECK,
+        .lines = NEUROFETCH_DATATEXT_LOGO_STEAMDECK,
         .colors = {
             FF_COLOR_FG_BLUE,
             FF_COLOR_FG_WHITE
@@ -4678,7 +4718,7 @@ static const FFlogo S[] = {
     // Steam Deck Small
     {
         .names = {"SteamDeck_small"},
-        .lines = FASTFETCH_DATATEXT_LOGO_STEAMDECK_SMALL,
+        .lines = NEUROFETCH_DATATEXT_LOGO_STEAMDECK_SMALL,
         .colors = {
             FF_COLOR_FG_BLUE,
             FF_COLOR_FG_WHITE
@@ -4689,7 +4729,7 @@ static const FFlogo S[] = {
     // Steam Deck OLED
     {
         .names = {"SteamDeckOled"},
-        .lines = FASTFETCH_DATATEXT_LOGO_STEAMDECK,
+        .lines = NEUROFETCH_DATATEXT_LOGO_STEAMDECK,
         .colors = {
             FF_COLOR_FG_RED,
             FF_COLOR_FG_WHITE
@@ -4700,7 +4740,7 @@ static const FFlogo S[] = {
     // Sulin
     {
         .names = {"Sulin"},
-        .lines = FASTFETCH_DATATEXT_LOGO_SULIN,
+        .lines = NEUROFETCH_DATATEXT_LOGO_SULIN,
         .colors = {
             FF_COLOR_FG_BLUE,
             FF_COLOR_FG_WHITE,
@@ -4709,7 +4749,7 @@ static const FFlogo S[] = {
     // SummitOS
     {
         .names = {"SummitOS"},
-        .lines = FASTFETCH_DATATEXT_LOGO_SUMMITOS,
+        .lines = NEUROFETCH_DATATEXT_LOGO_SUMMITOS,
         .colors = {
             FF_COLOR_FG_RGB "143;191;80",
             FF_COLOR_FG_RGB "160;205;102",
@@ -4719,7 +4759,7 @@ static const FFlogo S[] = {
     // Suse
     {
         .names = {"suse", "suse-linux"},
-        .lines = FASTFETCH_DATATEXT_LOGO_SUSE,
+        .lines = NEUROFETCH_DATATEXT_LOGO_SUSE,
         .colors = {
             FF_COLOR_FG_GREEN,
             FF_COLOR_FG_GREEN,
@@ -4729,7 +4769,7 @@ static const FFlogo S[] = {
     {
         .names = {"suse_small", "suse-linux_small"},
         .type = FF_LOGO_LINE_TYPE_SMALL_BIT,
-        .lines = FASTFETCH_DATATEXT_LOGO_OPENSUSE_SMALL,
+        .lines = NEUROFETCH_DATATEXT_LOGO_OPENSUSE_SMALL,
         .colors = {
             FF_COLOR_FG_GREEN,
             FF_COLOR_FG_GREEN,
@@ -4738,7 +4778,7 @@ static const FFlogo S[] = {
     // Swagarch
     {
         .names = {"Swagarch"},
-        .lines = FASTFETCH_DATATEXT_LOGO_SWAGARCH,
+        .lines = NEUROFETCH_DATATEXT_LOGO_SWAGARCH,
         .colors = {
             FF_COLOR_FG_BLUE,
             FF_COLOR_FG_WHITE,
@@ -4752,7 +4792,7 @@ static const FFlogo T[] = {
     // T2
     {
         .names = {"T2", "T2 SDE", "T2/Linux"},
-        .lines = FASTFETCH_DATATEXT_LOGO_T2,
+        .lines = NEUROFETCH_DATATEXT_LOGO_T2,
         .colors = {
             FF_COLOR_FG_RED,
             FF_COLOR_FG_WHITE,
@@ -4764,7 +4804,7 @@ static const FFlogo T[] = {
     {
         .names = {"T2_small", "T2 SDE_small", "T2/Linux_small"},
         .type = FF_LOGO_LINE_TYPE_SMALL_BIT,
-        .lines = FASTFETCH_DATATEXT_LOGO_T2_SMALL,
+        .lines = NEUROFETCH_DATATEXT_LOGO_T2_SMALL,
         .colors = {
             FF_COLOR_FG_WHITE,
             FF_COLOR_FG_BLUE,
@@ -4773,7 +4813,7 @@ static const FFlogo T[] = {
     // Tails
     {
         .names = {"Tails"},
-        .lines = FASTFETCH_DATATEXT_LOGO_TAILS,
+        .lines = NEUROFETCH_DATATEXT_LOGO_TAILS,
         .colors = {
             FF_COLOR_FG_BLUE,
             FF_COLOR_FG_WHITE,
@@ -4782,7 +4822,7 @@ static const FFlogo T[] = {
     // Tatra
     {
         .names = {"Tatra"},
-        .lines = FASTFETCH_DATATEXT_LOGO_TATRA,
+        .lines = NEUROFETCH_DATATEXT_LOGO_TATRA,
         .colors = {
             FF_COLOR_FG_BLUE,
             FF_COLOR_FG_GREEN,
@@ -4791,7 +4831,7 @@ static const FFlogo T[] = {
     // TeArch
     {
         .names = {"TeArch"},
-        .lines = FASTFETCH_DATATEXT_LOGO_TEARCH,
+        .lines = NEUROFETCH_DATATEXT_LOGO_TEARCH,
         .colors = {
             FF_COLOR_FG_256 "39",
             FF_COLOR_FG_WHITE,
@@ -4800,7 +4840,7 @@ static const FFlogo T[] = {
     // TempleOS
     {
         .names = {"TempleOS"},
-        .lines = FASTFETCH_DATATEXT_LOGO_TEMPLEOS,
+        .lines = NEUROFETCH_DATATEXT_LOGO_TEMPLEOS,
         .colors = {
             FF_COLOR_FG_YELLOW,
             FF_COLOR_FG_RED,
@@ -4810,7 +4850,7 @@ static const FFlogo T[] = {
     // TileOS
     {
         .names = {"TileOS"},
-        .lines = FASTFETCH_DATATEXT_LOGO_TILEOS,
+        .lines = NEUROFETCH_DATATEXT_LOGO_TILEOS,
         .colors = {
             FF_COLOR_FG_MAGENTA,
             FF_COLOR_FG_BLUE,
@@ -4820,7 +4860,7 @@ static const FFlogo T[] = {
     // Torizon OS
     {
         .names = {"Torizon OS", "TorizonCore"},
-        .lines = FASTFETCH_DATATEXT_LOGO_TORIZONCORE,
+        .lines = NEUROFETCH_DATATEXT_LOGO_TORIZONCORE,
         .colors = {
             FF_COLOR_FG_LIGHT_WHITE,
             FF_COLOR_FG_YELLOW,
@@ -4830,7 +4870,7 @@ static const FFlogo T[] = {
     // Trisquel
     {
         .names = {"Trisquel"},
-        .lines = FASTFETCH_DATATEXT_LOGO_TRISQUEL,
+        .lines = NEUROFETCH_DATATEXT_LOGO_TRISQUEL,
         .colors = {
             FF_COLOR_FG_BLUE,
             FF_COLOR_FG_CYAN,
@@ -4839,7 +4879,7 @@ static const FFlogo T[] = {
     // TrueNAS Scale
     {
         .names = {"TrueNAS-Scale"},
-        .lines = FASTFETCH_DATATEXT_LOGO_TRUENAS_SCALE,
+        .lines = NEUROFETCH_DATATEXT_LOGO_TRUENAS_SCALE,
         .colors = {
             FF_COLOR_FG_256 "39",
             FF_COLOR_FG_256 "32",
@@ -4851,7 +4891,7 @@ static const FFlogo T[] = {
     // TuxedoOS
     {
         .names = {"Tuxedo OS", "tuxedo"},
-        .lines = FASTFETCH_DATATEXT_LOGO_TUXEDO_OS,
+        .lines = NEUROFETCH_DATATEXT_LOGO_TUXEDO_OS,
         .colors = {
             FF_COLOR_FG_WHITE,
             FF_COLOR_FG_RED,
@@ -4860,7 +4900,7 @@ static const FFlogo T[] = {
     // Twister
     {
         .names = {"Twister"},
-        .lines = FASTFETCH_DATATEXT_LOGO_TWISTER,
+        .lines = NEUROFETCH_DATATEXT_LOGO_TWISTER,
         .colors = {
             FF_COLOR_FG_GREEN,
             FF_COLOR_FG_RED,
@@ -4877,7 +4917,7 @@ static const FFlogo U[] = {
     // UBLinux
     {
         .names = {"UBLinux"},
-        .lines = FASTFETCH_DATATEXT_LOGO_UBLINUX,
+        .lines = NEUROFETCH_DATATEXT_LOGO_UBLINUX,
         .colors = {
             FF_COLOR_FG_256 "38",
             FF_COLOR_FG_WHITE,
@@ -4890,7 +4930,7 @@ static const FFlogo U[] = {
     {
         .names = {"UBLinux_small"},
         .type = FF_LOGO_LINE_TYPE_SMALL_BIT,
-        .lines = FASTFETCH_DATATEXT_LOGO_UBLINUX_SMALL,
+        .lines = NEUROFETCH_DATATEXT_LOGO_UBLINUX_SMALL,
         .colors = {
             FF_COLOR_FG_256 "38",
             FF_COLOR_FG_WHITE,
@@ -4902,7 +4942,7 @@ static const FFlogo U[] = {
     // Ubuntu
     {
         .names = {"ubuntu", "ubuntu-linux"},
-        .lines = FASTFETCH_DATATEXT_LOGO_UBUNTU,
+        .lines = NEUROFETCH_DATATEXT_LOGO_UBUNTU,
         .colors = {
             FF_COLOR_FG_RED,
             FF_COLOR_FG_RED,
@@ -4912,7 +4952,7 @@ static const FFlogo U[] = {
     {
         .names = {"ubuntu_small", "ubuntu-linux_small"},
         .type = FF_LOGO_LINE_TYPE_SMALL_BIT,
-        .lines = FASTFETCH_DATATEXT_LOGO_UBUNTU_SMALL,
+        .lines = NEUROFETCH_DATATEXT_LOGO_UBUNTU_SMALL,
         .colors = {
             FF_COLOR_FG_RED,
             FF_COLOR_FG_RED,
@@ -4922,7 +4962,7 @@ static const FFlogo U[] = {
     {
         .names = {"ubuntu_old", "ubuntu-linux_old"},
         .type = FF_LOGO_LINE_TYPE_ALTER_BIT,
-        .lines = FASTFETCH_DATATEXT_LOGO_UBUNTU_OLD,
+        .lines = NEUROFETCH_DATATEXT_LOGO_UBUNTU_OLD,
         .colors = {
             FF_COLOR_FG_RED,
             FF_COLOR_FG_WHITE,
@@ -4934,7 +4974,7 @@ static const FFlogo U[] = {
     {
         .names = {"ubuntu_old2"},
         .type = FF_LOGO_LINE_TYPE_ALTER_BIT,
-        .lines = FASTFETCH_DATATEXT_LOGO_UBUNTU_OLD2,
+        .lines = NEUROFETCH_DATATEXT_LOGO_UBUNTU_OLD2,
         .colors = {
             FF_COLOR_FG_RED,
             FF_COLOR_FG_WHITE,
@@ -4947,7 +4987,7 @@ static const FFlogo U[] = {
     {
         .names = {"ubuntu_old2_small", "ubuntu_old2_small"},
         .type = FF_LOGO_LINE_TYPE_SMALL_BIT | FF_LOGO_LINE_TYPE_ALTER_BIT,
-        .lines = FASTFETCH_DATATEXT_LOGO_UBUNTU_OLD2_SMALL,
+        .lines = NEUROFETCH_DATATEXT_LOGO_UBUNTU_OLD2_SMALL,
         .colors = {
             FF_COLOR_FG_RED,
         },
@@ -4957,7 +4997,7 @@ static const FFlogo U[] = {
     // UbuntuBudgie
     {
         .names = {"ubuntu budgie", "ubuntu-budgie"},
-        .lines = FASTFETCH_DATATEXT_LOGO_UBUNTU_BUDGIE,
+        .lines = NEUROFETCH_DATATEXT_LOGO_UBUNTU_BUDGIE,
         .colors = {
             FF_COLOR_FG_BLUE,
             FF_COLOR_FG_WHITE,
@@ -4969,7 +5009,7 @@ static const FFlogo U[] = {
     // UbuntuCinnamon
     {
         .names = {"ubuntu cinnamon", "ubuntu-cinnamon"},
-        .lines = FASTFETCH_DATATEXT_LOGO_UBUNTU_CINNAMON,
+        .lines = NEUROFETCH_DATATEXT_LOGO_UBUNTU_CINNAMON,
         .colors = {
             FF_COLOR_FG_RED,
             FF_COLOR_FG_WHITE,
@@ -4978,7 +5018,7 @@ static const FFlogo U[] = {
     // UbuntuGNOME
     {
         .names = {"ubuntu gnome", "ubuntu-gnome"},
-        .lines = FASTFETCH_DATATEXT_LOGO_UBUNTU_GNOME,
+        .lines = NEUROFETCH_DATATEXT_LOGO_UBUNTU_GNOME,
         .colors = {
             FF_COLOR_FG_BLUE,
             FF_COLOR_FG_MAGENTA,
@@ -4991,7 +5031,7 @@ static const FFlogo U[] = {
     // UbuntuKylin
     {
         .names = {"ubuntu kylin", "ubuntu-kylin"},
-        .lines = FASTFETCH_DATATEXT_LOGO_UBUNTU_KYLIN,
+        .lines = NEUROFETCH_DATATEXT_LOGO_UBUNTU_KYLIN,
         .colors = {
             FF_COLOR_FG_RED,
             FF_COLOR_FG_WHITE,
@@ -5003,7 +5043,7 @@ static const FFlogo U[] = {
     // UbuntuMate
     {
         .names = {"ubuntu mate", "ubuntu-mate"},
-        .lines = FASTFETCH_DATATEXT_LOGO_UBUNTU_MATE,
+        .lines = NEUROFETCH_DATATEXT_LOGO_UBUNTU_MATE,
         .colors = {
             FF_COLOR_FG_GREEN,
             FF_COLOR_FG_WHITE,
@@ -5014,7 +5054,7 @@ static const FFlogo U[] = {
     // UbuntuKde
     {
         .names = {"ubuntu kde", "ubuntu-kde", "ubuntu-plasma"},
-        .lines = FASTFETCH_DATATEXT_LOGO_KUBUNTU,
+        .lines = NEUROFETCH_DATATEXT_LOGO_KUBUNTU,
         .colors = {
             FF_COLOR_FG_BLUE,
             FF_COLOR_FG_WHITE,
@@ -5025,7 +5065,7 @@ static const FFlogo U[] = {
     // UbuntuStudio
     {
         .names = {"ubuntu studio", "ubuntu-studio"},
-        .lines = FASTFETCH_DATATEXT_LOGO_UBUNTU_STUDIO,
+        .lines = NEUROFETCH_DATATEXT_LOGO_UBUNTU_STUDIO,
         .colors = {
             FF_COLOR_FG_CYAN,
             FF_COLOR_FG_WHITE,
@@ -5034,7 +5074,7 @@ static const FFlogo U[] = {
     // UbuntuSway
     {
         .names = {"ubuntu sway", "ubuntu-sway"},
-        .lines = FASTFETCH_DATATEXT_LOGO_UBUNTU_SWAY,
+        .lines = NEUROFETCH_DATATEXT_LOGO_UBUNTU_SWAY,
         .colors = {
             FF_COLOR_FG_CYAN,
             FF_COLOR_FG_WHITE,
@@ -5043,7 +5083,7 @@ static const FFlogo U[] = {
     // UbuntuTouch
     {
         .names = {"ubuntu touch", "ubuntu-touch"},
-        .lines = FASTFETCH_DATATEXT_LOGO_UBUNTU_TOUCH,
+        .lines = NEUROFETCH_DATATEXT_LOGO_UBUNTU_TOUCH,
         .colors = {
             FF_COLOR_FG_YELLOW,
             FF_COLOR_FG_WHITE,
@@ -5052,7 +5092,7 @@ static const FFlogo U[] = {
     // UbuntuUnity
     {
         .names = {"ubuntu unity", "ubuntu-unity"},
-        .lines = FASTFETCH_DATATEXT_LOGO_UBUNTU_UNITY,
+        .lines = NEUROFETCH_DATATEXT_LOGO_UBUNTU_UNITY,
         .colors = {
             FF_COLOR_FG_MAGENTA,
             FF_COLOR_FG_WHITE,
@@ -5061,7 +5101,7 @@ static const FFlogo U[] = {
     // Ultramarine
     {
         .names = {"Ultramarine", "Ultramarine Linux"},
-        .lines = FASTFETCH_DATATEXT_LOGO_ULTRAMARINE,
+        .lines = NEUROFETCH_DATATEXT_LOGO_ULTRAMARINE,
         .colors = {
             FF_COLOR_FG_BLUE,
             FF_COLOR_FG_WHITE,
@@ -5070,7 +5110,7 @@ static const FFlogo U[] = {
     // Ultramarine Small
     {
         .names = {"Ultramarine_small"},
-        .lines = FASTFETCH_DATATEXT_LOGO_ULTRAMARINE_SMALL,
+        .lines = NEUROFETCH_DATATEXT_LOGO_ULTRAMARINE_SMALL,
         .colors = {
             FF_COLOR_FG_BLUE,
             FF_COLOR_FG_WHITE,
@@ -5079,7 +5119,7 @@ static const FFlogo U[] = {
     // Unifi
     {
         .names = {"Unifi"},
-        .lines = FASTFETCH_DATATEXT_LOGO_UNIFI,
+        .lines = NEUROFETCH_DATATEXT_LOGO_UNIFI,
         .colors = {
             FF_COLOR_FG_WHITE,
             FF_COLOR_FG_WHITE,
@@ -5088,7 +5128,7 @@ static const FFlogo U[] = {
     // Univalent
     {
         .names = {"Univalent"},
-        .lines = FASTFETCH_DATATEXT_LOGO_UNIVALENT,
+        .lines = NEUROFETCH_DATATEXT_LOGO_UNIVALENT,
         .colors = {
             FF_COLOR_FG_CYAN,
             FF_COLOR_FG_CYAN,
@@ -5097,7 +5137,7 @@ static const FFlogo U[] = {
     // Univention
     {
         .names = {"Univention"},
-        .lines = FASTFETCH_DATATEXT_LOGO_UNIVENTION,
+        .lines = NEUROFETCH_DATATEXT_LOGO_UNIVENTION,
         .colors = {
             FF_COLOR_FG_RED,
             FF_COLOR_FG_WHITE,
@@ -5106,7 +5146,7 @@ static const FFlogo U[] = {
     // UOS
     {
         .names = {"UOS"},
-        .lines = FASTFETCH_DATATEXT_LOGO_UOS,
+        .lines = NEUROFETCH_DATATEXT_LOGO_UOS,
         .colors = {
             FF_COLOR_FG_RED,
         },
@@ -5116,7 +5156,7 @@ static const FFlogo U[] = {
     // UrukOS
     {
         .names = {"UrukOS"},
-        .lines = FASTFETCH_DATATEXT_LOGO_URUKOS,
+        .lines = NEUROFETCH_DATATEXT_LOGO_URUKOS,
         .colors = {
             FF_COLOR_FG_LIGHT_BLUE,
             FF_COLOR_FG_LIGHT_BLUE,
@@ -5128,7 +5168,7 @@ static const FFlogo U[] = {
     // Uwuntu
     {
         .names = {"uwuntu"},
-        .lines = FASTFETCH_DATATEXT_LOGO_UWUNTU,
+        .lines = NEUROFETCH_DATATEXT_LOGO_UWUNTU,
         .colors = {
             FF_COLOR_FG_256 "225",
             FF_COLOR_FG_256 "206",
@@ -5143,17 +5183,31 @@ static const FFlogo V[] = {
     // Valhalla
     {
         .names = {"Valhalla", "valhallaos", "valhalla-linux"},
-        .lines = FASTFETCH_DATATEXT_LOGO_VALHALLA,
+        .lines = NEUROFETCH_DATATEXT_LOGO_VALHALLA,
         .colors = {
             FF_COLOR_FG_DEFAULT,
         },
         .colorKeys = FF_COLOR_FG_DEFAULT,
         .colorTitle = FF_COLOR_FG_DEFAULT,
     },
+    // Vedal
+    {
+        .names = {"Vedal"},
+        .lines = NEUROFETCH_DATATEXT_LOGO_VEDAL,
+        .colors = {
+            "38;2;84;170;102",      // $1 - Green primary
+            "38;2;42;42;42",        // $2 - Dark gray
+            "38;2;127;199;131",     // $3 - Medium green
+            "38;2;158;211;152",     // $4 - Light green
+            "38;2;255;255;255",     // $5 - Pure white
+        },
+        .colorKeys = "38;2;84;170;102",
+        .colorTitle = "38;2;84;170;102",
+    },
     // Vanilla
     {
         .names = {"vanilla"},
-        .lines = FASTFETCH_DATATEXT_LOGO_VANILLA,
+        .lines = NEUROFETCH_DATATEXT_LOGO_VANILLA,
         .colors = {
             FF_COLOR_FG_YELLOW,
         },
@@ -5164,7 +5218,7 @@ static const FFlogo V[] = {
     {
         .names = {"vanilla2"},
         .type = FF_LOGO_LINE_TYPE_ALTER_BIT,
-        .lines = FASTFETCH_DATATEXT_LOGO_VANILLA2,
+        .lines = NEUROFETCH_DATATEXT_LOGO_VANILLA2,
         .colors = {
             FF_COLOR_FG_YELLOW,
         },
@@ -5175,7 +5229,7 @@ static const FFlogo V[] = {
     {
         .names = {"vanilla_small"},
         .type = FF_LOGO_LINE_TYPE_SMALL_BIT,
-        .lines = FASTFETCH_DATATEXT_LOGO_VANILLA_SMALL,
+        .lines = NEUROFETCH_DATATEXT_LOGO_VANILLA_SMALL,
         .colors = {
             FF_COLOR_FG_LIGHT_YELLOW,
             FF_COLOR_FG_YELLOW,
@@ -5184,7 +5238,7 @@ static const FFlogo V[] = {
     // Venom
     {
         .names = {"Venom"},
-        .lines = FASTFETCH_DATATEXT_LOGO_VENOM,
+        .lines = NEUROFETCH_DATATEXT_LOGO_VENOM,
         .colors = {
             FF_COLOR_FG_LIGHT_BLACK,
             FF_COLOR_FG_BLUE,
@@ -5194,7 +5248,7 @@ static const FFlogo V[] = {
     {
         .names = {"Venom_small"},
         .type = FF_LOGO_LINE_TYPE_SMALL_BIT,
-        .lines = FASTFETCH_DATATEXT_LOGO_VENOM_SMALL,
+        .lines = NEUROFETCH_DATATEXT_LOGO_VENOM_SMALL,
         .colors = {
             FF_COLOR_FG_LIGHT_BLACK,
             FF_COLOR_FG_BLUE,
@@ -5203,7 +5257,7 @@ static const FFlogo V[] = {
     // Vnux
     {
         .names = {"Vnux"},
-        .lines = FASTFETCH_DATATEXT_LOGO_VNUX,
+        .lines = NEUROFETCH_DATATEXT_LOGO_VNUX,
         .colors = {
             FF_COLOR_FG_256 "11",
             FF_COLOR_FG_256 "8",
@@ -5215,7 +5269,7 @@ static const FFlogo V[] = {
     // Vzlinux
     {
         .names = {"Vzlinux"},
-        .lines = FASTFETCH_DATATEXT_LOGO_VZLINUX,
+        .lines = NEUROFETCH_DATATEXT_LOGO_VZLINUX,
         .colors = {
             FF_COLOR_FG_RED,
             FF_COLOR_FG_WHITE,
@@ -5225,7 +5279,7 @@ static const FFlogo V[] = {
     // Void
     {
         .names = {"void"},
-        .lines = FASTFETCH_DATATEXT_LOGO_VOID,
+        .lines = NEUROFETCH_DATATEXT_LOGO_VOID,
         .colors = {
             FF_COLOR_FG_GREEN,
             FF_COLOR_FG_LIGHT_BLACK,
@@ -5237,7 +5291,7 @@ static const FFlogo V[] = {
     {
         .names = {"void_small"},
         .type = FF_LOGO_LINE_TYPE_SMALL_BIT,
-        .lines = FASTFETCH_DATATEXT_LOGO_VOID_SMALL,
+        .lines = NEUROFETCH_DATATEXT_LOGO_VOID_SMALL,
         .colors = {
             FF_COLOR_FG_GREEN,
         },
@@ -5247,7 +5301,7 @@ static const FFlogo V[] = {
     // Void2
     {
         .names = {"void2"},
-        .lines = FASTFETCH_DATATEXT_LOGO_VOID2,
+        .lines = NEUROFETCH_DATATEXT_LOGO_VOID2,
         .colors = {
             FF_COLOR_FG_YELLOW,
             FF_COLOR_FG_DEFAULT,
@@ -5260,7 +5314,7 @@ static const FFlogo V[] = {
     {
         .names = {"void2_small"},
         .type = FF_LOGO_LINE_TYPE_SMALL_BIT | FF_LOGO_LINE_TYPE_ALTER_BIT,
-        .lines = FASTFETCH_DATATEXT_LOGO_VOID2_SMALL,
+        .lines = NEUROFETCH_DATATEXT_LOGO_VOID2_SMALL,
         .colors = {
             FF_COLOR_FG_GREEN,
         },
@@ -5275,7 +5329,7 @@ static const FFlogo W[] = {
     // WiiLinux
     {
         .names = {"WiiLinuxNgx", "WiiLinux", "Wii-Linux", "Wii Linux"},
-        .lines = FASTFETCH_DATATEXT_LOGO_WII_LINUX,
+        .lines = NEUROFETCH_DATATEXT_LOGO_WII_LINUX,
         .colors = {
             FF_COLOR_FG_CYAN,
             FF_COLOR_FG_WHITE,
@@ -5284,7 +5338,7 @@ static const FFlogo W[] = {
     // Windows2025
     {
         .names = {"Windows Server 2025"},
-        .lines = FASTFETCH_DATATEXT_LOGO_WINDOWS_2025,
+        .lines = NEUROFETCH_DATATEXT_LOGO_WINDOWS_2025,
         .colors = {
             FF_COLOR_FG_BLUE,
             FF_COLOR_FG_BLUE,
@@ -5297,7 +5351,7 @@ static const FFlogo W[] = {
     // Windows11
     {
         .names = {"Windows 11", "Windows Server 2022"},
-        .lines = FASTFETCH_DATATEXT_LOGO_WINDOWS_11,
+        .lines = NEUROFETCH_DATATEXT_LOGO_WINDOWS_11,
         .colors = {
             FF_COLOR_FG_BLUE,
             FF_COLOR_FG_BLUE,
@@ -5311,7 +5365,7 @@ static const FFlogo W[] = {
     {
         .names = {"Windows 11_small"},
         .type = FF_LOGO_LINE_TYPE_SMALL_BIT,
-        .lines = FASTFETCH_DATATEXT_LOGO_WINDOWS_11_SMALL,
+        .lines = NEUROFETCH_DATATEXT_LOGO_WINDOWS_11_SMALL,
         .colors = {
             FF_COLOR_FG_BLUE,
             FF_COLOR_FG_BLUE,
@@ -5324,7 +5378,7 @@ static const FFlogo W[] = {
     // Windows8
     {
         .names = {"Windows 8", "Windows 8.1", "Windows 10", "Windows Server 2012", "Windows Server 2012 R2", "Windows Server 2016", "Windows Server 2019"},
-        .lines = FASTFETCH_DATATEXT_LOGO_WINDOWS_8,
+        .lines = NEUROFETCH_DATATEXT_LOGO_WINDOWS_8,
         .colors = {
             FF_COLOR_FG_CYAN,
             FF_COLOR_FG_CYAN,
@@ -5337,7 +5391,7 @@ static const FFlogo W[] = {
     // Windows
     {
         .names = {"Windows", "Windows 7", "Windows Server 2008", "Windows Server 2008 R2"},
-        .lines = FASTFETCH_DATATEXT_LOGO_WINDOWS,
+        .lines = NEUROFETCH_DATATEXT_LOGO_WINDOWS,
         .colors = {
             FF_COLOR_FG_RED,
             FF_COLOR_FG_GREEN,
@@ -5350,7 +5404,7 @@ static const FFlogo W[] = {
     // Windows95
     {
         .names = {"Windows 95", "Windows 9x"},
-        .lines = FASTFETCH_DATATEXT_LOGO_WINDOWS_95,
+        .lines = NEUROFETCH_DATATEXT_LOGO_WINDOWS_95,
         .colors = {
             FF_COLOR_FG_CYAN,
             FF_COLOR_FG_BLUE,
@@ -5365,7 +5419,7 @@ static const FFlogo W[] = {
     // WolfOS
     {
         .names = {"WolfOS"},
-        .lines = FASTFETCH_DATATEXT_LOGO_WOLFOS,
+        .lines = NEUROFETCH_DATATEXT_LOGO_WOLFOS,
         .colors = {
             FF_COLOR_FG_BLUE,
             FF_COLOR_FG_GREEN,
@@ -5379,7 +5433,7 @@ static const FFlogo X[] = {
     // XCP-ng
     {
         .names = {"XCP-ng", "xenenterprise"},
-        .lines = FASTFETCH_DATATEXT_LOGO_XCP_NG,
+        .lines = NEUROFETCH_DATATEXT_LOGO_XCP_NG,
         .colors = {
             FF_COLOR_FG_RED,
             FF_COLOR_FG_RED,
@@ -5392,7 +5446,7 @@ static const FFlogo X[] = {
     // Xenia
     {
         .names = {"Xenia"},
-        .lines = FASTFETCH_DATATEXT_LOGO_XENIA,
+        .lines = NEUROFETCH_DATATEXT_LOGO_XENIA,
         .colors = {
             FF_COLOR_FG_RED,
             FF_COLOR_FG_LIGHT_BLACK,
@@ -5403,7 +5457,7 @@ static const FFlogo X[] = {
     // Xenia_old
     {
         .names = {"Xenia_old"},
-        .lines = FASTFETCH_DATATEXT_LOGO_XENIA_OLD,
+        .lines = NEUROFETCH_DATATEXT_LOGO_XENIA_OLD,
         .type = FF_LOGO_LINE_TYPE_ALTER_BIT,
         .colors = {
             FF_COLOR_FG_YELLOW,
@@ -5414,7 +5468,7 @@ static const FFlogo X[] = {
     //XeroArch
     {
         .names = {"XeroArch"},
-        .lines = FASTFETCH_DATATEXT_LOGO_XEROARCH,
+        .lines = NEUROFETCH_DATATEXT_LOGO_XEROARCH,
         .colors = {
             FF_COLOR_FG_256 "50",
             FF_COLOR_FG_256 "14",
@@ -5427,7 +5481,7 @@ static const FFlogo X[] = {
     // Xferience
     {
         .names = {"Xferience"},
-        .lines = FASTFETCH_DATATEXT_LOGO_XFERIENCE,
+        .lines = NEUROFETCH_DATATEXT_LOGO_XFERIENCE,
         .colors = {
             FF_COLOR_FG_CYAN,
             FF_COLOR_FG_CYAN,
@@ -5436,7 +5490,7 @@ static const FFlogo X[] = {
     // Xubuntu
     {
         .names = {"Xubuntu"},
-        .lines = FASTFETCH_DATATEXT_LOGO_XUBUNTU,
+        .lines = NEUROFETCH_DATATEXT_LOGO_XUBUNTU,
         .colors = {
             FF_COLOR_FG_256 "25",
             FF_COLOR_FG_DEFAULT,
@@ -5445,7 +5499,7 @@ static const FFlogo X[] = {
     //Xray_OS
     {
         .names = {"Xray_OS"},
-        .lines = FASTFETCH_DATATEXT_LOGO_XRAY_OS,
+        .lines = NEUROFETCH_DATATEXT_LOGO_XRAY_OS,
         .colors = {
             FF_COLOR_FG_256 "15",
             FF_COLOR_FG_256 "14",
@@ -5460,7 +5514,7 @@ static const FFlogo Y[] = {
     // YiffOS
     {
         .names = {"YiffOS"},
-        .lines = FASTFETCH_DATATEXT_LOGO_YIFFOS,
+        .lines = NEUROFETCH_DATATEXT_LOGO_YIFFOS,
         .colors = {
             FF_COLOR_FG_256 "93",
             FF_COLOR_FG_256 "92",
@@ -5474,7 +5528,7 @@ static const FFlogo Z[] = {
     // Zorin
     {
         .names = {"Zorin"},
-        .lines = FASTFETCH_DATATEXT_LOGO_ZORIN,
+        .lines = NEUROFETCH_DATATEXT_LOGO_ZORIN,
         .colors = {
             FF_COLOR_FG_BLUE,
         },
@@ -5484,7 +5538,7 @@ static const FFlogo Z[] = {
     // Z/OS
     {
         .names = {"z/OS", "zos"},
-        .lines = FASTFETCH_DATATEXT_LOGO_ZOS,
+        .lines = NEUROFETCH_DATATEXT_LOGO_ZOS,
         .colors = {
             FF_COLOR_FG_BLUE,
         },

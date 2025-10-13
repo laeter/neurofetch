@@ -31,11 +31,11 @@ static uint32_t getShellInfo(FFShellResult* result, uint32_t pid)
             ffStrbufIgnCaseEqualS(&result->prettyName, "gdb")           ||
             ffStrbufIgnCaseEqualS(&result->prettyName, "lldb")          ||
             ffStrbufIgnCaseEqualS(&result->prettyName, "python")        || // python on windows generates shim executables
-            ffStrbufIgnCaseEqualS(&result->prettyName, "fastfetch")     || // scoop warps the real binaries with a "shim" exe
+            ffStrbufIgnCaseEqualS(&result->prettyName, "neurofetch")     || // scoop warps the real binaries with a "shim" exe
             ffStrbufIgnCaseEqualS(&result->prettyName, "flashfetch")    ||
             ffStrbufContainIgnCaseS(&result->prettyName, "debug")       ||
             ffStrbufContainIgnCaseS(&result->prettyName, "time")        ||
-            ffStrbufStartsWithIgnCaseS(&result->prettyName, "ConEmu") // https://github.com/fastfetch-cli/fastfetch/issues/488#issuecomment-1619982014
+            ffStrbufStartsWithIgnCaseS(&result->prettyName, "ConEmu") // https://github.com/neurofetch-cli/neurofetch/issues/488#issuecomment-1619982014
         ) {
             ffStrbufClear(&result->processName);
             ffStrbufClear(&result->prettyName);
@@ -51,7 +51,7 @@ static uint32_t getShellInfo(FFShellResult* result, uint32_t pid)
         if(ffStrbufIgnCaseEqualS(&result->prettyName, "explorer"))
         {
             ffStrbufSetS(&result->prettyName, "Windows Explorer"); // Started without shell
-            // In this case, terminal process will be created by fastfetch itself.
+            // In this case, terminal process will be created by neurofetch itself.
             ppid = 0;
         }
 

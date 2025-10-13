@@ -1,6 +1,6 @@
 #pragma once
 
-#include "fastfetch.h"
+#include "neurofetch.h"
 
 const char* ffFindExecutableInPath(const char* name, FFstrbuf* result);
 bool ffIsAbsolutePath(const char* path);

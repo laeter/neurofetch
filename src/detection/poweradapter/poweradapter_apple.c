@@ -1,4 +1,4 @@
-#include "fastfetch.h"
+#include "neurofetch.h"
 #include "poweradapter.h"
 #include "util/apple/cf_helpers.h"
 

@@ -66,13 +66,13 @@
 #define FF_STR(x) FF_STR_INDIR(x)
 
 FFVersionResult ffVersionResult = {
-    .projectName = FASTFETCH_PROJECT_NAME,
+    .projectName = NEUROFETCH_PROJECT_NAME,
     .sysName = FF_SYSNAME,
     .architecture = FF_ARCHITECTURE,
-    .version = FASTFETCH_PROJECT_VERSION,
-    .versionTweak = FASTFETCH_PROJECT_VERSION_TWEAK,
-    .versionGit = FASTFETCH_PROJECT_VERSION_GIT,
-    .cmakeBuiltType = FASTFETCH_PROJECT_CMAKE_BUILD_TYPE,
+    .version = NEUROFETCH_PROJECT_VERSION,
+    .versionTweak = NEUROFETCH_PROJECT_VERSION_TWEAK,
+    .versionGit = NEUROFETCH_PROJECT_VERSION_GIT,
+    .cmakeBuiltType = NEUROFETCH_PROJECT_CMAKE_BUILD_TYPE,
     .compileTime = __DATE__ ", " __TIME__,
     .compiler =
 

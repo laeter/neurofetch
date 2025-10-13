@@ -1,6 +1,6 @@
 #pragma once
 
-#include "fastfetch.h"
+#include "neurofetch.h"
 #include "modules/brightness/option.h"
 
 typedef struct FFBrightnessResult

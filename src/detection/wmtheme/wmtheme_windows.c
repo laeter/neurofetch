@@ -1,4 +1,4 @@
-#include "fastfetch.h"
+#include "neurofetch.h"
 #include "wmtheme.h"
 #include "util/windows/registry.h"
 

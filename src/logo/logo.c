@@ -189,7 +189,7 @@ static uint32_t logoAppendChars(const char* data, bool doColorReplacement, FFstr
             //Don't continue here, print the char after the letters with the unicode printing
         }
 
-        //We have a fastfetch color placeholder. Replace it with the esacape sequence, don't increase the line length
+        //We have a neurofetch color placeholder. Replace it with the esacape sequence, don't increase the line length
         if(doColorReplacement && *data == '$')
         {
             ++data;
@@ -209,7 +209,7 @@ static uint32_t logoAppendChars(const char* data, bool doColorReplacement, FFstr
                 int index = *data - '1';
 
                 //If the index is valid, print the color. Otherwise continue as normal
-                if(index < 0 || index >= FASTFETCH_LOGO_MAX_COLORS)
+                if(index < 0 || index >= NEUROFETCH_LOGO_MAX_COLORS)
                 {
                     if(result) ffStrbufAppendC(result, '$');
                     ++currentlineLength;
@@ -273,7 +273,7 @@ void ffLogoPrintChars(const char* data, bool doColorReplacement)
     FF_STRBUF_AUTO_DESTROY result = ffStrbufCreateA(2048);
 
     if (!instance.config.display.pipe && instance.config.display.brightColor)
-        ffStrbufAppendS(&result, FASTFETCH_TEXT_MODIFIER_BOLT);
+        ffStrbufAppendS(&result, NEUROFETCH_TEXT_MODIFIER_BOLT);
 
     ffStrbufAppendNC(&result, options->paddingTop, '\n');
 
@@ -284,7 +284,7 @@ void ffLogoPrintChars(const char* data, bool doColorReplacement)
     instance.state.logoHeight = options->paddingTop + logoAppendChars(data, doColorReplacement, &result);
 
     if(!instance.config.display.pipe)
-        ffStrbufAppendS(&result, FASTFETCH_TEXT_MODIFIER_RESET);
+        ffStrbufAppendS(&result, NEUROFETCH_TEXT_MODIFIER_RESET);
 
     if(options->position == FF_LOGO_POSITION_LEFT)
     {
@@ -322,7 +322,7 @@ static void logoApplyColors(const FFlogo* logo, bool replacement)
         FFOptionsLogo* options = &instance.config.logo;
 
         const char* const* colors = logo->colors;
-        for(int i = 0; *colors != NULL && i < FASTFETCH_LOGO_MAX_COLORS; i++, colors++)
+        for(int i = 0; *colors != NULL && i < NEUROFETCH_LOGO_MAX_COLORS; i++, colors++)
         {
             if(options->colors[i].length == 0)
                 ffStrbufAppendS(&options->colors[i], *colors);
@@ -334,7 +334,7 @@ static bool logoHasName(const FFlogo* logo, const FFstrbuf* name, bool small)
 {
     for(
         const char* const* logoName = logo->names;
-        *logoName != NULL && logoName <= &logo->names[FASTFETCH_LOGO_MAX_NAMES];
+        *logoName != NULL && logoName <= &logo->names[NEUROFETCH_LOGO_MAX_NAMES];
         ++logoName
     ) {
         if(small)
@@ -495,7 +495,7 @@ static bool updateLogoPath(void)
     {
         //We need to copy it, because multiple threads might be using dataDirs at the same time
         ffStrbufSet(&fullPath, dataDir);
-        ffStrbufAppendS(&fullPath, "fastfetch/logos/");
+        ffStrbufAppendS(&fullPath, "neurofetch/logos/");
         ffStrbufAppend(&fullPath, &options->source);
 
         if(ffPathExists(fullPath.chars, FF_PATHTYPE_FILE))
@@ -731,7 +731,7 @@ void ffLogoBuiltinPrint(void)
             //reset everything
             instance.state.logoHeight = 0;
             instance.state.keysHeight = 0;
-            for(uint8_t i = 0; i < FASTFETCH_LOGO_MAX_COLORS; i++)
+            for(uint8_t i = 0; i < NEUROFETCH_LOGO_MAX_COLORS; i++)
                 ffStrbufClear(&options->colors[i]);
 
             putchar('\n');
@@ -751,7 +751,7 @@ void ffLogoBuiltinList(void)
 
             for(
                 const char* const* names = logo->names;
-                *names != NULL && names <= &logo->names[FASTFETCH_LOGO_MAX_NAMES];
+                *names != NULL && names <= &logo->names[NEUROFETCH_LOGO_MAX_NAMES];
                 ++names
             )
                 printf("\"%s\" ", *names);

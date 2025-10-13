@@ -146,6 +146,6 @@ const char* ffDetectBluetoothRadio(FFlist* devices /* FFBluetoothRadioResult */)
         return detectBluetooth(devices);
     #else
         FF_UNUSED(devices)
-        return "Fastfetch was compiled without DBus support";
+        return "Neurofetch was compiled without DBus support";
     #endif
 }

@@ -1,5 +1,5 @@
 #include "io.h"
-#include "fastfetch.h"
+#include "neurofetch.h"
 #include "util/stringUtils.h"
 
 #include <windows.h>

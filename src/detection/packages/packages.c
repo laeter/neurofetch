@@ -58,7 +58,7 @@ bool ffPackagesReadCache(FFstrbuf* cacheDir, FFstrbuf* cacheContent, const char*
 
     ffStrbufSet(cacheDir, &instance.state.platform.cacheDir);
     ffStrbufEnsureEndsWithC(cacheDir, '/');
-    ffStrbufAppendF(cacheDir, "fastfetch/packages/%s.txt", packageId);
+    ffStrbufAppendF(cacheDir, "neurofetch/packages/%s.txt", packageId);
 
     if (ffReadFileBuffer(cacheDir->chars, cacheContent))
     {

@@ -1,4 +1,4 @@
-#include "fastfetch.h"
+#include "neurofetch.h"
 #include "users.h"
 
 #if FF_HAVE_UTMPX

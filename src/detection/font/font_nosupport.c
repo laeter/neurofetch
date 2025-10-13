@@ -1,4 +1,4 @@
-#include "fastfetch.h"
+#include "neurofetch.h"
 #include "font.h"
 
 const char* ffDetectFontImpl(FF_MAYBE_UNUSED FFFontResult* result)

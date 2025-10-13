@@ -1,4 +1,4 @@
-#include "fastfetch.h"
+#include "neurofetch.h"
 #include "common/library.h"
 
 #ifndef FF_DISABLE_DLOPEN

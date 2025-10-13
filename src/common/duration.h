@@ -1,3 +1,3 @@
-#include "fastfetch.h"
+#include "neurofetch.h"
 
 void ffDurationAppendNum(uint64_t totalSeconds, FFstrbuf* result);

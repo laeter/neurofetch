@@ -1,4 +1,4 @@
-#include "fastfetch.h"
+#include "neurofetch.h"
 #include "detection/gtk_qt/gtk_qt.h"
 #include "common/properties.h"
 #include "common/thread.h"

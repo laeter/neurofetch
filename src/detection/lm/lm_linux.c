@@ -62,7 +62,7 @@ static const char* getSddmVersion(FFstrbuf* version)
     FF_LIBRARY_LOAD_SYMBOL_MESSAGE(zlib, gzrewind)
     FF_LIBRARY_LOAD_SYMBOL_MESSAGE(zlib, gzclose)
 
-    gzFile file = ffgzopen(FASTFETCH_TARGET_DIR_USR "/share/man/man1/sddm.1.gz", "rb");
+    gzFile file = ffgzopen(NEUROFETCH_TARGET_DIR_USR "/share/man/man1/sddm.1.gz", "rb");
     if (file == Z_NULL)
         return "ffgzopen(\"/usr/share/man/man1/sddm.1.gz\", \"rb\") failed";
 
@@ -95,7 +95,7 @@ static const char* getSddmVersion(FFstrbuf* version)
 #else
 static const char* getSddmVersion(FF_MAYBE_UNUSED FFstrbuf* version)
 {
-    return "Fastfetch is built without libz support";
+    return "Neurofetch is built without libz support";
 }
 #endif
 

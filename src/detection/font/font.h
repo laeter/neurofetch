@@ -1,6 +1,6 @@
 #pragma once
 
-#include "fastfetch.h"
+#include "neurofetch.h"
 #include "modules/font/option.h"
 
 enum { FF_DETECT_FONT_NUM_FONTS = 4 };

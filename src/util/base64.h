@@ -1,6 +1,6 @@
 #pragma once
 
-#include "fastfetch.h"
+#include "neurofetch.h"
 
 void ffBase64EncodeRaw(uint32_t size, const char *str, uint32_t *out_size, char *output);
 static inline FFstrbuf ffBase64EncodeStrbuf(const FFstrbuf* in)

@@ -208,7 +208,7 @@ FFOpenCLResult* ffDetectOpenCL(void)
         #ifdef FF_HAVE_OPENCL
             result.error = detectOpenCL(&result);
         #else
-            result.error = "fastfetch was compiled without OpenCL support";
+            result.error = "neurofetch was compiled without OpenCL support";
         #endif
     }
 

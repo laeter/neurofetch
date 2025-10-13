@@ -1,6 +1,6 @@
 #pragma once
 
-#include "fastfetch.h"
+#include "neurofetch.h"
 
 // From https://github.com/openzfs/zfs/blob/master/include/libzfs.h
 

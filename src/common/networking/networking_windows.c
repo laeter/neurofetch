@@ -2,7 +2,7 @@
 #include <ws2tcpip.h>
 
 //Must be included after <mswsock.h>
-#include "fastfetch.h"
+#include "neurofetch.h"
 #include "common/networking/networking.h"
 #include "util/stringUtils.h"
 #include "util/debug.h"

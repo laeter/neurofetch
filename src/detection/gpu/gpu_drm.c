@@ -154,7 +154,7 @@ const char* ffDrmDetectAmdgpu(const FFGPUOptions* options, FFGPUResult* gpu, con
     return NULL;
 #else
     FF_UNUSED(gpu, renderPath);
-    return "Fastfetch is compiled without libdrm support";
+    return "Neurofetch is compiled without libdrm support";
 #endif
 }
 #endif

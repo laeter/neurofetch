@@ -1,4 +1,4 @@
-#include "fastfetch.h"
+#include "neurofetch.h"
 #include "smc_temps.h"
 #include "util/stringUtils.h"
 

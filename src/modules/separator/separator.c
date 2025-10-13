@@ -125,7 +125,7 @@ bool ffPrintSeparator(FFSeparatorOptions* options)
     }
 
     if(options->outputColor.length && !instance.config.display.pipe)
-        fputs(FASTFETCH_TEXT_MODIFIER_RESET, stdout);
+        fputs(NEUROFETCH_TEXT_MODIFIER_RESET, stdout);
     putchar('\n');
 
     return true;

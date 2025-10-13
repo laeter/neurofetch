@@ -1,6 +1,6 @@
 #pragma once
 
-// For "fastfetch.h"
+// For "neurofetch.h"
 
 #include "modules/battery/option.h"
 #include "modules/bios/option.h"

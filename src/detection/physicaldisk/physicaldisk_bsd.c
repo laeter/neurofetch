@@ -99,6 +99,6 @@ const char* ffDetectPhysicalDisk(FFlist* result, FFPhysicalDiskOptions* options)
 #else
 const char* ffDetectPhysicalDisk(FFlist* result, FFPhysicalDiskOptions* options)
 {
-    return "Fastfetch was compiled without libgeom support";
+    return "Neurofetch was compiled without libgeom support";
 }
 #endif

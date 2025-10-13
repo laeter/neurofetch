@@ -1,6 +1,6 @@
 #pragma once
 
-#include "fastfetch.h"
+#include "neurofetch.h"
 #include "modules/battery/option.h"
 
 #define FF_BATTERY_TEMP_UNSET (-DBL_MAX)

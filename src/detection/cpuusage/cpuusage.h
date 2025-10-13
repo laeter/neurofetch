@@ -1,6 +1,6 @@
 #pragma once
 
-#include "fastfetch.h"
+#include "neurofetch.h"
 #include "modules/cpuusage/option.h"
 
 typedef struct FFCpuUsageInfo {

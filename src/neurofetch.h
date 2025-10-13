@@ -1,6 +1,6 @@
 #pragma once
 
-#include "fastfetch_config.h"
+#include "neurofetch_config.h"
 
 #include <stdint.h>
 #include <stdbool.h>

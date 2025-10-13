@@ -22,7 +22,7 @@ FFLogoImageResult ffLogoPrintImageIM6(FFLogoRequestData* requestData)
         .library = imageMagick,
     });
 
-    imageMagick = NULL; // leak imageMagick to prevent fastfetch from crashing #552
+    imageMagick = NULL; // leak imageMagick to prevent neurofetch from crashing #552
     return result;
 }
 

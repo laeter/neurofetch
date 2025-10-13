@@ -1,4 +1,4 @@
-#include "fastfetch.h"
+#include "neurofetch.h"
 #include "common/networking/networking.h"
 #include "common/time.h"
 #include "common/library.h"

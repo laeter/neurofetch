@@ -113,7 +113,7 @@ const char* ffDetectPhysicalMemory(FFlist* result)
             }
         }
 
-        // https://github.com/fastfetch-cli/fastfetch/issues/1051#issuecomment-2206687345
+        // https://github.com/neurofetch-cli/neurofetch/issues/1051#issuecomment-2206687345
         const char* lbank = ffSmbiosLocateString(strings, data->BankLocator);
         const char* ldevice = ffSmbiosLocateString(strings, data->DeviceLocator);
         if (lbank && ldevice)

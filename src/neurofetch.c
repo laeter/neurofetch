@@ -1,4 +1,4 @@
-#include "fastfetch.h"
+#include "neurofetch.h"
 #include "common/commandoption.h"
 #include "common/init.h"
 #include "common/io/io.h"
@@ -7,7 +7,7 @@
 #include "logo/logo.h"
 #include "util/stringUtils.h"
 #include "util/mallocHelper.h"
-#include "fastfetch_datatext.h"
+#include "neurofetch_datatext.h"
 
 #include <stdlib.h>
 #include <ctype.h>
@@ -68,7 +68,7 @@ static void printCommandFormatHelp(const char* command)
                 FF_STRBUF_AUTO_DESTROY variable = ffStrbufCreate();
                 printf("-- In config file: { \"type\": \"%s\", \"format\": \"{<format-variable>}\" }\n", type.chars);
                 printf("Sets the format string for %s output.\n", baseInfo->name);
-                puts("To see how a format string is constructed, take a look at https://github.com/fastfetch-cli/fastfetch/wiki/Format-String-Guide.");
+                puts("To see how a format string is constructed, take a look at https://github.com/neurofetch-cli/neurofetch/wiki/Format-String-Guide.");
                 puts("The following variables are passed:");
 
                 for (unsigned i = 0; i < baseInfo->formatArgs.count; i++)
@@ -89,13 +89,13 @@ static void printCommandFormatHelp(const char* command)
 
 static void printFullHelp()
 {
-    fputs("Fastfetch is a neofetch-like tool for fetching system information and displaying them in a pretty way\n\n", stdout);
+    fputs("Neurofetch is a fastfetch-based tool for fetching system information and displaying them in a pretty way\n\n", stdout);
     if (!instance.config.display.pipe)
-        fputs("\e[1;4mUsage:\e[m \e[1mfastfetch\e[m \e[3m<?options>\e[m\n\n", stdout);
+        fputs("\e[1;4mUsage:\e[m \e[1mneurofetch\e[m \e[3m<?options>\e[m\n\n", stdout);
     else
-        fputs("Usage: fastfetch <?options>\n\n", stdout);
+        fputs("Usage: neurofetch <?options>\n\n", stdout);
 
-    yyjson_doc* doc = yyjson_read(FASTFETCH_DATATEXT_JSON_HELP, strlen(FASTFETCH_DATATEXT_JSON_HELP), YYJSON_READ_NOFLAG);
+    yyjson_doc* doc = yyjson_read(NEUROFETCH_DATATEXT_JSON_HELP, strlen(NEUROFETCH_DATATEXT_JSON_HELP), YYJSON_READ_NOFLAG);
     assert(doc);
     yyjson_val *groupKey, *flagArr;
     size_t groupIdx, groupMax;
@@ -188,12 +188,12 @@ Command flags are not case sensitive. E.g. `--print-logos` is equal to `--Print-
 If a value starts with a ?, it is optional. An optional boolean value defaults to true if not specified.\n\
 More detailed help messages for each options can be printed with `-h <option_without_dash_prefix>`\n\
 For detailed information on logo options, module configuration, and formatting, visit:\n\
-      https://github.com/fastfetch-cli/fastfetch/wiki/Configuration");
+      https://github.com/neurofetch-cli/neurofetch/wiki/Configuration");
 }
 
 static bool printSpecificCommandHelp(const char* command)
 {
-    yyjson_doc* doc = yyjson_read(FASTFETCH_DATATEXT_JSON_HELP, strlen(FASTFETCH_DATATEXT_JSON_HELP), YYJSON_READ_NOFLAG);
+    yyjson_doc* doc = yyjson_read(NEUROFETCH_DATATEXT_JSON_HELP, strlen(NEUROFETCH_DATATEXT_JSON_HELP), YYJSON_READ_NOFLAG);
     assert(doc);
     yyjson_val *groupKey, *flagArr;
     size_t groupIdx, groupMax;
@@ -249,7 +249,7 @@ static bool printSpecificCommandHelp(const char* command)
                     if (defaultKey)
                     {
                         if (ffStrEqualsIgnCase(yyjson_get_str(typeKey), "structure"))
-                            printf("%10s: %s\n", "Default", FASTFETCH_DATATEXT_STRUCTURE);
+                            printf("%10s: %s\n", "Default", NEUROFETCH_DATATEXT_STRUCTURE);
                         else if (yyjson_is_bool(defaultKey))
                             printf("%10s: %s\n", "Default", yyjson_get_bool(defaultKey) ? "true" : "false");
                         else if (yyjson_is_num(defaultKey))
@@ -318,7 +318,7 @@ static void listAvailablePresets(bool pretty)
 {
     FF_LIST_FOR_EACH(FFstrbuf, path, instance.state.platform.dataDirs)
     {
-        ffStrbufAppendS(path, "fastfetch/presets/");
+        ffStrbufAppendS(path, "neurofetch/presets/");
         ffListFilesRecursively(path->chars, pretty);
     }
 
@@ -335,7 +335,7 @@ static void listAvailableLogos(void)
 {
     FF_LIST_FOR_EACH(FFstrbuf, path, instance.state.platform.dataDirs)
     {
-        ffStrbufAppendS(path, "fastfetch/logos/");
+        ffStrbufAppendS(path, "neurofetch/logos/");
         ffListFilesRecursively(path->chars, true);
     }
 }
@@ -345,8 +345,8 @@ static void listConfigPaths(void)
     FF_LIST_FOR_EACH(FFstrbuf, folder, instance.state.platform.configDirs)
     {
         bool exists = false;
-        uint32_t length = folder->length + (uint32_t) strlen("fastfetch") + 1 /* trailing slash */;
-        ffStrbufAppendS(folder, "fastfetch/config.jsonc");
+        uint32_t length = folder->length + (uint32_t) strlen("neurofetch") + 1 /* trailing slash */;
+        ffStrbufAppendS(folder, "neurofetch/config.jsonc");
         exists = ffPathExists(folder->chars, FF_PATHTYPE_FILE);
         ffStrbufSubstrBefore(folder, length);
         printf("%s%s\n", folder->chars, exists ? " (*)" : "");
@@ -357,7 +357,7 @@ static void listDataPaths(void)
 {
     FF_LIST_FOR_EACH(FFstrbuf, folder, instance.state.platform.dataDirs)
     {
-        ffStrbufAppendS(folder, "fastfetch/");
+        ffStrbufAppendS(folder, "neurofetch/");
         puts(folder->chars);
     }
 }
@@ -442,7 +442,7 @@ static void generateConfigFile(bool force, const char* filePath, bool fullConfig
         }
 
         ffStrbufSet(&instance.state.genConfigPath, FF_LIST_GET(FFstrbuf, instance.state.platform.configDirs, 0));
-        ffStrbufAppendS(&instance.state.genConfigPath, "fastfetch/config.jsonc");
+        ffStrbufAppendS(&instance.state.genConfigPath, "neurofetch/config.jsonc");
     }
     else
     {
@@ -506,7 +506,7 @@ static void optionParseConfigFile(FFdata* data, const char* key, const char* val
     FF_LIST_FOR_EACH(FFstrbuf, path, instance.state.platform.dataDirs)
     {
         ffStrbufSet(&absolutePath, path);
-        ffStrbufAppendS(&absolutePath, "fastfetch/presets/");
+        ffStrbufAppendS(&absolutePath, "neurofetch/presets/");
         ffStrbufAppendS(&absolutePath, value);
         if (needExtension)
             ffStrbufAppendS(&absolutePath, ".jsonc");
@@ -514,7 +514,7 @@ static void optionParseConfigFile(FFdata* data, const char* key, const char* val
         if (parseJsoncFile(absolutePath.chars, flag)) return;
     }
 
-    //Try to load as a relative path with the directory of fastfetch binary
+    //Try to load as a relative path with the directory of neurofetch binary
 
     if (instance.state.platform.exePath.length)
     {
@@ -578,7 +578,7 @@ static void parseCommand(FFdata* data, char* key, char* value)
     }
     if(ffStrEqualsIgnCase(key, "--help-raw"))
     {
-        puts(FASTFETCH_DATATEXT_JSON_HELP);
+        puts(NEUROFETCH_DATATEXT_JSON_HELP);
         exit(0);
     }
     else if(ffStrEqualsIgnCase(key, "-v") || ffStrEqualsIgnCase(key, "--version"))
@@ -588,14 +588,14 @@ static void parseCommand(FFdata* data, char* key, char* value)
     }
     else if(ffStrEqualsIgnCase(key, "--version-raw"))
     {
-        puts(FASTFETCH_PROJECT_VERSION);
+        puts(NEUROFETCH_PROJECT_VERSION);
         exit(0);
     }
     else if(ffStrStartsWithIgnCase(key, "--print-"))
     {
         const char* subkey = key + strlen("--print-");
         if(ffStrEndsWithIgnCase(subkey, "structure"))
-            puts(FASTFETCH_DATATEXT_STRUCTURE);
+            puts(NEUROFETCH_DATATEXT_STRUCTURE);
         else if(ffStrEqualsIgnCase(subkey, "logos"))
             ffLogoBuiltinPrint();
         else
@@ -706,12 +706,12 @@ static void parseConfigFiles(void)
         {
             uint32_t dirLength = dir->length;
 
-            ffStrbufAppendS(dir, "fastfetch/config.jsonc");
+            ffStrbufAppendS(dir, "neurofetch/config.jsonc");
             bool success = parseJsoncFile(dir->chars, YYJSON_READ_ALLOW_COMMENTS | YYJSON_READ_ALLOW_TRAILING_COMMAS);
             ffStrbufSubstrBefore(dir, dirLength);
             if (success) return;
 
-            ffStrbufAppendS(dir, "fastfetch/config.json5");
+            ffStrbufAppendS(dir, "neurofetch/config.json5");
             success = parseJsoncFile(dir->chars, YYJSON_READ_JSON5);
             ffStrbufSubstrBefore(dir, dirLength);
             if (success) return;
@@ -758,7 +758,7 @@ static void run(FFdata* data)
     {
         //If we don't have a custom structure, use the default one
         if(data->structure.length == 0)
-            ffStrbufAppendS(&data->structure, FASTFETCH_DATATEXT_STRUCTURE); // Cannot use `ffStrbufSetStatic` here because we will modify the string
+            ffStrbufAppendS(&data->structure, NEUROFETCH_DATATEXT_STRUCTURE); // Cannot use `ffStrbufSetStatic` here because we will modify the string
         ffPrepareCommandOption(data);
     }
 
@@ -786,7 +786,7 @@ static void writeConfigFile(FFdata* data)
     yyjson_mut_doc* doc = yyjson_mut_doc_new(NULL);
     yyjson_mut_val* root = yyjson_mut_obj(doc);
     yyjson_mut_doc_set_root(doc, root);
-    yyjson_mut_obj_add_str(doc, root, "$schema", "https://github.com/fastfetch-cli/fastfetch/raw/master/doc/json_schema.json");
+    yyjson_mut_obj_add_str(doc, root, "$schema", "https://github.com/neurofetch-cli/neurofetch/raw/master/doc/json_schema.json");
 
     if (instance.state.fullConfig)
     {
@@ -811,7 +811,7 @@ static void writeConfigFile(FFdata* data)
         {
             printf("✓ Configuration file generated: `%s`\n"
                    "* Tip: Use a JSON schema-aware editor for better editing experience\n"
-                   "* Documentation: https://github.com/fastfetch-cli/fastfetch/wiki/Configuration\n", filename->chars);
+                   "* Documentation: https://github.com/neurofetch-cli/neurofetch/wiki/Configuration\n", filename->chars);
         }
         else
         {
@@ -828,7 +828,7 @@ int main(int argc, char** argv)
     ffInitInstance();
     atexit(ffDestroyInstance);
 
-    //Data stores things only needed for the configuration of fastfetch
+    //Data stores things only needed for the configuration of neurofetch
     FFdata data = {
         .structure = ffStrbufCreate(),
         .configLoaded = false,

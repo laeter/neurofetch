@@ -3,7 +3,7 @@
 #include "common/printing.h"
 #include "common/time.h"
 #include "common/jsonconfig.h"
-#include "fastfetch_datatext.h"
+#include "neurofetch_datatext.h"
 #include "modules/modules.h"
 #include "util/stringUtils.h"
 
@@ -62,7 +62,7 @@ bool ffParseModuleOptions(const char* key, const char* value)
             fprintf(stderr, "Error: Unsupported module option: %s\n", key);
             fputs("       Support of module options has been removed. Please add the flag to the JSON config instead.\n", stderr);
             fprintf(stderr, "       Example (demonstration only): `{ \"modules\": [ { \"type\": \"%s\", \"%s\": %s%s%s } ] }`\n", moduleName.chars, jsonKey.chars, value ? "\"" : "", value ? value : "true", value ? "\"" : "");
-            fputs("       See <https://github.com/fastfetch-cli/fastfetch/wiki/Configuration> for more information.\n", stderr);
+            fputs("       See <https://github.com/neurofetch-cli/neurofetch/wiki/Configuration> for more information.\n", stderr);
             exit(477);
         }
     }
@@ -216,7 +216,7 @@ void ffMigrateCommandOptionToJsonc(FFdata* data, yyjson_mut_doc* jsonDoc)
 {
     //If we don't have a custom structure, use the default one
     if(data->structure.length == 0)
-        ffStrbufAppendS(&data->structure, FASTFETCH_DATATEXT_STRUCTURE); // Cannot use `ffStrbufSetStatic` here because we will modify the string
+        ffStrbufAppendS(&data->structure, NEUROFETCH_DATATEXT_STRUCTURE); // Cannot use `ffStrbufSetStatic` here because we will modify the string
 
     //Parse the structure and call the modules
     uint32_t startIndex = 0;

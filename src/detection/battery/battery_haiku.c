@@ -1,4 +1,4 @@
-#include "fastfetch.h"
+#include "neurofetch.h"
 #include "battery.h"
 #include "common/io/io.h"
 

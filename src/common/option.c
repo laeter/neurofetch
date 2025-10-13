@@ -1,4 +1,4 @@
-#include "fastfetch.h"
+#include "neurofetch.h"
 #include "common/option.h"
 #include "common/color.h"
 #include "util/stringUtils.h"

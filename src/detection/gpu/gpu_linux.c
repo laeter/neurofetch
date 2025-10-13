@@ -116,12 +116,12 @@ static const char* drmDetectAmdSpecific(const FFGPUOptions* options, FFGPUResult
         return ffDrmDetectAmdgpu(options, gpu, buffer->chars);
         #else
         FF_UNUSED(options, gpu, drmKey, buffer);
-        return "Fastfetch is not compiled with libdrm_amdgpu support";
+        return "Neurofetch is not compiled with libdrm_amdgpu support";
         #endif
     }
     #else
     FF_UNUSED(gpu, drmKey, buffer);
-    return "Fastfetch is not compiled with drm support";
+    return "Neurofetch is not compiled with drm support";
     #endif
 }
 
@@ -259,7 +259,7 @@ static const char* drmDetectIntelSpecific(FFGPUResult* gpu, const char* drmKey, 
     return "Unknown Intel GPU driver";
     #else
     FF_UNUSED(gpu, drmKey, buffer);
-    return "Fastfetch is not compiled with drm support";
+    return "Neurofetch is not compiled with drm support";
     #endif
 }
 
@@ -302,7 +302,7 @@ static const char* drmDetectNouveauSpecific(FFGPUResult* gpu, const char* drmKey
     return ffDrmDetectNouveau(gpu, fd);
     #else
     FF_UNUSED(gpu, drmKey, buffer);
-    return "Fastfetch is not compiled with drm support";
+    return "Neurofetch is not compiled with drm support";
     #endif
 }
 

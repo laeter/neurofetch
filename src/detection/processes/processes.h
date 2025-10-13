@@ -1,5 +1,5 @@
 #pragma once
 
-#include "fastfetch.h"
+#include "neurofetch.h"
 
 const char* ffDetectProcesses(uint32_t* result);

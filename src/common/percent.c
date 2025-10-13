@@ -1,4 +1,4 @@
-#include "fastfetch.h"
+#include "neurofetch.h"
 #include "common/percent.h"
 #include "common/color.h"
 #include "common/option.h"
@@ -161,7 +161,7 @@ void ffPercentAppendBar(FFstrbuf* buffer, double percent, FFPercentageModuleConf
 
     if(!options->pipe && (options->barColorElapsed.length > 0 || options->barColorTotal.length > 0 || options->barColorBorder.length > 0))
     {
-        ffStrbufAppendS(buffer, FASTFETCH_TEXT_MODIFIER_RESET);
+        ffStrbufAppendS(buffer, NEUROFETCH_TEXT_MODIFIER_RESET);
         appendOutputColor(buffer, module);
     }
 }
@@ -211,7 +211,7 @@ void ffPercentAppendNum(FFstrbuf* buffer, double percent, FFPercentageModuleConf
 
     if (colored && !options->pipe)
     {
-        ffStrbufAppendS(buffer, FASTFETCH_TEXT_MODIFIER_RESET);
+        ffStrbufAppendS(buffer, NEUROFETCH_TEXT_MODIFIER_RESET);
         appendOutputColor(buffer, module);
     }
 

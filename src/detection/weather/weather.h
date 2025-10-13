@@ -1,6 +1,6 @@
 #pragma once
 
-#include "fastfetch.h"
+#include "neurofetch.h"
 #include "modules/weather/option.h"
 
 void ffPrepareWeather(FFWeatherOptions* options);

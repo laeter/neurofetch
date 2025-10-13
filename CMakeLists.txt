@@ -1,10 +1,10 @@
 cmake_minimum_required(VERSION 3.12.0) # target_link_libraries with OBJECT libs & project homepage url
 
-project(fastfetch
+project(neurofetch
     VERSION 2.53.0
     LANGUAGES C
-    DESCRIPTION "Fast neofetch-like system information tool"
-    HOMEPAGE_URL "https://github.com/fastfetch-cli/fastfetch"
+    DESCRIPTION "Neuro-sama themed system information tool"
+    HOMEPAGE_URL "https://github.com/yourusername/neurofetch"
 )
 
 set(PROJECT_LICENSE "MIT license")
@@ -96,19 +96,19 @@ cmake_dependent_option(ENABLE_LIBZFS "Enable libzfs" ON "LINUX OR FreeBSD OR Sun
 cmake_dependent_option(ENABLE_PCIACCESS "Enable libpciaccess" ON "NetBSD OR OpenBSD" OFF)
 
 option(ENABLE_ZLIB "Enable zlib" ON)
-option(ENABLE_SYSTEM_YYJSON "Use system provided (instead of fastfetch embedded) yyjson library" OFF)
-option(ENABLE_ASAN "Build fastfetch with ASAN (address sanitizer)" OFF)
+option(ENABLE_SYSTEM_YYJSON "Use system provided (instead of neurofetch embedded) yyjson library" OFF)
+option(ENABLE_ASAN "Build neurofetch with ASAN (address sanitizer)" OFF)
 option(ENABLE_LTO "Enable link-time optimization in release mode if supported" ON)
 option(BUILD_FLASHFETCH "Build flashfetch" ON) # Also build the flashfetch binary
 option(BUILD_TESTS "Build tests" OFF) # Also create test executables
 option(SET_TWEAK "Add tweak to project version" ON) # This is set to off by github actions for release builds
 option(IS_MUSL "Build with musl libc" OFF) # Used by Github Actions
 option(INSTALL_LICENSE "Install license into /usr/share/licenses" ON)
-option(ENABLE_EMBEDDED_PCIIDS "Embed pci.ids into fastfetch, requires `python`" OFF)
-option(ENABLE_EMBEDDED_AMDGPUIDS "Embed amdgpu.ids into fastfetch, requires `python`" OFF)
+option(ENABLE_EMBEDDED_PCIIDS "Embed pci.ids into neurofetch, requires `python`" OFF)
+option(ENABLE_EMBEDDED_AMDGPUIDS "Embed amdgpu.ids into neurofetch, requires `python`" OFF)
 
 set(BINARY_LINK_TYPE_OPTIONS dlopen dynamic static)
-set(BINARY_LINK_TYPE dlopen CACHE STRING "How to link fastfetch")
+set(BINARY_LINK_TYPE dlopen CACHE STRING "How to link neurofetch")
 set_property(CACHE BINARY_LINK_TYPE PROPERTY STRINGS ${BINARY_LINK_TYPE_OPTIONS})
 if(NOT BINARY_LINK_TYPE IN_LIST BINARY_LINK_TYPE_OPTIONS)
     message(FATAL_ERROR "BINARY_LINK_TYPE must be one of ${BINARY_LINK_TYPE_OPTIONS}")
@@ -165,13 +165,13 @@ elseif(APPLE AND CMAKE_C_COMPILER_ID MATCHES "Clang")
     set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -fobjc-arc")
 endif()
 
-set(FASTFETCH_FLAGS_DEBUG "-fno-omit-frame-pointer")
+set(NEUROFETCH_FLAGS_DEBUG "-fno-omit-frame-pointer")
 if(ENABLE_ASAN)
     message(STATUS "Address sanitizer enabled (DEBUG only)")
-    set(FASTFETCH_FLAGS_DEBUG "${FASTFETCH_FLAGS_DEBUG} -fsanitize=address")
+    set(NEUROFETCH_FLAGS_DEBUG "${NEUROFETCH_FLAGS_DEBUG} -fsanitize=address")
 endif()
-set(CMAKE_C_FLAGS_DEBUG "${CMAKE_C_FLAGS_DEBUG} ${FASTFETCH_FLAGS_DEBUG}")
-set(CMAKE_EXE_LINKER_FLAGS_DEBUG "${CMAKE_EXE_LINKER_FLAGS_DEBUG} ${FASTFETCH_FLAGS_DEBUG} -fstack-protector-all -fno-delete-null-pointer-checks")
+set(CMAKE_C_FLAGS_DEBUG "${CMAKE_C_FLAGS_DEBUG} ${NEUROFETCH_FLAGS_DEBUG}")
+set(CMAKE_EXE_LINKER_FLAGS_DEBUG "${CMAKE_EXE_LINKER_FLAGS_DEBUG} ${NEUROFETCH_FLAGS_DEBUG} -fstack-protector-all -fno-delete-null-pointer-checks")
 if(NOT WIN32)
     set(CMAKE_EXE_LINKER_FLAGS_DEBUG "${CMAKE_EXE_LINKER_FLAGS_DEBUG} -rdynamic")
 endif()
@@ -253,19 +253,19 @@ endif()
 # Text data #
 #############
 
-function(fastfetch_encode_c_string STR OUTVAR)
+function(neurofetch_encode_c_string STR OUTVAR)
     string(REGEX REPLACE "\n$" "" TEMP "${STR}")  # Remove trailing newline
     string(REPLACE "\\" "\\\\" TEMP "${TEMP}")    # Escape backslashes
     string(REPLACE "\n" "\\n" TEMP "${TEMP}")     # Replace newlines with \n
     string(REPLACE "\"" "\\\"" TEMP "${TEMP}")    # Replace quotes with \"
     set(${OUTVAR} "\"${TEMP}\"" PARENT_SCOPE)
-endfunction(fastfetch_encode_c_string)
+endfunction(neurofetch_encode_c_string)
 
-function(fastfetch_load_text FILENAME OUTVAR)
+function(neurofetch_load_text FILENAME OUTVAR)
     file(READ "${FILENAME}" TEMP)
-    fastfetch_encode_c_string("${TEMP}" TEMP)
+    neurofetch_encode_c_string("${TEMP}" TEMP)
     set(${OUTVAR} "${TEMP}" PARENT_SCOPE)
-endfunction(fastfetch_load_text)
+endfunction(neurofetch_load_text)
 
 find_package(Python)
 if(Python_FOUND)
@@ -281,65 +281,65 @@ else()
     file(READ "src/data/help.json" DATATEXT_JSON_HELP)
 endif()
 
-if(ENABLE_EMBEDDED_PCIIDS AND NOT EXISTS "${PROJECT_BINARY_DIR}/fastfetch_pciids.c.inc")
+if(ENABLE_EMBEDDED_PCIIDS AND NOT EXISTS "${PROJECT_BINARY_DIR}/neurofetch_pciids.c.inc")
     if(Python_FOUND)
         if(NOT EXISTS "${PROJECT_BINARY_DIR}/pci.ids")
             message(STATUS "'${PROJECT_BINARY_DIR}/pci.ids' is missing, downloading...")
             file(DOWNLOAD "https://pci-ids.ucw.cz/v2.2/pci.ids" "${PROJECT_BINARY_DIR}/pci.ids")
         endif()
-        message(STATUS "Generating 'fastfetch_pciids.c.inc'")
+        message(STATUS "Generating 'neurofetch_pciids.c.inc'")
         execute_process(COMMAND ${Python_EXECUTABLE} "${CMAKE_CURRENT_SOURCE_DIR}/scripts/gen-pciids.py" "${PROJECT_BINARY_DIR}/pci.ids"
-                        OUTPUT_FILE "${PROJECT_BINARY_DIR}/fastfetch_pciids.c.inc"
+                        OUTPUT_FILE "${PROJECT_BINARY_DIR}/neurofetch_pciids.c.inc"
                         RESULT_VARIABLE PYTHON_PCIIDS_RETCODE)
         if(NOT PYTHON_PCIIDS_RETCODE EQUAL 0)
-            file(REMOVE "${PROJECT_BINARY_DIR}/fastfetch_pciids.c.inc")
-            message(FATAL_ERROR "Failed to generate 'fastfetch_pciids.c.inc'")
+            file(REMOVE "${PROJECT_BINARY_DIR}/neurofetch_pciids.c.inc")
+            message(FATAL_ERROR "Failed to generate 'neurofetch_pciids.c.inc'")
         endif()
     else()
-        message(WARNING "Python3 is not found, 'fastfetch_pciids.c.inc' will not be generated")
+        message(WARNING "Python3 is not found, 'neurofetch_pciids.c.inc' will not be generated")
         set(ENABLE_EMBEDDED_PCIIDS OFF)
     endif()
 endif()
 
-if(ENABLE_EMBEDDED_AMDGPUIDS AND NOT EXISTS "${PROJECT_BINARY_DIR}/fastfetch_amdgpuids.c.inc")
+if(ENABLE_EMBEDDED_AMDGPUIDS AND NOT EXISTS "${PROJECT_BINARY_DIR}/neurofetch_amdgpuids.c.inc")
     if(Python_FOUND)
         if(NOT EXISTS "${PROJECT_BINARY_DIR}/amdgpu.ids")
             message(STATUS "'${PROJECT_BINARY_DIR}/amdgpu.ids' is missing, downloading...")
             file(DOWNLOAD "https://gitlab.freedesktop.org/mesa/drm/-/raw/main/data/amdgpu.ids" "${PROJECT_BINARY_DIR}/amdgpu.ids")
         endif()
-        message(STATUS "Generating 'fastfetch_amdgpuids.c.inc'")
+        message(STATUS "Generating 'neurofetch_amdgpuids.c.inc'")
         execute_process(COMMAND ${Python_EXECUTABLE} "${CMAKE_CURRENT_SOURCE_DIR}/scripts/gen-amdgpuids.py" "${PROJECT_BINARY_DIR}/amdgpu.ids"
-                        OUTPUT_FILE "${PROJECT_BINARY_DIR}/fastfetch_amdgpuids.c.inc"
+                        OUTPUT_FILE "${PROJECT_BINARY_DIR}/neurofetch_amdgpuids.c.inc"
                         RESULT_VARIABLE PYTHON_AMDGPUIDS_RETCODE)
         if(NOT PYTHON_AMDGPUIDS_RETCODE EQUAL 0)
-            file(REMOVE "${PROJECT_BINARY_DIR}/fastfetch_amdgpuids.c.inc")
-            message(FATAL_ERROR "Failed to generate 'fastfetch_amdgpuids.c.inc'")
+            file(REMOVE "${PROJECT_BINARY_DIR}/neurofetch_amdgpuids.c.inc")
+            message(FATAL_ERROR "Failed to generate 'neurofetch_amdgpuids.c.inc'")
         endif()
     else()
-        message(WARNING "Python3 is not found, 'fastfetch_amdgpuids.c.inc' will not be generated")
+        message(WARNING "Python3 is not found, 'neurofetch_amdgpuids.c.inc' will not be generated")
         set(ENABLE_EMBEDDED_AMDGPUIDS OFF)
     endif()
 endif()
 
 if(Python_FOUND)
-    message(STATUS "Generating 'fastfetch.1'")
+    message(STATUS "Generating 'neurofetch.1'")
     execute_process(COMMAND ${Python_EXECUTABLE} "${CMAKE_CURRENT_SOURCE_DIR}/scripts/gen-man.py"
-                    OUTPUT_FILE "${PROJECT_BINARY_DIR}/fastfetch.1"
+                    OUTPUT_FILE "${PROJECT_BINARY_DIR}/neurofetch.1"
                     RESULT_VARIABLE PYTHON_MANPAGE_RETCODE)
         if(NOT PYTHON_MANPAGE_RETCODE EQUAL 0)
-            message(FATAL_ERROR "Failed to generate 'fastfetch.1'")
+            message(FATAL_ERROR "Failed to generate 'neurofetch.1'")
         endif()
 else()
-    message(WARNING "Python3 is not found, use basic 'fastfetch.1.in' instead")
-    string(TIMESTAMP FASTFETCH_BUILD_DATE "%d %B %Y" UTC)
-    configure_file(doc/fastfetch.1.in fastfetch.1 @ONLY)
+    message(WARNING "Python3 is not found, use basic 'neurofetch.1.in' instead")
+    string(TIMESTAMP NEUROFETCH_BUILD_DATE "%d %B %Y" UTC)
+    configure_file(doc/neurofetch.1.in neurofetch.1 @ONLY)
 endif()
 
-fastfetch_encode_c_string("${DATATEXT_JSON_HELP}" DATATEXT_JSON_HELP)
-fastfetch_load_text(src/data/structure.txt DATATEXT_STRUCTURE)
+neurofetch_encode_c_string("${DATATEXT_JSON_HELP}" DATATEXT_JSON_HELP)
+neurofetch_load_text(src/data/structure.txt DATATEXT_STRUCTURE)
 
-configure_file(src/fastfetch_config.h.in fastfetch_config.h @ONLY)
-configure_file(src/fastfetch_datatext.h.in fastfetch_datatext.h @ONLY)
+configure_file(src/neurofetch_config.h.in neurofetch_config.h @ONLY)
+configure_file(src/neurofetch_datatext.h.in neurofetch_datatext.h @ONLY)
 if(APPLE)
     configure_file(src/util/apple/Info.plist.in Info.plist @ONLY)
 endif()
@@ -351,18 +351,18 @@ endif()
 file(GLOB LOGO_FILES CONFIGURE_DEPENDS "src/logo/ascii/*.txt")
 set(LOGO_BUILTIN_H "#pragma once\n#pragma GCC diagnostic ignored \"-Wtrigraphs\"\n\n")
 foreach(file ${LOGO_FILES})
-    fastfetch_load_text("${file}" content)
+    neurofetch_load_text("${file}" content)
     get_filename_component(file "${file}" NAME_WE)
     string(TOUPPER "${file}" file)
-    set(LOGO_BUILTIN_H "${LOGO_BUILTIN_H}#define FASTFETCH_DATATEXT_LOGO_${file} ${content}\n")
+    set(LOGO_BUILTIN_H "${LOGO_BUILTIN_H}#define NEUROFETCH_DATATEXT_LOGO_${file} ${content}\n")
 endforeach()
 file(GENERATE OUTPUT logo_builtin.h CONTENT "${LOGO_BUILTIN_H}")
 
 #######################
-# libfastfetch target #
+# libneurofetch target #
 #######################
 
-set(LIBFASTFETCH_SRC
+set(LIBNEUROFETCH_SRC
     src/common/commandoption.c
     src/common/duration.c
     src/common/font.c
@@ -500,7 +500,7 @@ set(LIBFASTFETCH_SRC
 )
 
 if(LINUX)
-    list(APPEND LIBFASTFETCH_SRC
+    list(APPEND LIBNEUROFETCH_SRC
         src/common/dbus.c
         src/common/io/io_unix.c
         src/common/netif/netif_linux.c
@@ -585,7 +585,7 @@ if(LINUX)
         src/util/binary_linux.c
     )
 elseif(ANDROID)
-    list(APPEND LIBFASTFETCH_SRC
+    list(APPEND LIBNEUROFETCH_SRC
         src/common/dbus.c
         src/common/io/io_unix.c
         src/common/netif/netif_linux.c
@@ -659,7 +659,7 @@ elseif(ANDROID)
         src/util/binary_linux.c
     )
 elseif(FreeBSD)
-    list(APPEND LIBFASTFETCH_SRC
+    list(APPEND LIBNEUROFETCH_SRC
         src/common/dbus.c
         src/common/io/io_unix.c
         src/common/netif/netif_bsd.c
@@ -742,18 +742,18 @@ elseif(FreeBSD)
         src/util/binary_linux.c
     )
     if(DragonFly)
-        list(APPEND LIBFASTFETCH_SRC
+        list(APPEND LIBNEUROFETCH_SRC
             src/detection/bluetooth/bluetooth_nosupport.c
             src/detection/wifi/wifi_nosupport.c
         )
     else()
-        list(APPEND LIBFASTFETCH_SRC
+        list(APPEND LIBNEUROFETCH_SRC
             src/detection/bluetooth/bluetooth_bsd.c
             src/detection/wifi/wifi_bsd.c
         )
     endif()
 elseif(NetBSD)
-    list(APPEND LIBFASTFETCH_SRC
+    list(APPEND LIBNEUROFETCH_SRC
         src/common/dbus.c
         src/common/io/io_unix.c
         src/common/netif/netif_bsd.c
@@ -836,7 +836,7 @@ elseif(NetBSD)
         src/util/binary_linux.c
     )
 elseif(OpenBSD)
-    list(APPEND LIBFASTFETCH_SRC
+    list(APPEND LIBNEUROFETCH_SRC
         src/common/dbus.c
         src/common/io/io_unix.c
         src/common/netif/netif_bsd.c
@@ -920,7 +920,7 @@ elseif(OpenBSD)
         src/util/smbiosHelper.c
     )
 elseif(APPLE)
-    list(APPEND LIBFASTFETCH_SRC
+    list(APPEND LIBNEUROFETCH_SRC
         src/common/io/io_unix.c
         src/common/netif/netif_apple.c
         src/common/networking/networking_linux.c
@@ -992,7 +992,7 @@ elseif(APPLE)
         src/util/binary_apple.c
     )
 elseif(WIN32)
-    list(APPEND LIBFASTFETCH_SRC
+    list(APPEND LIBNEUROFETCH_SRC
         src/common/io/io_windows.c
         src/common/netif/netif_windows.c
         src/common/networking/networking_windows.c
@@ -1066,7 +1066,7 @@ elseif(WIN32)
         src/util/debug_windows.c
     )
 elseif(SunOS)
-    list(APPEND LIBFASTFETCH_SRC
+    list(APPEND LIBNEUROFETCH_SRC
         src/common/dbus.c
         src/common/io/io_unix.c
         src/common/netif/netif_apple.c
@@ -1148,7 +1148,7 @@ elseif(SunOS)
         src/util/binary_linux.c
     )
 elseif(Haiku)
-    list(APPEND LIBFASTFETCH_SRC
+    list(APPEND LIBNEUROFETCH_SRC
         src/common/dbus.c
         src/common/io/io_unix.c
         src/common/netif/netif_haiku.c
@@ -1218,7 +1218,7 @@ elseif(Haiku)
         src/util/haiku/version.cpp
     )
 elseif(GNU)
-    list(APPEND LIBFASTFETCH_SRC
+    list(APPEND LIBNEUROFETCH_SRC
         src/common/dbus.c
         src/common/io/io_unix.c
         src/common/netif/netif_gnu.c
@@ -1300,22 +1300,22 @@ endif()
 
 if(ENABLE_DIRECTX_HEADERS)
     message(STATUS "Enabling DirectX headers for WSL")
-    list(APPEND LIBFASTFETCH_SRC src/detection/gpu/gpu_wsl.cpp)
+    list(APPEND LIBNEUROFETCH_SRC src/detection/gpu/gpu_wsl.cpp)
 endif()
 
 # Proprietary GPU driver APIs
 if(LINUX OR FreeBSD OR WIN32)
-    list(APPEND LIBFASTFETCH_SRC src/detection/gpu/gpu_nvidia.c)
-    list(APPEND LIBFASTFETCH_SRC src/detection/gpu/gpu_mthreads.c)
+    list(APPEND LIBNEUROFETCH_SRC src/detection/gpu/gpu_nvidia.c)
+    list(APPEND LIBNEUROFETCH_SRC src/detection/gpu/gpu_mthreads.c)
 endif()
 if(WIN32)
-    list(APPEND LIBFASTFETCH_SRC src/detection/gpu/gpu_intel.c)
-    list(APPEND LIBFASTFETCH_SRC src/detection/gpu/gpu_amd.c)
+    list(APPEND LIBNEUROFETCH_SRC src/detection/gpu/gpu_intel.c)
+    list(APPEND LIBNEUROFETCH_SRC src/detection/gpu/gpu_amd.c)
 endif()
 include(CheckFunctionExists)
 check_function_exists(wcwidth HAVE_WCWIDTH)
 if(NOT HAVE_WCWIDTH)
-    list(APPEND LIBFASTFETCH_SRC src/util/wcwidth.c)
+    list(APPEND LIBNEUROFETCH_SRC src/util/wcwidth.c)
 endif()
 if(NOT WIN32)
     check_function_exists(pipe2 HAVE_PIPE2)
@@ -1329,18 +1329,18 @@ if(ENABLE_SYSTEM_YYJSON)
         message(FATAL_ERROR "ENABLE_SYSTEM_YYJSON is set but system provided yyjson is not found")
     endif()
 else()
-    list(APPEND LIBFASTFETCH_SRC
+    list(APPEND LIBNEUROFETCH_SRC
         src/3rdparty/yyjson/yyjson.c
     )
 endif()
 
-add_library(libfastfetch OBJECT
-    ${LIBFASTFETCH_SRC}
+add_library(libneurofetch OBJECT
+    ${LIBNEUROFETCH_SRC}
 )
 
 if(yyjson_FOUND)
-    target_compile_definitions(libfastfetch PUBLIC FF_USE_SYSTEM_YYJSON)
-    target_link_libraries(libfastfetch PUBLIC yyjson::yyjson)
+    target_compile_definitions(libneurofetch PUBLIC FF_USE_SYSTEM_YYJSON)
+    target_link_libraries(libneurofetch PUBLIC yyjson::yyjson)
     # `target_link_libraries(yyjson::yyjson)` sets rpath implicitly
 else()
     # Used for dlopen finding dylibs installed by homebrew
@@ -1362,14 +1362,14 @@ if(LINUX AND EXISTS "/lib/ld-musl-${CMAKE_HOST_SYSTEM_PROCESSOR}.so.1")
     execute_process(COMMAND "/lib/ld-musl-${CMAKE_HOST_SYSTEM_PROCESSOR}.so.1"
                     ERROR_VARIABLE LD_MUSL_RESULT)
     if("${LD_MUSL_RESULT}" MATCHES "Version ([0-9]+\\.[0-9]+\\.[0-9]+)")
-        target_compile_definitions(libfastfetch PUBLIC FF_MUSL_VERSION="${CMAKE_MATCH_1}")
+        target_compile_definitions(libneurofetch PUBLIC FF_MUSL_VERSION="${CMAKE_MATCH_1}")
     endif()
 endif()
 if(APPLE AND EXISTS "/usr/bin/otool")
     execute_process(COMMAND /usr/bin/otool -L /usr/bin/otool
                     OUTPUT_VARIABLE OTOOL_OTOOL_RESULT)
     if("${OTOOL_OTOOL_RESULT}" MATCHES "libSystem\\.B\\.dylib \\(.*current version ([0-9]+\\.[0-9]+\\.[0-9]+)\\)")
-        target_compile_definitions(libfastfetch PUBLIC FF_LIBSYSTEM_VERSION="${CMAKE_MATCH_1}")
+        target_compile_definitions(libneurofetch PUBLIC FF_LIBSYSTEM_VERSION="${CMAKE_MATCH_1}")
     endif()
 endif()
 if(MidnightBSD AND EXISTS "/usr/bin/objdump")
@@ -1377,49 +1377,49 @@ if(MidnightBSD AND EXISTS "/usr/bin/objdump")
                     OUTPUT_VARIABLE OBJDUMP_T_RESULT)
     if("${OBJDUMP_T_RESULT}" MATCHES "FBSD_([0-9]+\\.[0-9]+)")
         message(STATUS "Found FBSD ${CMAKE_MATCH_1}")
-        target_compile_definitions(libfastfetch PUBLIC FF_FBSD_VERSION="${CMAKE_MATCH_1}")
+        target_compile_definitions(libneurofetch PUBLIC FF_FBSD_VERSION="${CMAKE_MATCH_1}")
     endif()
 elseif(FreeBSD AND EXISTS "/usr/local/bin/objdump")
     execute_process(COMMAND /bin/sh -c "/usr/local/bin/objdump -T /lib/libc.so.* | grep 'FBSD_[0-9][0-9]*\\.[0-9][0-9]*' -o | sort -Vru | head -1"
                     OUTPUT_VARIABLE OBJDUMP_T_RESULT)
     if("${OBJDUMP_T_RESULT}" MATCHES "FBSD_([0-9]+\\.[0-9]+)")
         message(STATUS "Found FBSD ${CMAKE_MATCH_1}")
-        target_compile_definitions(libfastfetch PUBLIC FF_FBSD_VERSION="${CMAKE_MATCH_1}")
+        target_compile_definitions(libneurofetch PUBLIC FF_FBSD_VERSION="${CMAKE_MATCH_1}")
     endif()
 elseif(DragonFly AND EXISTS "/usr/local/bin/objdump")
     execute_process(COMMAND /bin/sh -c "/usr/local/bin/objdump -T /lib/libc.so.* | grep 'DF[0-9][0-9]*\\.[0-9][0-9]*' -o | sort -Vru | head -1"
                     OUTPUT_VARIABLE OBJDUMP_T_RESULT)
     if("${OBJDUMP_T_RESULT}" MATCHES "DF([0-9]+\\.[0-9]+)")
         message(STATUS "Found DF ${CMAKE_MATCH_1}")
-        target_compile_definitions(libfastfetch PUBLIC FF_DF_VERSION="${CMAKE_MATCH_1}")
+        target_compile_definitions(libneurofetch PUBLIC FF_DF_VERSION="${CMAKE_MATCH_1}")
     endif()
 endif()
 
 if(LINUX)
-    target_compile_definitions(libfastfetch PUBLIC _GNU_SOURCE _XOPEN_SOURCE _ATFILE_SOURCE __STDC_WANT_LIB_EXT1__ _FILE_OFFSET_BITS=64 _TIME_BITS=64) # "$<$<CONFIG:Release>:_FORTIFY_SOURCE=3>"
+    target_compile_definitions(libneurofetch PUBLIC _GNU_SOURCE _XOPEN_SOURCE _ATFILE_SOURCE __STDC_WANT_LIB_EXT1__ _FILE_OFFSET_BITS=64 _TIME_BITS=64) # "$<$<CONFIG:Release>:_FORTIFY_SOURCE=3>"
 elseif(ANDROID)
-    target_compile_definitions(libfastfetch PUBLIC _GNU_SOURCE _XOPEN_SOURCE _FILE_OFFSET_BITS=64 "$<$<CONFIG:DEBUG>:__BIONIC_FORTIFY>" "$<$<CONFIG:DEBUG>:__BIONIC_FORTIFY_RUNTIME_CHECKS_ENABLED>")
+    target_compile_definitions(libneurofetch PUBLIC _GNU_SOURCE _XOPEN_SOURCE _FILE_OFFSET_BITS=64 "$<$<CONFIG:DEBUG>:__BIONIC_FORTIFY>" "$<$<CONFIG:DEBUG>:__BIONIC_FORTIFY_RUNTIME_CHECKS_ENABLED>")
 elseif(WIN32)
-    target_compile_definitions(libfastfetch PUBLIC _GNU_SOURCE WIN32_LEAN_AND_MEAN _WIN32_WINNT=0x0A00 NOMINMAX UNICODE) # "$<$<CONFIG:Release>:_FORTIFY_SOURCE=3>"
+    target_compile_definitions(libneurofetch PUBLIC _GNU_SOURCE WIN32_LEAN_AND_MEAN _WIN32_WINNT=0x0A00 NOMINMAX UNICODE) # "$<$<CONFIG:Release>:_FORTIFY_SOURCE=3>"
 elseif(APPLE)
-    target_compile_definitions(libfastfetch PUBLIC _GNU_SOURCE _XOPEN_SOURCE __STDC_WANT_LIB_EXT1__ _FILE_OFFSET_BITS=64 _DARWIN_C_SOURCE)
+    target_compile_definitions(libneurofetch PUBLIC _GNU_SOURCE _XOPEN_SOURCE __STDC_WANT_LIB_EXT1__ _FILE_OFFSET_BITS=64 _DARWIN_C_SOURCE)
 elseif(OpenBSD)
-    target_compile_definitions(libfastfetch PUBLIC _XOPEN_SOURCE=700 _FILE_OFFSET_BITS=64 _BSD_SOURCE)
+    target_compile_definitions(libneurofetch PUBLIC _XOPEN_SOURCE=700 _FILE_OFFSET_BITS=64 _BSD_SOURCE)
     set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -Wl,-rpath,/usr/X11R6/lib") # detect x11 lib path automatically
 elseif(DragonFly)
-    target_compile_definitions(libfastfetch PUBLIC __FreeBSD__)
+    target_compile_definitions(libneurofetch PUBLIC __FreeBSD__)
 elseif(SunOS)
-    target_compile_definitions(libfastfetch PUBLIC _GNU_SOURCE _XOPEN_SOURCE __STDC_WANT_LIB_EXT1__ _FILE_OFFSET_BITS=64 __EXTENSIONS__ _POSIX_C_SOURCE)
+    target_compile_definitions(libneurofetch PUBLIC _GNU_SOURCE _XOPEN_SOURCE __STDC_WANT_LIB_EXT1__ _FILE_OFFSET_BITS=64 __EXTENSIONS__ _POSIX_C_SOURCE)
 elseif(NetBSD)
-    target_compile_definitions(libfastfetch PUBLIC _GNU_SOURCE)
+    target_compile_definitions(libneurofetch PUBLIC _GNU_SOURCE)
     set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wno-char-subscripts")
     set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -Wl,-rpath,/usr/X11R7/lib -Wl,-rpath,/usr/pkg/lib") # ditto
 elseif(Haiku)
-    target_compile_definitions(libfastfetch PUBLIC _GNU_SOURCE)
+    target_compile_definitions(libneurofetch PUBLIC _GNU_SOURCE)
 elseif(GNU)
-    target_compile_definitions(libfastfetch PUBLIC _GNU_SOURCE)
+    target_compile_definitions(libneurofetch PUBLIC _GNU_SOURCE)
     # On Hurd PATH_MAX is not defined. Set an arbitrary limit as workaround.
-    target_compile_definitions(libfastfetch PUBLIC PATH_MAX=4096)
+    target_compile_definitions(libneurofetch PUBLIC PATH_MAX=4096)
 endif()
 
 if(FreeBSD OR OpenBSD OR NetBSD)
@@ -1427,39 +1427,39 @@ if(FreeBSD OR OpenBSD OR NetBSD)
     set(CMAKE_REQUIRED_DEFINITIONS "-D_IFI_OQDROPS=1")
     CHECK_STRUCT_HAS_MEMBER("struct if_data" ifi_oqdrops net/if.h HAVE_IFI_OQDROPS LANGUAGE C)
     if(HAVE_IFI_OQDROPS)
-    target_compile_definitions(libfastfetch PUBLIC _IFI_OQDROPS FF_HAVE_IFI_OQDROPS)
+    target_compile_definitions(libneurofetch PUBLIC _IFI_OQDROPS FF_HAVE_IFI_OQDROPS)
     endif()
     unset(CMAKE_REQUIRED_DEFINITIONS)
 endif()
 
 if(HAVE_WCWIDTH)
-    target_compile_definitions(libfastfetch PUBLIC FF_HAVE_WCWIDTH)
+    target_compile_definitions(libneurofetch PUBLIC FF_HAVE_WCWIDTH)
 endif()
 
 if(HAVE_PIPE2)
-    target_compile_definitions(libfastfetch PUBLIC FF_HAVE_PIPE2)
+    target_compile_definitions(libneurofetch PUBLIC FF_HAVE_PIPE2)
 endif()
 
 if(NOT "${CUSTOM_PCI_IDS_PATH}" STREQUAL "")
     message(STATUS "Custom file path of pci.ids: ${CUSTOM_PCI_IDS_PATH}")
-    target_compile_definitions(libfastfetch PRIVATE FF_CUSTOM_PCI_IDS_PATH=${CUSTOM_PCI_IDS_PATH})
+    target_compile_definitions(libneurofetch PRIVATE FF_CUSTOM_PCI_IDS_PATH=${CUSTOM_PCI_IDS_PATH})
 endif()
 if(NOT "${CUSTOM_AMDGPU_IDS_PATH}" STREQUAL "")
     message(STATUS "Custom file path of amdgpu.ids: ${CUSTOM_AMDGPU_IDS_PATH}")
-    target_compile_definitions(libfastfetch PRIVATE FF_CUSTOM_AMDGPU_IDS_PATH=${CUSTOM_AMDGPU_IDS_PATH})
+    target_compile_definitions(libneurofetch PRIVATE FF_CUSTOM_AMDGPU_IDS_PATH=${CUSTOM_AMDGPU_IDS_PATH})
 endif()
 if(NOT "${CUSTOM_OS_RELEASE_PATH}" STREQUAL "")
     message(STATUS "Custom file path of os_release: ${CUSTOM_OS_RELEASE_PATH}")
-    target_compile_definitions(libfastfetch PRIVATE FF_CUSTOM_OS_RELEASE_PATH=${CUSTOM_OS_RELEASE_PATH})
+    target_compile_definitions(libneurofetch PRIVATE FF_CUSTOM_OS_RELEASE_PATH=${CUSTOM_OS_RELEASE_PATH})
 endif()
 if(NOT "${CUSTOM_LSB_RELEASE_PATH}" STREQUAL "")
     message(STATUS "Custom file path of lsb_release: ${CUSTOM_LSB_RELEASE_PATH}")
-    target_compile_definitions(libfastfetch PRIVATE FF_CUSTOM_LSB_RELEASE_PATH=${CUSTOM_LSB_RELEASE_PATH})
+    target_compile_definitions(libneurofetch PRIVATE FF_CUSTOM_LSB_RELEASE_PATH=${CUSTOM_LSB_RELEASE_PATH})
 endif()
 
 if(NOT BINARY_LINK_TYPE STREQUAL "dlopen")
     message(STATUS "Enabling custom link type: ${BINARY_LINK_TYPE}")
-    target_compile_definitions(libfastfetch PRIVATE FF_DISABLE_DLOPEN=1)
+    target_compile_definitions(libneurofetch PRIVATE FF_DISABLE_DLOPEN=1)
     if(NOT WIN32)
         set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -Wl,--copy-dt-needed-entries")
     endif()
@@ -1490,18 +1490,18 @@ function(ff_lib_enable VARNAME PKGCONFIG_NAMES CMAKE_NAME)
 
     message(STATUS "Library: found ${VARNAME}")
 
-    target_compile_definitions(libfastfetch PRIVATE FF_HAVE_${VARNAME}=1)
-    target_include_directories(libfastfetch PRIVATE ${${VARNAME}_INCLUDE_DIRS})
+    target_compile_definitions(libneurofetch PRIVATE FF_HAVE_${VARNAME}=1)
+    target_include_directories(libneurofetch PRIVATE ${${VARNAME}_INCLUDE_DIRS})
 
     if(NOT BINARY_LINK_TYPE STREQUAL "dlopen")
-        target_link_directories(libfastfetch PUBLIC ${${VARNAME}_LIBRARY_DIRS})
-        target_link_libraries(libfastfetch PRIVATE ${${VARNAME}_LIBRARIES})
+        target_link_directories(libneurofetch PUBLIC ${${VARNAME}_LIBRARY_DIRS})
+        target_link_libraries(libneurofetch PRIVATE ${${VARNAME}_LIBRARIES})
     endif()
 
     foreach(FLAG ${${VARNAME}_CFLAGS_OTHER})
         if(FLAG MATCHES "-D.*")
             string(SUBSTRING ${FLAG} 2 -1 FLAG)
-            target_compile_definitions(libfastfetch PRIVATE ${FLAG})
+            target_compile_definitions(libneurofetch PRIVATE ${FLAG})
         endif()
     endforeach()
 endfunction()
@@ -1612,7 +1612,7 @@ ff_lib_enable(PCIACCESS
 # The system <libzfs.h> is only usable on SunOS. We provide our local copy of it so it's always available.
 if(ENABLE_LIBZFS)
     if(BINARY_LINK_TYPE STREQUAL "dlopen")
-        target_compile_definitions(libfastfetch PRIVATE FF_HAVE_LIBZFS=1)
+        target_compile_definitions(libneurofetch PRIVATE FF_HAVE_LIBZFS=1)
     else()
         set(CMAKE_REQUIRED_LIBRARIES_BACKUP ${CMAKE_REQUIRED_LIBRARIES})
         set(CMAKE_REQUIRED_LIBRARIES ${CMAKE_REQUIRED_LIBRARIES} zfs)
@@ -1622,40 +1622,40 @@ if(ENABLE_LIBZFS)
             message(STATUS "Library: missing: LIBZFS")
         else()
             message(STATUS "Library: found LIBZFS")
-            target_compile_definitions(libfastfetch PRIVATE FF_HAVE_LIBZFS=1)
-            target_link_libraries(libfastfetch PRIVATE zfs)
+            target_compile_definitions(libneurofetch PRIVATE FF_HAVE_LIBZFS=1)
+            target_link_libraries(libneurofetch PRIVATE zfs)
         endif()
     endif()
 endif()
 
 if(ENABLE_THREADS)
-    target_compile_definitions(libfastfetch PRIVATE FF_HAVE_THREADS=1)
+    target_compile_definitions(libneurofetch PRIVATE FF_HAVE_THREADS=1)
     if(CMAKE_USE_PTHREADS_INIT) #Threads::Threads is not set for WIN32
-        target_link_libraries(libfastfetch PRIVATE Threads::Threads)
+        target_link_libraries(libneurofetch PRIVATE Threads::Threads)
     endif()
 endif()
 
 if(ENABLE_EMBEDDED_PCIIDS)
-    target_compile_definitions(libfastfetch PRIVATE FF_HAVE_EMBEDDED_PCIIDS=1)
+    target_compile_definitions(libneurofetch PRIVATE FF_HAVE_EMBEDDED_PCIIDS=1)
 endif()
 if(ENABLE_EMBEDDED_AMDGPUIDS)
-    target_compile_definitions(libfastfetch PRIVATE FF_HAVE_EMBEDDED_AMDGPUIDS=1)
+    target_compile_definitions(libneurofetch PRIVATE FF_HAVE_EMBEDDED_AMDGPUIDS=1)
 endif()
 
 if(LINUX)
-    target_link_libraries(libfastfetch
+    target_link_libraries(libneurofetch
         PRIVATE "m"
     )
 
     if(ENABLE_DIRECTX_HEADERS)
         if(NOT BINARY_LINK_TYPE STREQUAL "dlopen")
-            target_link_libraries(libfastfetch
+            target_link_libraries(libneurofetch
                 PRIVATE "/usr/lib/wsl/lib/libdxcore.so"
             )
         endif()
     endif()
 elseif(APPLE)
-    target_link_libraries(libfastfetch
+    target_link_libraries(libneurofetch
         PRIVATE "-framework AVFoundation"
         PRIVATE "-framework Cocoa"
         PRIVATE "-framework CoreFoundation"
@@ -1676,7 +1676,7 @@ elseif(APPLE)
         PRIVATE "-weak_framework MediaRemote"
     )
 elseif(WIN32)
-    target_link_libraries(libfastfetch
+    target_link_libraries(libneurofetch
         PRIVATE "dwmapi"
         PRIVATE "gdi32"
         PRIVATE "iphlpapi"
@@ -1694,39 +1694,39 @@ elseif(WIN32)
     )
     if(CMAKE_SYSTEM_PROCESSOR STREQUAL "aarch64")
         # WoA only works on Windows 10 or higher
-        target_link_libraries(libfastfetch
+        target_link_libraries(libneurofetch
             PRIVATE "mincore"
         )
     endif()
 elseif(FreeBSD)
-    target_link_libraries(libfastfetch
+    target_link_libraries(libneurofetch
         PRIVATE "m"
         PRIVATE "usbhid"
         PRIVATE "bluetooth"
     )
     if(NOT DragonFly)
-        target_link_libraries(libfastfetch
+        target_link_libraries(libneurofetch
             PRIVATE "geom"
         )
     else()
-        target_link_libraries(libfastfetch
+        target_link_libraries(libneurofetch
             PRIVATE "devstat"
         )
     endif()
 elseif(OpenBSD)
-    target_link_libraries(libfastfetch
+    target_link_libraries(libneurofetch
         PRIVATE "m"
         PRIVATE "kvm"
         PRIVATE "sndio"
     )
 elseif(NetBSD)
-    target_link_libraries(libfastfetch
+    target_link_libraries(libneurofetch
         PRIVATE "bluetooth"
         PRIVATE "m"
         PRIVATE "prop"
     )
 elseif(SunOS)
-    target_link_libraries(libfastfetch
+    target_link_libraries(libneurofetch
         PRIVATE "m"
         PRIVATE "socket"
         PRIVATE "kstat"
@@ -1736,28 +1736,28 @@ elseif(SunOS)
         PRIVATE "devinfo"
     )
 elseif(GNU)
-    target_link_libraries(libfastfetch
+    target_link_libraries(libneurofetch
         PRIVATE "m"
     )
 elseif(ANDROID)
-    target_link_libraries(libfastfetch
+    target_link_libraries(libneurofetch
         PRIVATE "m"
     )
     CHECK_LIBRARY_EXISTS(-l:libandroid-wordexp.a wordexp "" HAVE_LIBANDROID_WORDEXP_STATIC)
     if(HAVE_LIBANDROID_WORDEXP_STATIC)
-        target_link_libraries(libfastfetch
+        target_link_libraries(libneurofetch
             PRIVATE -l:libandroid-wordexp.a
         )
     else()
         CHECK_LIBRARY_EXISTS(android-wordexp wordexp "" HAVE_LIBANDROID_WORDEXP)
         if(HAVE_LIBANDROID_WORDEXP)
-            target_link_libraries(libfastfetch
+            target_link_libraries(libneurofetch
                 PRIVATE android-wordexp
             )
         endif()
     endif()
 elseif(Haiku)
-    target_link_libraries(libfastfetch
+    target_link_libraries(libneurofetch
         PRIVATE "network"
         PRIVATE "bnetapi"
         PRIVATE "media"
@@ -1769,16 +1769,16 @@ elseif(Haiku)
     )
 endif()
 
-target_include_directories(libfastfetch
+target_include_directories(libneurofetch
     PUBLIC ${PROJECT_BINARY_DIR}
     PUBLIC ${PROJECT_SOURCE_DIR}/src
 )
 
-target_link_libraries(libfastfetch
+target_link_libraries(libneurofetch
     PRIVATE ${CMAKE_DL_LIBS}
 )
 
-target_compile_options(libfastfetch PRIVATE
+target_compile_options(libneurofetch PRIVATE
     $<$<COMPILE_LANGUAGE:CXX>:-fno-exceptions -fno-rtti>)
 
 if(WIN32)
@@ -1801,38 +1801,38 @@ endif()
 if(LINUX OR FreeBSD OR OpenBSD OR NetBSD)
     CHECK_INCLUDE_FILE("linux/videodev2.h" HAVE_LINUX_VIDEODEV2)
     if(HAVE_LINUX_VIDEODEV2)
-        target_compile_definitions(libfastfetch PRIVATE FF_HAVE_LINUX_VIDEODEV2=1)
+        target_compile_definitions(libneurofetch PRIVATE FF_HAVE_LINUX_VIDEODEV2=1)
     endif()
 endif()
 if(LINUX)
     CHECK_INCLUDE_FILE("linux/wireless.h" HAVE_LINUX_WIRELESS)
     if(HAVE_LINUX_WIRELESS)
-        target_compile_definitions(libfastfetch PRIVATE FF_HAVE_LINUX_WIRELESS=1)
+        target_compile_definitions(libneurofetch PRIVATE FF_HAVE_LINUX_WIRELESS=1)
     endif()
 endif()
 if(NOT WIN32)
     CHECK_INCLUDE_FILE("utmpx.h" HAVE_UTMPX)
     if(HAVE_UTMPX)
-        target_compile_definitions(libfastfetch PRIVATE FF_HAVE_UTMPX=1)
+        target_compile_definitions(libneurofetch PRIVATE FF_HAVE_UTMPX=1)
     endif()
     CHECK_INCLUDE_FILE("wordexp.h" HAVE_WORDEXP)
     if(HAVE_WORDEXP)
-        target_compile_definitions(libfastfetch PRIVATE FF_HAVE_WORDEXP=1)
+        target_compile_definitions(libneurofetch PRIVATE FF_HAVE_WORDEXP=1)
     endif()
     CHECK_INCLUDE_FILE("glob.h" HAVE_GLOB)
     if(HAVE_GLOB)
-        target_compile_definitions(libfastfetch PRIVATE FF_HAVE_GLOB=1)
+        target_compile_definitions(libneurofetch PRIVATE FF_HAVE_GLOB=1)
     endif()
     if(ENABLE_THREADS AND CMAKE_USE_PTHREADS_INIT)
         CHECK_INCLUDE_FILE("pthread_np.h" HAVE_PTHREAD_NP)
         if(HAVE_PTHREAD_NP)
-            target_compile_definitions(libfastfetch PRIVATE FF_HAVE_PTHREAD_NP=1)
+            target_compile_definitions(libneurofetch PRIVATE FF_HAVE_PTHREAD_NP=1)
             set(CMAKE_REQUIRED_INCLUDES ${CMAKE_REQUIRED_INCLUDES} pthread_np.h)
         endif()
         set(CMAKE_REQUIRED_LIBRARIES ${CMAKE_REQUIRED_LIBRARIES} Threads::Threads)
         check_function_exists("pthread_timedjoin_np" HAVE_TIMEDJOIN_NP)
         if(HAVE_TIMEDJOIN_NP)
-            target_compile_definitions(libfastfetch PRIVATE FF_HAVE_TIMEDJOIN_NP=1)
+            target_compile_definitions(libneurofetch PRIVATE FF_HAVE_TIMEDJOIN_NP=1)
         else()
             message(WARNING "pthread_timedjoin_np was not found; networking timeout will not work")
         endif()
@@ -1853,39 +1853,39 @@ else()
     list(TRANSFORM PACKAGES_DISABLE_LIST APPEND "_BIT")
     list(JOIN PACKAGES_DISABLE_LIST " | " PACKAGES_DISABLE_LIST)
 endif()
-target_compile_definitions(libfastfetch PRIVATE FF_PACKAGES_DISABLE_LIST=${PACKAGES_DISABLE_LIST})
+target_compile_definitions(libneurofetch PRIVATE FF_PACKAGES_DISABLE_LIST=${PACKAGES_DISABLE_LIST})
 
 ######################
 # Executable targets #
 ######################
 
-add_executable(fastfetch
-    src/fastfetch.c
+add_executable(neurofetch
+    src/neurofetch.c
 )
-target_compile_definitions(fastfetch
-    PRIVATE FASTFETCH_TARGET_BINARY_NAME=fastfetch
+target_compile_definitions(neurofetch
+    PRIVATE NEUROFETCH_TARGET_BINARY_NAME=neurofetch
 )
-target_link_libraries(fastfetch
-    PRIVATE libfastfetch
+target_link_libraries(neurofetch
+    PRIVATE libneurofetch
 )
 
-# Prevent fastfetch from linking to libstdc++
+# Prevent neurofetch from linking to libstdc++
 set(CMAKE_CXX_IMPLICIT_LINK_LIBRARIES "")
 set(CMAKE_CXX_IMPLICIT_LINK_DIRECTORIES "")
-set_target_properties(fastfetch PROPERTIES LINKER_LANGUAGE C)
+set_target_properties(neurofetch PROPERTIES LINKER_LANGUAGE C)
 
 if(WIN32)
-    target_sources(fastfetch
+    target_sources(neurofetch
         PRIVATE src/util/windows/version.rc
     )
 elseif(APPLE)
-    target_link_options(fastfetch
+    target_link_options(neurofetch
         PRIVATE LINKER:-sectcreate,__TEXT,__info_plist,Info.plist
     )
 endif()
 
 if(BINARY_LINK_TYPE STREQUAL "static")
-    target_link_options(fastfetch PRIVATE "-static")
+    target_link_options(neurofetch PRIVATE "-static")
 endif()
 
 # Apply all above parameters to flashfetch if it is built
@@ -1894,10 +1894,10 @@ if (BUILD_FLASHFETCH)
         src/flashfetch.c
     )
     target_compile_definitions(flashfetch
-        PRIVATE FASTFETCH_TARGET_BINARY_NAME=flashfetch
+        PRIVATE NEUROFETCH_TARGET_BINARY_NAME=flashfetch
     )
     target_link_libraries(flashfetch
-        PRIVATE libfastfetch
+        PRIVATE libneurofetch
     )
 
     set_target_properties(flashfetch PROPERTIES LINKER_LANGUAGE C)
@@ -1922,47 +1922,47 @@ endif()
 ###################
 
 if (BUILD_TESTS)
-    add_executable(fastfetch-test-strbuf
+    add_executable(neurofetch-test-strbuf
         tests/strbuf.c
     )
-    target_link_libraries(fastfetch-test-strbuf
-        PRIVATE libfastfetch
+    target_link_libraries(neurofetch-test-strbuf
+        PRIVATE libneurofetch
     )
 
-    add_executable(fastfetch-test-list
+    add_executable(neurofetch-test-list
         tests/list.c
     )
-    target_link_libraries(fastfetch-test-list
-        PRIVATE libfastfetch
+    target_link_libraries(neurofetch-test-list
+        PRIVATE libneurofetch
     )
 
-    add_executable(fastfetch-test-format
+    add_executable(neurofetch-test-format
         tests/format.c
     )
-    target_link_libraries(fastfetch-test-format
-        PRIVATE libfastfetch
+    target_link_libraries(neurofetch-test-format
+        PRIVATE libneurofetch
     )
 
-    add_executable(fastfetch-test-color
+    add_executable(neurofetch-test-color
         tests/color.c
     )
-    target_link_libraries(fastfetch-test-color
-        PRIVATE libfastfetch
+    target_link_libraries(neurofetch-test-color
+        PRIVATE libneurofetch
     )
 
-    add_executable(fastfetch-test-duration
+    add_executable(neurofetch-test-duration
         tests/duration.c
     )
-    target_link_libraries(fastfetch-test-duration
-        PRIVATE libfastfetch
+    target_link_libraries(neurofetch-test-duration
+        PRIVATE libneurofetch
     )
 
     enable_testing()
-    add_test(NAME test-strbuf COMMAND fastfetch-test-strbuf)
-    add_test(NAME test-list COMMAND fastfetch-test-list)
-    add_test(NAME test-format COMMAND fastfetch-test-format)
-    add_test(NAME test-color COMMAND fastfetch-test-color)
-    add_test(NAME test-duration COMMAND fastfetch-test-duration)
+    add_test(NAME test-strbuf COMMAND neurofetch-test-strbuf)
+    add_test(NAME test-list COMMAND neurofetch-test-list)
+    add_test(NAME test-format COMMAND neurofetch-test-format)
+    add_test(NAME test-color COMMAND neurofetch-test-color)
+    add_test(NAME test-duration COMMAND neurofetch-test-duration)
 endif()
 
 ##################
@@ -1972,7 +1972,7 @@ endif()
 include(GNUInstallDirs)
 
 install(
-    TARGETS fastfetch
+    TARGETS neurofetch
     DESTINATION "${CMAKE_INSTALL_BINDIR}"
 )
 
@@ -2021,7 +2021,7 @@ if(INSTALL_LICENSE)
 endif()
 
 install(
-    FILES "${PROJECT_BINARY_DIR}/fastfetch.1"
+    FILES "${PROJECT_BINARY_DIR}/neurofetch.1"
     DESTINATION "${CMAKE_INSTALL_MANDIR}/man1"
 )
 
@@ -2078,7 +2078,7 @@ set(CPACK_SET_DESTDIR ON)
 
 set(CPACK_PACKAGE_CONTACT "Carter Li <zhangsongcui@live.cn>")
 set(CPACK_PACKAGE_DESCRIPTION "\
-fastfetch is a neofetch-like tool for fetching system information and displaying them in a pretty way. \
+neurofetch is a fastfetch-based tool for fetching system information and displaying them in a pretty way. \
 It is written mostly in C to achieve much better performance.\
 ")
 

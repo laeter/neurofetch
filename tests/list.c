@@ -9,14 +9,14 @@
 __attribute__((__noreturn__))
 static void testFailed(const FFlist* list, const char* expression, int lineNo)
 {
-    fputs(FASTFETCH_TEXT_MODIFIER_ERROR, stderr);
+    fputs(NEUROFETCH_TEXT_MODIFIER_ERROR, stderr);
     fprintf(stderr, "[%d] %s, list:", lineNo, expression);
     for (uint32_t i = 0; i < list->length; ++i)
     {
         fprintf(stderr, "%u ", *(uint32_t*)ffListGet(list, i));
     }
     fputc('\n', stderr);
-    fputs(FASTFETCH_TEXT_MODIFIER_RESET, stderr);
+    fputs(NEUROFETCH_TEXT_MODIFIER_RESET, stderr);
     fputc('\n', stderr);
     exit(1);
 }
@@ -122,5 +122,5 @@ int main(void)
     }
 
     //Success
-    puts("\033[32mAll tests passed!"FASTFETCH_TEXT_MODIFIER_RESET);
+    puts("\033[32mAll tests passed!"NEUROFETCH_TEXT_MODIFIER_RESET);
 }

@@ -67,7 +67,7 @@ static void* outputListener[] = {
 };
 static_assert(
     sizeof(outputListener) >= sizeof(struct wl_output_listener),
-    "sizeof(outputListener) is too small. Please report it to fastfetch github issue"
+    "sizeof(outputListener) is too small. Please report it to neurofetch github issue"
 );
 
 static struct zxdg_output_v1_listener zxdgOutputListener = {

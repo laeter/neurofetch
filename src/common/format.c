@@ -1,4 +1,4 @@
-#include "fastfetch.h"
+#include "neurofetch.h"
 #include "common/format.h"
 #include "common/parsing.h"
 #include "util/textModifier.h"
@@ -190,7 +190,7 @@ void ffParseFormatString(FFstrbuf* buffer, const FFstrbuf* formatstr, uint32_t n
             if (firstChar == '#')
             {
                 if (!instance.config.display.pipe)
-                    ffStrbufAppendS(buffer, FASTFETCH_TEXT_MODIFIER_RESET);
+                    ffStrbufAppendS(buffer, NEUROFETCH_TEXT_MODIFIER_RESET);
 
                 continue;
             }
@@ -409,5 +409,5 @@ void ffParseFormatString(FFstrbuf* buffer, const FFstrbuf* formatstr, uint32_t n
     }
 
     if (!instance.config.display.pipe)
-        ffStrbufAppendS(buffer, FASTFETCH_TEXT_MODIFIER_RESET);
+        ffStrbufAppendS(buffer, NEUROFETCH_TEXT_MODIFIER_RESET);
 }

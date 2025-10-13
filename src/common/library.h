@@ -1,6 +1,6 @@
 #pragma once
 
-#include "fastfetch.h"
+#include "neurofetch.h"
 #include "util/FFcheckmacros.h"
 
 #ifndef FF_DISABLE_DLOPEN

@@ -1,4 +1,4 @@
-#include "fastfetch.h"
+#include "neurofetch.h"
 #include "common/processing.h"
 #include "common/io/io.h"
 
@@ -50,7 +50,7 @@ const char* ffProcessAppendOutput(FFstrbuf* buffer, char* const argv[], bool use
     int timeout = instance.config.general.processingTimeout;
 
     wchar_t pipeName[32];
-    swprintf(pipeName, ARRAY_SIZE(pipeName), L"\\\\.\\pipe\\FASTFETCH-%u", GetCurrentProcessId());
+    swprintf(pipeName, ARRAY_SIZE(pipeName), L"\\\\.\\pipe\\NEUROFETCH-%u", GetCurrentProcessId());
 
     FF_AUTO_CLOSE_FD HANDLE hChildPipeRead = CreateNamedPipeW(
         pipeName,
@@ -63,7 +63,7 @@ const char* ffProcessAppendOutput(FFstrbuf* buffer, char* const argv[], bool use
         NULL
     );
     if (hChildPipeRead == INVALID_HANDLE_VALUE)
-        return "CreateNamedPipeW(L\"\\\\.\\pipe\\FASTFETCH-$(PID)\") failed";
+        return "CreateNamedPipeW(L\"\\\\.\\pipe\\NEUROFETCH-$(PID)\") failed";
 
     HANDLE hChildPipeWrite = CreateFileW(
         pipeName,
@@ -79,7 +79,7 @@ const char* ffProcessAppendOutput(FFstrbuf* buffer, char* const argv[], bool use
         NULL
     );
     if (hChildPipeWrite == INVALID_HANDLE_VALUE)
-        return "CreateFileW(L\"\\\\.\\pipe\\FASTFETCH-$(PID)\") failed";
+        return "CreateFileW(L\"\\\\.\\pipe\\NEUROFETCH-$(PID)\") failed";
 
     PROCESS_INFORMATION piProcInfo = {};
 

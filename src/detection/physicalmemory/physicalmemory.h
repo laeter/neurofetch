@@ -1,6 +1,6 @@
 #pragma once
 
-#include "fastfetch.h"
+#include "neurofetch.h"
 #include "modules/physicalmemory/option.h"
 
 typedef struct FFPhysicalMemoryResult

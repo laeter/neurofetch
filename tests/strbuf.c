@@ -8,10 +8,10 @@
 __attribute__((__noreturn__))
 static void testFailed(const FFstrbuf* strbuf, const char* expression, int lineNo)
 {
-    fputs(FASTFETCH_TEXT_MODIFIER_ERROR, stderr);
+    fputs(NEUROFETCH_TEXT_MODIFIER_ERROR, stderr);
     fprintf(stderr, "[%d] %s, strbuf:", lineNo, expression);
     ffStrbufWriteTo(strbuf, stderr);
-    fputs(FASTFETCH_TEXT_MODIFIER_RESET, stderr);
+    fputs(NEUROFETCH_TEXT_MODIFIER_RESET, stderr);
     fputc('\n', stderr);
     exit(1);
 }
@@ -1016,5 +1016,5 @@ int main(void)
     }
 
     //Success
-    puts("\e[32mAll tests passed!" FASTFETCH_TEXT_MODIFIER_RESET);
+    puts("\e[32mAll tests passed!" NEUROFETCH_TEXT_MODIFIER_RESET);
 }

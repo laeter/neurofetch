@@ -1,4 +1,4 @@
-#include "fastfetch.h"
+#include "neurofetch.h"
 #include "modules/physicaldisk/option.h"
 
 #define FF_PHYSICALDISK_TEMP_UNSET (-DBL_MAX)

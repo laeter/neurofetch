@@ -22,7 +22,7 @@
     #define strcasestr StrStrIA
 #endif
 
-#define FASTFETCH_STRBUF_DEFAULT_ALLOC 32
+#define NEUROFETCH_STRBUF_DEFAULT_ALLOC 32
 
 typedef struct FFstrbuf
 {

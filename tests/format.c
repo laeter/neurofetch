@@ -1,6 +1,6 @@
 #include "common/format.h"
 #include "util/textModifier.h"
-#include "fastfetch.h"
+#include "neurofetch.h"
 
 #include <stdlib.h>
 
@@ -14,7 +14,7 @@ static void verify(const char* format, const char* arg, const char* expected, in
     ffParseFormatString(&result, &formatter, 1, arguments);
     if (!ffStrbufEqualS(&result, expected))
     {
-        fprintf(stderr, FASTFETCH_TEXT_MODIFIER_ERROR "[%d] %s: expected \"%s\", got \"%s\"\n" FASTFETCH_TEXT_MODIFIER_RESET, lineNo, format, expected, result.chars);
+        fprintf(stderr, NEUROFETCH_TEXT_MODIFIER_ERROR "[%d] %s: expected \"%s\", got \"%s\"\n" NEUROFETCH_TEXT_MODIFIER_RESET, lineNo, format, expected, result.chars);
         exit(1);
     }
 }
@@ -136,5 +136,5 @@ int main(void)
     #endif
 
     //Success
-    puts("\033[32mAll tests passed!" FASTFETCH_TEXT_MODIFIER_RESET);
+    puts("\033[32mAll tests passed!" NEUROFETCH_TEXT_MODIFIER_RESET);
 }

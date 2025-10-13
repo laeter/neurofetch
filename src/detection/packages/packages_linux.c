@@ -461,7 +461,7 @@ static void getPackageCountsRegular(FFstrbuf* baseDir, FFPackagesResult* package
     if (!(options->disabled & FF_PACKAGES_FLAG_PACMAN_BIT))
     {
         uint32_t baseDirLength = baseDir->length;
-        ffStrbufAppendS(baseDir, FASTFETCH_TARGET_DIR_ETC "/pacman-mirrors.conf");
+        ffStrbufAppendS(baseDir, NEUROFETCH_TARGET_DIR_ETC "/pacman-mirrors.conf");
         if(ffParsePropFile(baseDir->chars, "Branch =", &packageCounts->pacmanBranch) && packageCounts->pacmanBranch.length == 0)
             ffStrbufAppendS(&packageCounts->pacmanBranch, "stable");
         ffStrbufSubstrBefore(baseDir, baseDirLength);
@@ -503,7 +503,7 @@ static void getPackageCountsBedrock(FFstrbuf* baseDir, FFPackagesResult* package
 void ffDetectPackagesImpl(FFPackagesResult* result, FFPackagesOptions* options)
 {
     FF_STRBUF_AUTO_DESTROY baseDir = ffStrbufCreateA(512);
-    ffStrbufAppendS(&baseDir, FASTFETCH_TARGET_DIR_ROOT);
+    ffStrbufAppendS(&baseDir, NEUROFETCH_TARGET_DIR_ROOT);
 
     if(ffStrbufIgnCaseEqualS(&ffDetectOS()->id, "bedrock"))
         getPackageCountsBedrock(&baseDir, result, options);

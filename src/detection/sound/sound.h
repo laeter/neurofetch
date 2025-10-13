@@ -1,6 +1,6 @@
 #pragma once
 
-#include "fastfetch.h"
+#include "neurofetch.h"
 
 #define FF_SOUND_VOLUME_UNKNOWN 255
 

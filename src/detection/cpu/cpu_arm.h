@@ -1,6 +1,6 @@
 #pragma once
 
-#include "fastfetch.h"
+#include "neurofetch.h"
 
 // https://github.com/util-linux/util-linux/blob/master/sys-utils/lscpu-arm.c
 // We use the util-linux's data but not its code. Call me if it violates util-linux's GPL license.

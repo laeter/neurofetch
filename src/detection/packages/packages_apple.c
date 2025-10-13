@@ -37,9 +37,9 @@ void ffDetectPackagesImpl(FFPackagesResult* result, FFPackagesOptions* options)
         else
         {
             #ifdef __aarch64__
-            ffStrbufSetS(&baseDir, FASTFETCH_TARGET_DIR_ROOT "/opt/homebrew");
+            ffStrbufSetS(&baseDir, NEUROFETCH_TARGET_DIR_ROOT "/opt/homebrew");
             #else
-            ffStrbufSetS(&baseDir, FASTFETCH_TARGET_DIR_USR "/local");
+            ffStrbufSetS(&baseDir, NEUROFETCH_TARGET_DIR_USR "/local");
             #endif
         }
         countBrewPackages(&baseDir, result);
@@ -53,14 +53,14 @@ void ffDetectPackagesImpl(FFPackagesResult* result, FFPackagesOptions* options)
         }
         else
         {
-            ffStrbufSetS(&baseDir, FASTFETCH_TARGET_DIR_ROOT "/opt/local");
+            ffStrbufSetS(&baseDir, NEUROFETCH_TARGET_DIR_ROOT "/opt/local");
         }
 
         result->macports = getMacPortsPackages(&baseDir);
     }
     if (!(options->disabled & FF_PACKAGES_FLAG_NIX_BIT))
     {
-        ffStrbufSetS(&baseDir, FASTFETCH_TARGET_DIR_ROOT);
+        ffStrbufSetS(&baseDir, NEUROFETCH_TARGET_DIR_ROOT);
         result->nixDefault += ffPackagesGetNix(&baseDir, "/nix/var/nix/profiles/default");
         result->nixSystem += ffPackagesGetNix(&baseDir, "/run/current-system");
         ffStrbufSet(&baseDir, &instance.state.platform.homeDir);

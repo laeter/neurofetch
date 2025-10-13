@@ -1,4 +1,4 @@
-#include "fastfetch.h"
+#include "neurofetch.h"
 #include "users.h"
 
 const char* ffDetectUsers(FFUsersOptions* options, FFlist* users)

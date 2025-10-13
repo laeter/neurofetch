@@ -1,6 +1,6 @@
 #include "common/duration.h"
 #include "util/textModifier.h"
-#include "fastfetch.h"
+#include "neurofetch.h"
 
 #include <stdlib.h>
 
@@ -10,7 +10,7 @@ static void verify(uint64_t totalSeconds, const char* expected, int lineNo)
     ffDurationAppendNum(totalSeconds, &result);
     if (!ffStrbufEqualS(&result, expected))
     {
-        fprintf(stderr, FASTFETCH_TEXT_MODIFIER_ERROR "[%d] %llu: expected \"%s\", got \"%s\"\n" FASTFETCH_TEXT_MODIFIER_RESET, lineNo, (unsigned long long) totalSeconds, expected, result.chars);
+        fprintf(stderr, NEUROFETCH_TEXT_MODIFIER_ERROR "[%d] %llu: expected \"%s\", got \"%s\"\n" NEUROFETCH_TEXT_MODIFIER_RESET, lineNo, (unsigned long long) totalSeconds, expected, result.chars);
         exit(1);
     }
 }
@@ -116,5 +116,5 @@ int main(void)
     VERIFY(60 * 60 * 24 * 200, "200d");
 
     //Success
-    puts("\033[32mAll tests passed!" FASTFETCH_TEXT_MODIFIER_RESET);
+    puts("\033[32mAll tests passed!" NEUROFETCH_TEXT_MODIFIER_RESET);
 }

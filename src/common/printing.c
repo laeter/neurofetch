@@ -1,4 +1,4 @@
-#include "fastfetch.h"
+#include "neurofetch.h"
 #include "common/printing.h"
 #include "logo/logo.h"
 #include "util/textModifier.h"
@@ -18,9 +18,9 @@ void ffPrintLogoAndKey(const char* moduleName, uint8_t moduleIndex, const FFModu
 
         if(!instance.config.display.pipe)
         {
-            fputs(FASTFETCH_TEXT_MODIFIER_RESET, stdout);
+            fputs(NEUROFETCH_TEXT_MODIFIER_RESET, stdout);
             if (instance.config.display.brightColor)
-                fputs(FASTFETCH_TEXT_MODIFIER_BOLT, stdout);
+                fputs(NEUROFETCH_TEXT_MODIFIER_BOLT, stdout);
 
             if(moduleArgs && !(printType & FF_PRINT_TYPE_NO_CUSTOM_KEY_COLOR) && moduleArgs->keyColor.length > 0)
                 ffPrintColor(&moduleArgs->keyColor);
@@ -61,14 +61,14 @@ void ffPrintLogoAndKey(const char* moduleName, uint8_t moduleIndex, const FFModu
 
         if(!instance.config.display.pipe)
         {
-            fputs(FASTFETCH_TEXT_MODIFIER_RESET, stdout);
+            fputs(NEUROFETCH_TEXT_MODIFIER_RESET, stdout);
             ffPrintColor(&instance.config.display.colorSeparator);
         }
 
         ffStrbufWriteTo(&instance.config.display.keyValueSeparator, stdout);
 
         if(!instance.config.display.pipe && instance.config.display.colorSeparator.length)
-            fputs(FASTFETCH_TEXT_MODIFIER_RESET, stdout);
+            fputs(NEUROFETCH_TEXT_MODIFIER_RESET, stdout);
 
         if (!(printType & FF_PRINT_TYPE_NO_CUSTOM_KEY_WIDTH))
         {
@@ -80,7 +80,7 @@ void ffPrintLogoAndKey(const char* moduleName, uint8_t moduleIndex, const FFModu
 
     if(!instance.config.display.pipe)
     {
-        fputs(FASTFETCH_TEXT_MODIFIER_RESET, stdout);
+        fputs(NEUROFETCH_TEXT_MODIFIER_RESET, stdout);
         if (moduleArgs && moduleArgs->outputColor.length)
             ffPrintColor(&moduleArgs->outputColor);
         else if (instance.config.display.colorOutput.length)
@@ -108,7 +108,7 @@ void ffPrintError(const char* moduleName, uint8_t moduleIndex, const FFModuleArg
     ffPrintLogoAndKey(moduleName, moduleIndex, moduleArgs, printType);
 
     if(!instance.config.display.pipe)
-        fputs(FASTFETCH_TEXT_MODIFIER_ERROR, stdout);
+        fputs(NEUROFETCH_TEXT_MODIFIER_ERROR, stdout);
 
     va_list arguments;
     va_start(arguments, message);
@@ -116,7 +116,7 @@ void ffPrintError(const char* moduleName, uint8_t moduleIndex, const FFModuleArg
     va_end(arguments);
 
     if(!instance.config.display.pipe)
-        fputs(FASTFETCH_TEXT_MODIFIER_RESET, stdout);
+        fputs(NEUROFETCH_TEXT_MODIFIER_RESET, stdout);
 
     putchar('\n');
 }

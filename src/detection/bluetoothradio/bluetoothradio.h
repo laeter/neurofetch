@@ -1,6 +1,6 @@
 #pragma once
 
-#include "fastfetch.h"
+#include "neurofetch.h"
 #include "modules/bluetoothradio/option.h"
 
 typedef struct FFBluetoothRadioResult

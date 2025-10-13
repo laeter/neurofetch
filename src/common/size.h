@@ -1,3 +1,3 @@
-#include "fastfetch.h"
+#include "neurofetch.h"
 
 void ffSizeAppendNum(uint64_t bytes, FFstrbuf* result);

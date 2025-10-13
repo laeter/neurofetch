@@ -1,5 +1,5 @@
 #pragma once
 
-#include "fastfetch.h"
+#include "neurofetch.h"
 
 const char* ffDetectLoadavg(double result[3]);

@@ -64,7 +64,7 @@ const char* ffDetectDNS(FFDNSOptions* options, FFlist* results)
 {
     FF_DEBUG("Starting DNS detection");
 
-    const char* error = detectDnsFromConf(FASTFETCH_TARGET_DIR_ROOT RESOLV_CONF, options, results);
+    const char* error = detectDnsFromConf(NEUROFETCH_TARGET_DIR_ROOT RESOLV_CONF, options, results);
     if (error != NULL)
     {
         FF_DEBUG("Error detecting DNS: %s", error);
@@ -100,17 +100,17 @@ const char* ffDetectDNS(FFDNSOptions* options, FFlist* results)
 
         // Try resolvconf
         FF_DEBUG("Trying resolvconf configuration");
-        if (detectDnsFromConf(FASTFETCH_TARGET_DIR_ROOT "/run/resolvconf/resolv.conf", options, results) == NULL && results->length > 0)
+        if (detectDnsFromConf(NEUROFETCH_TARGET_DIR_ROOT "/run/resolvconf/resolv.conf", options, results) == NULL && results->length > 0)
             return NULL;
 
         // Try dnsmasq
         FF_DEBUG("Trying dnsmasq configuration");
-        if (detectDnsFromConf(FASTFETCH_TARGET_DIR_ROOT "/var/run/dnsmasq/resolv.conf", options, results) == NULL && results->length > 0)
+        if (detectDnsFromConf(NEUROFETCH_TARGET_DIR_ROOT "/var/run/dnsmasq/resolv.conf", options, results) == NULL && results->length > 0)
             return NULL;
 
         // Try openresolv
         FF_DEBUG("Trying openresolv configuration");
-        if (detectDnsFromConf(FASTFETCH_TARGET_DIR_ROOT "/etc/resolv.conf.openresolv", options, results) == NULL && results->length > 0)
+        if (detectDnsFromConf(NEUROFETCH_TARGET_DIR_ROOT "/etc/resolv.conf.openresolv", options, results) == NULL && results->length > 0)
             return NULL;
     }
     #elif defined(__FreeBSD__) || defined(__DragonFly__) || defined(__NetBSD__) || defined(__OpenBSD__)
@@ -121,17 +121,17 @@ const char* ffDetectDNS(FFDNSOptions* options, FFlist* results)
 
         // FreeBSD and other BSDs may use resolvconf service
         FF_DEBUG("Trying BSD resolvconf configuration");
-        if (detectDnsFromConf(FASTFETCH_TARGET_DIR_ROOT "/var/run/resolvconf/resolv.conf", options, results) == NULL && results->length > 0)
+        if (detectDnsFromConf(NEUROFETCH_TARGET_DIR_ROOT "/var/run/resolvconf/resolv.conf", options, results) == NULL && results->length > 0)
             return NULL;
 
         // Some BSDs store DNS configuration here
         FF_DEBUG("Trying BSD nameserver configuration");
-        if (detectDnsFromConf(FASTFETCH_TARGET_DIR_ROOT "/var/run/nameserver", options, results) == NULL && results->length > 0)
+        if (detectDnsFromConf(NEUROFETCH_TARGET_DIR_ROOT "/var/run/nameserver", options, results) == NULL && results->length > 0)
             return NULL;
 
         // Try common BSD paths
         FF_DEBUG("Trying BSD common paths");
-        if (detectDnsFromConf(FASTFETCH_TARGET_DIR_ROOT "/etc/nameserver", options, results) == NULL && results->length > 0)
+        if (detectDnsFromConf(NEUROFETCH_TARGET_DIR_ROOT "/etc/nameserver", options, results) == NULL && results->length > 0)
             return NULL;
     }
     #endif

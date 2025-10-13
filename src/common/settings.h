@@ -1,6 +1,6 @@
 #pragma once
 
-#include "fastfetch.h"
+#include "neurofetch.h"
 
 typedef enum __attribute__((__packed__)) FFvarianttype
 {

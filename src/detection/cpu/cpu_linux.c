@@ -508,7 +508,7 @@ FF_MAYBE_UNUSED static const char* detectCPUX86(const FFCPUOptions* options, FFC
     if (cpu->coresPhysical > 0 && cpu->packages > 1)
         cpu->coresPhysical *= cpu->packages;
 
-    // Ref https://github.com/fastfetch-cli/fastfetch/issues/1194#issuecomment-2295058252
+    // Ref https://github.com/neurofetch-cli/neurofetch/issues/1194#issuecomment-2295058252
     ffCPUDetectByCpuid(cpu);
     if (!detectFrequency(cpu, options) || cpu->frequencyBase == 0)
         cpu->frequencyBase = (uint32_t) ffStrbufToUInt(&cpuMHz, 0);

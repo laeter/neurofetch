@@ -344,7 +344,7 @@ const char* ffdsConnectWayland(FFDisplayServerResult* result)
 
 const char* ffdsConnectWayland(FF_MAYBE_UNUSED FFDisplayServerResult* result)
 {
-    return "Fastfetch was compiled without Wayland support";
+    return "Neurofetch was compiled without Wayland support";
 }
 
 #endif

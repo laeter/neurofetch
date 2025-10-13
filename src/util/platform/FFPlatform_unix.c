@@ -1,7 +1,7 @@
 #include "FFPlatform_private.h"
 #include "util/FFstrbuf.h"
 #include "util/stringUtils.h"
-#include "fastfetch_config.h"
+#include "neurofetch_config.h"
 #include "common/io/io.h"
 
 #include <unistd.h>
@@ -140,11 +140,11 @@ static void getConfigDirs(FFPlatform* platform)
     platformPathAddEnv(&platform->configDirs, "XDG_CONFIG_DIRS");
 
     #if !defined(__APPLE__)
-        ffPlatformPathAddAbsolute(&platform->configDirs, FASTFETCH_TARGET_DIR_ETC "/xdg/");
+        ffPlatformPathAddAbsolute(&platform->configDirs, NEUROFETCH_TARGET_DIR_ETC "/xdg/");
     #endif
 
-    ffPlatformPathAddAbsolute(&platform->configDirs, FASTFETCH_TARGET_DIR_ETC "/");
-    ffPlatformPathAddAbsolute(&platform->configDirs, FASTFETCH_TARGET_DIR_INSTALL_SYSCONF "/");
+    ffPlatformPathAddAbsolute(&platform->configDirs, NEUROFETCH_TARGET_DIR_ETC "/");
+    ffPlatformPathAddAbsolute(&platform->configDirs, NEUROFETCH_TARGET_DIR_INSTALL_SYSCONF "/");
 }
 
 static void getDataDirs(FFPlatform* platform)
@@ -171,8 +171,8 @@ static void getDataDirs(FFPlatform* platform)
 #ifdef _PATH_LOCALBASE
     ffPlatformPathAddAbsolute(&platform->dataDirs, _PATH_LOCALBASE "/share/");
 #endif
-    ffPlatformPathAddAbsolute(&platform->dataDirs, FASTFETCH_TARGET_DIR_USR "/local/share/");
-    ffPlatformPathAddAbsolute(&platform->dataDirs, FASTFETCH_TARGET_DIR_USR "/share/");
+    ffPlatformPathAddAbsolute(&platform->dataDirs, NEUROFETCH_TARGET_DIR_USR "/local/share/");
+    ffPlatformPathAddAbsolute(&platform->dataDirs, NEUROFETCH_TARGET_DIR_USR "/share/");
 }
 
 static void getUserName(FFPlatform* platform, const struct passwd* pwd)

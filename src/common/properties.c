@@ -1,4 +1,4 @@
-#include "fastfetch.h"
+#include "neurofetch.h"
 #include "common/properties.h"
 #include "common/io/io.h"
 #include "util/mallocHelper.h"

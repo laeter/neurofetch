@@ -1,4 +1,4 @@
-#include "fastfetch.h"
+#include "neurofetch.h"
 #include "common/color.h"
 #include "common/jsonconfig.h"
 #include "common/percent.h"

@@ -1,4 +1,4 @@
-#include "fastfetch.h"
+#include "neurofetch.h"
 #include "detection/cpuusage/cpuusage.h"
 
 const char* ffGetCpuUsageInfo(FF_MAYBE_UNUSED FFlist* cpuTimes)

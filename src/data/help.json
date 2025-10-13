@@ -1,4 +1,48 @@
 {
+    "Main Usage Commands": [
+        {
+            "long": "neuro",
+            "desc": "Display Neurosama logo"
+        },
+        {
+            "long": "neuro-a",
+            "desc": "Apply Neurosama as the default logo"
+        },
+        {
+            "long": "evil",
+            "desc": "Display EvilNeuro logo"
+        },
+        {
+            "long": "evil-a",
+            "desc": "Apply EvilNeuro as the default logo"
+        },
+        {
+            "long": "vedal",
+            "desc": "Display Vedal logo"
+        },
+        {
+            "long": "vedal-a",
+            "desc": "Apply Vedal as the default logo"
+        },
+        {
+            "long": "anny",
+            "desc": "Display Anny logo"
+        },
+        {
+            "long": "anny-a",
+            "desc": "Apply Anny as the default logo"
+        },
+        {
+            "short": "r",
+            "long": "random-mode",
+            "desc": "Enable random logo on terminal startup"
+        },
+        {
+            "short": "n",
+            "long": "normal-mode",
+            "desc": "Enable sequential logo rotation on terminal startup"
+        }
+    ],
     "Informative": [
         {
             "short": "h",

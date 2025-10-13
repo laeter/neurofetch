@@ -1,4 +1,4 @@
-#include "fastfetch.h"
+#include "neurofetch.h"
 #include "opengl.h"
 #include "common/io/io.h"
 
@@ -164,7 +164,7 @@ const char* ffDetectOpenGL(FFOpenGLOptions* options, FFOpenGLResult* result)
         #ifdef FF_HAVE_GLX
             return detectByGlx(result);
         #else
-            return "fastfetch was compiled without glx support";
+            return "neurofetch was compiled without glx support";
         #endif
     }
 
@@ -174,7 +174,7 @@ const char* ffDetectOpenGL(FFOpenGLOptions* options, FFOpenGLResult* result)
             const char* ffOpenGLDetectByEGL(FFOpenGLResult* result);
             return ffOpenGLDetectByEGL(result);
         #else
-            return "fastfetch was compiled without egl support";
+            return "neurofetch was compiled without egl support";
         #endif
     }
 
@@ -195,7 +195,7 @@ const char* ffDetectOpenGL(FFOpenGLOptions* options, FFOpenGLResult* result)
     #else
 
         FF_UNUSED(options, result);
-        return "Fastfetch was built without gl support.";
+        return "Neurofetch was built without gl support.";
 
     #endif //FF_HAVE_GL
 }

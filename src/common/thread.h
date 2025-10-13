@@ -1,6 +1,6 @@
 #pragma once
 
-#include "fastfetch.h"
+#include "neurofetch.h"
 
 #ifdef FF_HAVE_THREADS
     #if defined(_WIN32)

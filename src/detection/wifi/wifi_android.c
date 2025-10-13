@@ -3,7 +3,7 @@
 #include "common/processing.h"
 #include "common/properties.h"
 
-#define FF_TERMUX_API_PATH FASTFETCH_TARGET_DIR_ROOT "/libexec/termux-api"
+#define FF_TERMUX_API_PATH NEUROFETCH_TARGET_DIR_ROOT "/libexec/termux-api"
 #define FF_TERMUX_API_PARAM "WifiConnectionInfo"
 
 static inline void wrapYyjsonFree(yyjson_doc** doc)

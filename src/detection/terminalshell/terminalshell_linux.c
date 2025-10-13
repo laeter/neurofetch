@@ -53,7 +53,7 @@ static pid_t getShellInfo(FFShellResult* result, pid_t pid)
                 ffStrbufEqualS(&result->processName, "time")                ||
                 ffStrbufEqualS(&result->processName, "clifm")               || //https://github.com/leo-arch/clifm/issues/289
                 ffStrbufEqualS(&result->processName, "valgrind")            ||
-                ffStrbufEqualS(&result->processName, "fastfetch")           || //#994
+                ffStrbufEqualS(&result->processName, "neurofetch")           || //#994
                 ffStrbufEqualS(&result->processName, "flashfetch")          ||
                 ffStrbufEqualS(&result->processName, "proot")               ||
                 ffStrbufEqualS(&result->processName, "script")              ||
@@ -123,7 +123,7 @@ static pid_t getTerminalInfo(FFTerminalResult* result, pid_t pid)
         }
 
         #ifdef __APPLE__
-        // https://github.com/fastfetch-cli/fastfetch/discussions/501
+        // https://github.com/neurofetch-cli/neurofetch/discussions/501
         const char* pLeft = strstr(result->processName.chars, " (");
         if (pLeft)
         {
@@ -305,7 +305,7 @@ static void setShellInfoDetails(FFShellResult* result)
         ffStrbufInitStatic(&result->prettyName, "Oils");
     else
     {
-        // https://github.com/fastfetch-cli/fastfetch/discussions/280#discussioncomment-3831734
+        // https://github.com/neurofetch-cli/neurofetch/discussions/280#discussioncomment-3831734
         ffStrbufInitS(&result->prettyName, result->exeName);
     }
 }

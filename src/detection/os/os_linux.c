@@ -212,7 +212,7 @@ FF_MAYBE_UNUSED static bool detectDebianDerived(FFOSResult* result)
     }
     else if (ffStrbufStartsWithS(&result->name, "Lilidog GNU/Linux"))
     {
-        // https://github.com/fastfetch-cli/fastfetch/issues/1373
+        // https://github.com/neurofetch-cli/neurofetch/issues/1373
         ffStrbufSetStatic(&result->id, "lilidog");
         ffStrbufSetStatic(&result->idLike, "debian");
         return true;
@@ -313,7 +313,7 @@ static bool detectBedrock(FFOSResult* os)
 {
     const char* bedrockRestrict = getenv("BEDROCK_RESTRICT");
     if(bedrockRestrict && bedrockRestrict[0] == '1') return false;
-    if(parseOsRelease(FASTFETCH_TARGET_DIR_ROOT "/bedrock" FASTFETCH_TARGET_DIR_ETC "/bedrock-release", os))
+    if(parseOsRelease(NEUROFETCH_TARGET_DIR_ROOT "/bedrock" NEUROFETCH_TARGET_DIR_ETC "/bedrock-release", os))
     {
         if(os->id.length == 0)
             ffStrbufAppendS(&os->id, "bedrock");
@@ -324,7 +324,7 @@ static bool detectBedrock(FFOSResult* os)
         if(os->prettyName.length == 0)
             ffStrbufAppendS(&os->prettyName, "Bedrock Linux");
 
-        parseOsRelease("/bedrock" FASTFETCH_TARGET_DIR_ETC "/os-release", os);
+        parseOsRelease("/bedrock" NEUROFETCH_TARGET_DIR_ETC "/os-release", os);
         return true;
     }
     return false;
@@ -345,11 +345,11 @@ static void detectOS(FFOSResult* os)
 
     // Refer: https://gist.github.com/natefoo/814c5bf936922dad97ff
 
-    parseOsRelease(FASTFETCH_TARGET_DIR_ETC "/os-release", os);
+    parseOsRelease(NEUROFETCH_TARGET_DIR_ETC "/os-release", os);
     if (os->id.length == 0 || os->version.length == 0 || os->prettyName.length == 0 || os->codename.length == 0)
-        parseLsbRelease(FASTFETCH_TARGET_DIR_ETC "/lsb-release", os);
+        parseLsbRelease(NEUROFETCH_TARGET_DIR_ETC "/lsb-release", os);
     if (os->id.length == 0 || os->name.length == 0 || os->prettyName.length == 0)
-        parseOsRelease(FASTFETCH_TARGET_DIR_USR "/lib/os-release", os);
+        parseOsRelease(NEUROFETCH_TARGET_DIR_USR "/lib/os-release", os);
     if (os->id.length == 0 && os->name.length == 0 && os->prettyName.length == 0)
     {
         // HarmonyOS has no os-release file

@@ -999,7 +999,7 @@ static bool printImageIfExistsSlowPath(FFLogoType type, bool printError)
 
     ffStrbufInit(&requestData.cacheDir);
     ffStrbufAppend(&requestData.cacheDir, &instance.state.platform.cacheDir);
-    ffStrbufAppendS(&requestData.cacheDir, "fastfetch/images");
+    ffStrbufAppendS(&requestData.cacheDir, "neurofetch/images");
 
     ffStrbufEnsureFree(&requestData.cacheDir, PATH_MAX);
     if(realpath(instance.config.logo.source.chars, requestData.cacheDir.chars + requestData.cacheDir.length) == NULL)

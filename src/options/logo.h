@@ -2,8 +2,8 @@
 
 #include "util/FFstrbuf.h"
 
-#define FASTFETCH_LOGO_MAX_NAMES 9
-#define FASTFETCH_LOGO_MAX_COLORS 9 //two digits would make parsing much more complicated (index 1 - 9)
+#define NEUROFETCH_LOGO_MAX_NAMES 9
+#define NEUROFETCH_LOGO_MAX_COLORS 9 //two digits would make parsing much more complicated (index 1 - 9)
 
 typedef enum __attribute__((__packed__)) FFLogoType
 {
@@ -37,7 +37,7 @@ typedef struct FFOptionsLogo
     FFstrbuf source;
     FFLogoType type;
     FFLogoPosition position;
-    FFstrbuf colors[FASTFETCH_LOGO_MAX_COLORS];
+    FFstrbuf colors[NEUROFETCH_LOGO_MAX_COLORS];
     uint32_t width;
     uint32_t height;
     uint32_t paddingTop;

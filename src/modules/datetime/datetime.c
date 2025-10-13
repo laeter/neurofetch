@@ -16,26 +16,26 @@ typedef struct FFDateTimeResult
     uint16_t year; //2022
     uint8_t yearShort; //22
     uint8_t month; //2
-    char monthPretty[FASTFETCH_STRBUF_DEFAULT_ALLOC]; //02
-    char monthName[FASTFETCH_STRBUF_DEFAULT_ALLOC]; //February
-    char monthNameShort[FASTFETCH_STRBUF_DEFAULT_ALLOC]; //Feb
+    char monthPretty[NEUROFETCH_STRBUF_DEFAULT_ALLOC]; //02
+    char monthName[NEUROFETCH_STRBUF_DEFAULT_ALLOC]; //February
+    char monthNameShort[NEUROFETCH_STRBUF_DEFAULT_ALLOC]; //Feb
     uint8_t week; //8
-    char weekday[FASTFETCH_STRBUF_DEFAULT_ALLOC]; //Monday
-    char weekdayShort[FASTFETCH_STRBUF_DEFAULT_ALLOC]; //Mon
+    char weekday[NEUROFETCH_STRBUF_DEFAULT_ALLOC]; //Monday
+    char weekdayShort[NEUROFETCH_STRBUF_DEFAULT_ALLOC]; //Mon
     uint16_t dayInYear; //52
     uint8_t dayInMonth; //21
     uint8_t dayInWeek; //1
-    char dayPretty[FASTFETCH_STRBUF_DEFAULT_ALLOC]; //01
+    char dayPretty[NEUROFETCH_STRBUF_DEFAULT_ALLOC]; //01
     uint8_t hour; //15
-    char hourPretty[FASTFETCH_STRBUF_DEFAULT_ALLOC]; //15
+    char hourPretty[NEUROFETCH_STRBUF_DEFAULT_ALLOC]; //15
     uint8_t hour12; //3
-    char hour12Pretty[FASTFETCH_STRBUF_DEFAULT_ALLOC]; //03
+    char hour12Pretty[NEUROFETCH_STRBUF_DEFAULT_ALLOC]; //03
     uint8_t minute; //18
-    char minutePretty[FASTFETCH_STRBUF_DEFAULT_ALLOC]; //18
+    char minutePretty[NEUROFETCH_STRBUF_DEFAULT_ALLOC]; //18
     uint8_t second; //37
-    char secondPretty[FASTFETCH_STRBUF_DEFAULT_ALLOC]; //37
-    char offsetFromUtc[FASTFETCH_STRBUF_DEFAULT_ALLOC];
-    char timezoneName[FASTFETCH_STRBUF_DEFAULT_ALLOC];
+    char secondPretty[NEUROFETCH_STRBUF_DEFAULT_ALLOC]; //37
+    char offsetFromUtc[NEUROFETCH_STRBUF_DEFAULT_ALLOC];
+    char timezoneName[NEUROFETCH_STRBUF_DEFAULT_ALLOC];
 } FFDateTimeResult;
 
 static void printDateTimeFormat(struct tm* tm, const FFModuleArgs* moduleArgs)

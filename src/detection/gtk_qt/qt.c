@@ -1,4 +1,4 @@
-#include "fastfetch.h"
+#include "neurofetch.h"
 #include "common/properties.h"
 #include "common/thread.h"
 #include "detection/gtk_qt/gtk_qt.h"
@@ -152,7 +152,7 @@ static void detectQtCt(char qver, FFQtResult* result)
     if (ffStrbufStartsWithC(&font, '@'))
     {
         // See QVariant notes on https://doc.qt.io/qt-5/qsettings.html and
-        // https://github.com/fastfetch-cli/fastfetch/issues/1053#issuecomment-2197254769
+        // https://github.com/neurofetch-cli/neurofetch/issues/1053#issuecomment-2197254769
         // Thankfully, newer versions use the more common font encoding.
         ffStrbufSetNS(&font, 5, file);
     }

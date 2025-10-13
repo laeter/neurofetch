@@ -128,7 +128,7 @@ FF_MAYBE_UNUSED static void detectTTY(FFTerminalFontResult* terminalFont)
 {
     FF_STRBUF_AUTO_DESTROY fontName = ffStrbufCreate();
 
-    ffParsePropFile(FASTFETCH_TARGET_DIR_ETC"/vconsole.conf", "Font =", &fontName);
+    ffParsePropFile(NEUROFETCH_TARGET_DIR_ETC"/vconsole.conf", "Font =", &fontName);
 
     if(fontName.length == 0)
     {
@@ -145,7 +145,7 @@ FF_MAYBE_UNUSED static void detectTTY(FFTerminalFontResult* terminalFont)
     if(fontName.length > 0)
         ffFontInitCopy(&terminalFont->font, fontName.chars);
     else
-        ffStrbufAppendS(&terminalFont->error, "Couldn't find Font in "FASTFETCH_TARGET_DIR_ETC"/vconsole.conf");
+        ffStrbufAppendS(&terminalFont->error, "Couldn't find Font in "NEUROFETCH_TARGET_DIR_ETC"/vconsole.conf");
 }
 
 FF_MAYBE_UNUSED static bool detectKitty(const FFstrbuf* exe, FFTerminalFontResult* result)
@@ -154,7 +154,7 @@ FF_MAYBE_UNUSED static bool detectKitty(const FFstrbuf* exe, FFTerminalFontResul
     FF_STRBUF_AUTO_DESTROY fontSize = ffStrbufCreate();
 
     char fontHex[512] = "", sizeHex[512] = "";
-    // https://github.com/fastfetch-cli/fastfetch/discussions/1030#discussioncomment-9845233
+    // https://github.com/neurofetch-cli/neurofetch/discussions/1030#discussioncomment-9845233
     if (ffGetTerminalResponse(
         "\eP+q6b697474792d71756572792d666f6e745f66616d696c79;6b697474792d71756572792d666f6e745f73697a65\e\\", // kitty-query-font_family;kitty-query-font_size
         2,

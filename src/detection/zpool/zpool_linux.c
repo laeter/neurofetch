@@ -111,7 +111,7 @@ const char* ffDetectZpool(FFlist* result /* list of FFZpoolResult */)
 
 const char* ffDetectZpool(FF_MAYBE_UNUSED FFlist* result)
 {
-    return "Fastfetch was compiled without libzfs support";
+    return "Neurofetch was compiled without libzfs support";
 }
 
 #endif

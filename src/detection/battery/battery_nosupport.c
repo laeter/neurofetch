@@ -1,4 +1,4 @@
-#include "fastfetch.h"
+#include "neurofetch.h"
 #include "battery.h"
 
 const char* ffDetectBattery(FFBatteryOptions* options, FFlist* results)

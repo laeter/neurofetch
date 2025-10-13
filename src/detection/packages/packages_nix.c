@@ -86,7 +86,7 @@ static uint32_t getNixPackagesImpl(char* path)
 
     FF_STRBUF_AUTO_DESTROY cacheDir = ffStrbufCreateCopy(&instance.state.platform.cacheDir);
     ffStrbufEnsureEndsWithC(&cacheDir, '/');
-    ffStrbufAppendS(&cacheDir, "fastfetch/packages/nix");
+    ffStrbufAppendS(&cacheDir, "neurofetch/packages/nix");
     ffStrbufAppendS(&cacheDir, path);
 
     //Check the hash first to determine if we need to recompute the count
@@ -109,7 +109,7 @@ static uint32_t getNixPackagesImpl(char* path)
     count = 0;
 
     //Implementation based on bash script from here:
-    //https://github.com/fastfetch-cli/fastfetch/issues/195#issuecomment-1191748222
+    //https://github.com/neurofetch-cli/neurofetch/issues/195#issuecomment-1191748222
 
     FF_STRBUF_AUTO_DESTROY output = ffStrbufCreateA(1024);
 

@@ -34,8 +34,8 @@ void ffStrbufEnsureFree(FFstrbuf* strbuf, uint32_t free)
         return;
 
     uint32_t allocate = strbuf->allocated;
-    if(allocate < FASTFETCH_STRBUF_DEFAULT_ALLOC)
-        allocate = FASTFETCH_STRBUF_DEFAULT_ALLOC;
+    if(allocate < NEUROFETCH_STRBUF_DEFAULT_ALLOC)
+        allocate = NEUROFETCH_STRBUF_DEFAULT_ALLOC;
 
     while((strbuf->length + free + 1) > allocate) // + 1 for the null byte
         allocate *= 2;

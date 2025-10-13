@@ -1,6 +1,6 @@
 #pragma once
 
-#include "fastfetch.h"
+#include "neurofetch.h"
 #include "modules/terminal/option.h"
 #include "modules/shell/option.h"
 
