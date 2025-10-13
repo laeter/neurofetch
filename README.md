@@ -2,7 +2,7 @@
 
 **A Neuro-sama Fetch themed system information tool** - A fastfetch fork featuring custom ASCII art for the Neuro family.
 
-> Made with ❤️ for the Neuro-sama community. Primarily for personal use on Arch Linux.
+> Made with ❤️ for the Neuro-sama community. Primarily for my personal use on Arch Linux. What works for me may not work for you.
 
 > [!NOTE]
 > Some parts may not be working for other OS. I have not tested on anything other than Arch-based distributions.
