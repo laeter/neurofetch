@@ -6,6 +6,13 @@
 
 ![Neurofetch](https://img.shields.io/badge/neuro-sama-cyan?style=for-the-badge) ![Based on Fastfetch](https://img.shields.io/badge/based%20on-fastfetch-blue?style=for-the-badge) ![Arch Linux](https://img.shields.io/badge/arch-linux-1793D1?style=for-the-badge&logo=arch-linux)
 
+## Screenshots
+
+<img src="screenshots/neuro.png" width="49%" align="left" />
+<img src="screenshots/evil.png" width="49%" align="right" />
+<img src="screenshots/vedal.png" width="49%" align="left" />
+<img src="screenshots/anny.png" width="49%" align="right" />
+
 ## Features
 
 - 🎨 **Custom ASCII Art**: Neurosama, EvilNeuro, Vedal, and Anny
