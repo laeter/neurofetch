@@ -234,6 +234,50 @@ logoType:
         printf("Default logo set to: Anny\n");
         exit(0);
     }
+    else if(ffStrEqualsIgnCase(key, "--aquwa"))
+    {
+        ffStrbufSetStatic(&options->source, "Aquwa");
+        options->type = FF_LOGO_TYPE_BUILTIN;
+    }
+    else if(ffStrEqualsIgnCase(key, "--aquwa-a"))
+    {
+        system("sed -i 's/\"source\": \".*\"/\"source\": \"Aquwa\"/' ~/.config/neurofetch/config.jsonc");
+        printf("Default logo set to: Aquwa\n");
+        exit(0);
+    }
+    else if(ffStrEqualsIgnCase(key, "--imp"))
+    {
+        ffStrbufSetStatic(&options->source, "Imp");
+        options->type = FF_LOGO_TYPE_BUILTIN;
+    }
+    else if(ffStrEqualsIgnCase(key, "--imp-a"))
+    {
+        system("sed -i 's/\"source\": \".*\"/\"source\": \"Imp\"/' ~/.config/neurofetch/config.jsonc");
+        printf("Default logo set to: Imp\n");
+        exit(0);
+    }
+    else if(ffStrEqualsIgnCase(key, "--camimi"))
+    {
+        ffStrbufSetStatic(&options->source, "Camimi");
+        options->type = FF_LOGO_TYPE_BUILTIN;
+    }
+    else if(ffStrEqualsIgnCase(key, "--camimi-a"))
+    {
+        system("sed -i 's/\"source\": \".*\"/\"source\": \"Camimi\"/' ~/.config/neurofetch/config.jsonc");
+        printf("Default logo set to: Camimi\n");
+        exit(0);
+    }
+    else if(ffStrEqualsIgnCase(key, "--cog"))
+    {
+        ffStrbufSetStatic(&options->source, "Cog");
+        options->type = FF_LOGO_TYPE_BUILTIN;
+    }
+    else if(ffStrEqualsIgnCase(key, "--cog-a"))
+    {
+        system("sed -i 's/\"source\": \".*\"/\"source\": \"Cog\"/' ~/.config/neurofetch/config.jsonc");
+        printf("Default logo set to: Cog\n");
+        exit(0);
+    }
     else if(ffStrEqualsIgnCase(key, "-r") || ffStrEqualsIgnCase(key, "--random-mode"))
     {
         // Enable random mode in .zshrc - uncomment random section, comment sequential section

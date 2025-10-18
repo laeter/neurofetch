@@ -68,7 +68,7 @@ static void printCommandFormatHelp(const char* command)
                 FF_STRBUF_AUTO_DESTROY variable = ffStrbufCreate();
                 printf("-- In config file: { \"type\": \"%s\", \"format\": \"{<format-variable>}\" }\n", type.chars);
                 printf("Sets the format string for %s output.\n", baseInfo->name);
-                puts("To see how a format string is constructed, take a look at https://github.com/neurofetch-cli/neurofetch/wiki/Format-String-Guide.");
+                puts("To see how a format string is constructed, take a look at https://github.com/laeter/neurofetch.");
                 puts("The following variables are passed:");
 
                 for (unsigned i = 0; i < baseInfo->formatArgs.count; i++)
@@ -188,7 +188,7 @@ Command flags are not case sensitive. E.g. `--print-logos` is equal to `--Print-
 If a value starts with a ?, it is optional. An optional boolean value defaults to true if not specified.\n\
 More detailed help messages for each options can be printed with `-h <option_without_dash_prefix>`\n\
 For detailed information on logo options, module configuration, and formatting, visit:\n\
-      https://github.com/neurofetch-cli/neurofetch/wiki/Configuration");
+      https://github.com/laeter/neurofetch");
 }
 
 static bool printSpecificCommandHelp(const char* command)
@@ -786,7 +786,7 @@ static void writeConfigFile(FFdata* data)
     yyjson_mut_doc* doc = yyjson_mut_doc_new(NULL);
     yyjson_mut_val* root = yyjson_mut_obj(doc);
     yyjson_mut_doc_set_root(doc, root);
-    yyjson_mut_obj_add_str(doc, root, "$schema", "https://github.com/neurofetch-cli/neurofetch/raw/master/doc/json_schema.json");
+    yyjson_mut_obj_add_str(doc, root, "$schema", "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json");
 
     if (instance.state.fullConfig)
     {
@@ -811,7 +811,7 @@ static void writeConfigFile(FFdata* data)
         {
             printf("✓ Configuration file generated: `%s`\n"
                    "* Tip: Use a JSON schema-aware editor for better editing experience\n"
-                   "* Documentation: https://github.com/neurofetch-cli/neurofetch/wiki/Configuration\n", filename->chars);
+                   "* Documentation: https://github.com/laeter/neurofetch\n", filename->chars);
         }
         else
         {

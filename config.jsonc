@@ -36,15 +36,18 @@
       "key": "│ ├󱄄",
       "keyColor": "cyan"
     },
-    {
-      "type": "cpuusage",
-      "key": "│ ├  🌡 CPU",
-      "keyColor": "cyan"
+      {
+      "type": "command",
+      "key": "│ ├  CPU",
+      "keyColor": "cyan",
+      "color": "red",
+      "text": "cpu=$(top -bn1 | grep 'Cpu(s)' | awk '{print $2}' | cut -d'%' -f1); temp=$(sensors | grep 'Tctl' | awk '{print $2}'); echo \"${cpu}% | 🌡 ${temp}\""
     },
     {
-      "type": "gpuusage",
-      "key": "│ ├ 🌡 GPU",
-      "keyColor": "cyan"
+      "type": "command",
+      "key": "│ ├  GPU",
+      "keyColor": "cyan",
+      "text": "gpu=$(nvidia-smi --query-gpu=utilization.gpu --format=csv,noheader,nounits 2>/dev/null || echo '0'); temp=$(nvidia-smi --query-gpu=temperature.gpu --format=csv,noheader,nounits 2>/dev/null || echo '0'); echo \"${gpu}% | 🌡 ${temp}°C\""
     },
     {
       "type": "memory",
@@ -66,10 +69,9 @@
       "format": "\u001b[90m┌──────────────────────Software──────────────────────┐"
     },
     {
-      "type": "command",
-      "key": "\ue900 OS",
-      "keyColor": "magenta",
-      "text": "version=$(omarchy-version 2>/dev/null || echo 'Unknown'); echo \"Omarchy $version\""
+      "type": "os",
+      "key": " OS",
+      "keyColor": "magenta"
     },
     {
       "type": "command",

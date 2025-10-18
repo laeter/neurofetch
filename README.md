@@ -29,7 +29,7 @@
 
 ## Features
 
-- 🎨 **Custom ASCII Art**: Neurosama, EvilNeuro, Vedal, and Anny
+- 🎨 **Custom ASCII Art**: 8 characters - Neurosama, EvilNeuro, Vedal, Anny, Aquwa, Imp, Camimi, and Cog
 - ⚡ **Fast**: Built on fastfetch - lightning-fast system info display
 - 🎯 **Easy Commands**: Simple shortcuts for all logos
 - 🔄 **Smart Modes**: Random or sequential logo rotation on terminal startup
@@ -68,15 +68,23 @@ neurofetch --neuro    # Neurosama
 neurofetch --evil     # EvilNeuro
 neurofetch --vedal    # Vedal
 neurofetch --anny     # Anny
+neurofetch --aquwa    # Aquwa
+neurofetch --imp      # Imp
+neurofetch --camimi   # Camimi
+neurofetch --cog      # Cog (Swarm)
 ```
 
 ### Set Default Logo
 
 ```bash
-neurofetch --neuro-a  # Apply Neurosama as default
-neurofetch --evil-a   # Apply EvilNeuro as default
-neurofetch --vedal-a  # Apply Vedal as default
-neurofetch --anny-a   # Apply Anny as default
+neurofetch --neuro-a   # Apply Neurosama as default
+neurofetch --evil-a    # Apply EvilNeuro as default
+neurofetch --vedal-a   # Apply Vedal as default
+neurofetch --anny-a    # Apply Anny as default
+neurofetch --aquwa-a   # Apply Aquwa as default
+neurofetch --imp-a     # Apply Imp as default
+neurofetch --camimi-a  # Apply Camimi as default
+neurofetch --cog-a     # Apply Cog as default
 ```
 
 ### Terminal Startup Modes
@@ -91,7 +99,11 @@ neurofetch -n         # Sequential mode (cycles through all)
 - **Neurosama** - The AI VTuber herself (cyan/teal theme)
 - **EvilNeuro** - The chaotic twin (red theme)
 - **Vedal** - The creator/programmer (green theme)
-- **Anny** - The artist/mama (magenta/pink theme)
+- **Anny** - The mama (magenta/pink theme)
+- **Aquwa** - Collaborator/friend (light cyan/blue theme)
+- **Imp** - Character (pink/magenta theme)
+- **Camimi** - Camila/turtle version (dark pink/blue theme)
+- **Cog** - The Swarm symbol (pink/cyan theme)
 
 ## Configuration
 

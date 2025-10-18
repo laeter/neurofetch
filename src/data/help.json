@@ -33,6 +33,38 @@
             "desc": "Apply Anny as the default logo"
         },
         {
+            "long": "aquwa",
+            "desc": "Display Aquwa logo"
+        },
+        {
+            "long": "aquwa-a",
+            "desc": "Apply Aquwa as the default logo"
+        },
+        {
+            "long": "imp",
+            "desc": "Display Imp logo"
+        },
+        {
+            "long": "imp-a",
+            "desc": "Apply Imp as the default logo"
+        },
+        {
+            "long": "camimi",
+            "desc": "Display Camimi logo"
+        },
+        {
+            "long": "camimi-a",
+            "desc": "Apply Camimi as the default logo"
+        },
+        {
+            "long": "cog",
+            "desc": "Display Cog logo"
+        },
+        {
+            "long": "cog-a",
+            "desc": "Apply Cog as the default logo"
+        },
+        {
             "short": "r",
             "long": "random-mode",
             "desc": "Enable random logo on terminal startup"
