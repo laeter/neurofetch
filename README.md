@@ -18,6 +18,14 @@
 ## Screenshots
 
 <div align="center">
+  <img src="screenshots/neurofamily.png" width="100%" />
+  <p><i>All 8 Neuro family characters</i></p>
+</div>
+
+<details>
+<summary>Individual Character Screenshots</summary>
+
+<div align="center">
   <img src="screenshots/neuro.png" width="49%" />
   <img src="screenshots/evil.png" width="49%" />
 </div>
@@ -26,6 +34,18 @@
   <img src="screenshots/vedal.png" width="49%" />
   <img src="screenshots/anny.png" width="49%" />
 </div>
+
+<div align="center">
+  <img src="screenshots/aquwa.png" width="49%" />
+  <img src="screenshots/imp.png" width="49%" />
+</div>
+
+<div align="center">
+  <img src="screenshots/camimi.png" width="49%" />
+  <img src="screenshots/cog.png" width="49%" />
+</div>
+
+</details>
 
 ## Features
 
