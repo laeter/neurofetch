@@ -17,9 +17,16 @@
 
 ## Screenshots
 
+### The Neuro Family
 <div align="center">
   <img src="screenshots/neurofamily.png" width="100%" />
-  <p><i>All 8 Neuro family characters</i></p>
+  <p><i>Neurosama, EvilNeuro, Vedal, and Anny</i></p>
+</div>
+
+### Neuro Friends & Swarm
+<div align="center">
+  <img src="screenshots/neurofriends.png" width="100%" />
+  <p><i>Aquwa, Imp, Camimi, and Cog (Swarm symbol)</i></p>
 </div>
 
 <details>
