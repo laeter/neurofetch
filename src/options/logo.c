@@ -197,7 +197,7 @@ logoType:
     }
     else if(ffStrEqualsIgnCase(key, "--neuro-a"))
     {
-        system("sed -i 's/\"source\": \".*\"/\"source\": \"Neurosama\"/' ~/.config/neurofetch/config.jsonc");
+        system("if grep -q '\"source\":' ~/.config/neurofetch/config.jsonc; then sed -i 's/\"source\": \".*\"/\"source\": \"Neurosama\"/' ~/.config/neurofetch/config.jsonc; else sed -i '/\"logo\": {/a\\    \"source\": \"Neurosama\",' ~/.config/neurofetch/config.jsonc; fi");
         printf("Default logo set to: Neurosama\n");
         exit(0);
     }
@@ -208,7 +208,7 @@ logoType:
     }
     else if(ffStrEqualsIgnCase(key, "--evil-a"))
     {
-        system("sed -i 's/\"source\": \".*\"/\"source\": \"EvilNeuro\"/' ~/.config/neurofetch/config.jsonc");
+        system("if grep -q '\"source\":' ~/.config/neurofetch/config.jsonc; then sed -i 's/\"source\": \".*\"/\"source\": \"EvilNeuro\"/' ~/.config/neurofetch/config.jsonc; else sed -i '/\"logo\": {/a\\    \"source\": \"EvilNeuro\",' ~/.config/neurofetch/config.jsonc; fi");
         printf("Default logo set to: EvilNeuro\n");
         exit(0);
     }
@@ -219,7 +219,7 @@ logoType:
     }
     else if(ffStrEqualsIgnCase(key, "--vedal-a"))
     {
-        system("sed -i 's/\"source\": \".*\"/\"source\": \"Vedal\"/' ~/.config/neurofetch/config.jsonc");
+        system("if grep -q '\"source\":' ~/.config/neurofetch/config.jsonc; then sed -i 's/\"source\": \".*\"/\"source\": \"Vedal\"/' ~/.config/neurofetch/config.jsonc; else sed -i '/\"logo\": {/a\\    \"source\": \"Vedal\",' ~/.config/neurofetch/config.jsonc; fi");
         printf("Default logo set to: Vedal\n");
         exit(0);
     }
@@ -230,7 +230,7 @@ logoType:
     }
     else if(ffStrEqualsIgnCase(key, "--anny-a"))
     {
-        system("sed -i 's/\"source\": \".*\"/\"source\": \"Anny\"/' ~/.config/neurofetch/config.jsonc");
+        system("if grep -q '\"source\":' ~/.config/neurofetch/config.jsonc; then sed -i 's/\"source\": \".*\"/\"source\": \"Anny\"/' ~/.config/neurofetch/config.jsonc; else sed -i '/\"logo\": {/a\\    \"source\": \"Anny\",' ~/.config/neurofetch/config.jsonc; fi");
         printf("Default logo set to: Anny\n");
         exit(0);
     }
@@ -241,7 +241,7 @@ logoType:
     }
     else if(ffStrEqualsIgnCase(key, "--aquwa-a"))
     {
-        system("sed -i 's/\"source\": \".*\"/\"source\": \"Aquwa\"/' ~/.config/neurofetch/config.jsonc");
+        system("if grep -q '\"source\":' ~/.config/neurofetch/config.jsonc; then sed -i 's/\"source\": \".*\"/\"source\": \"Aquwa\"/' ~/.config/neurofetch/config.jsonc; else sed -i '/\"logo\": {/a\\    \"source\": \"Aquwa\",' ~/.config/neurofetch/config.jsonc; fi");
         printf("Default logo set to: Aquwa\n");
         exit(0);
     }
@@ -252,7 +252,7 @@ logoType:
     }
     else if(ffStrEqualsIgnCase(key, "--imp-a"))
     {
-        system("sed -i 's/\"source\": \".*\"/\"source\": \"Imp\"/' ~/.config/neurofetch/config.jsonc");
+        system("if grep -q '\"source\":' ~/.config/neurofetch/config.jsonc; then sed -i 's/\"source\": \".*\"/\"source\": \"Imp\"/' ~/.config/neurofetch/config.jsonc; else sed -i '/\"logo\": {/a\\    \"source\": \"Imp\",' ~/.config/neurofetch/config.jsonc; fi");
         printf("Default logo set to: Imp\n");
         exit(0);
     }
@@ -263,7 +263,7 @@ logoType:
     }
     else if(ffStrEqualsIgnCase(key, "--camimi-a"))
     {
-        system("sed -i 's/\"source\": \".*\"/\"source\": \"Camimi\"/' ~/.config/neurofetch/config.jsonc");
+        system("if grep -q '\"source\":' ~/.config/neurofetch/config.jsonc; then sed -i 's/\"source\": \".*\"/\"source\": \"Camimi\"/' ~/.config/neurofetch/config.jsonc; else sed -i '/\"logo\": {/a\\    \"source\": \"Camimi\",' ~/.config/neurofetch/config.jsonc; fi");
         printf("Default logo set to: Camimi\n");
         exit(0);
     }
@@ -274,24 +274,80 @@ logoType:
     }
     else if(ffStrEqualsIgnCase(key, "--cog-a"))
     {
-        system("sed -i 's/\"source\": \".*\"/\"source\": \"Cog\"/' ~/.config/neurofetch/config.jsonc");
+        system("if grep -q '\"source\":' ~/.config/neurofetch/config.jsonc; then sed -i 's/\"source\": \".*\"/\"source\": \"Cog\"/' ~/.config/neurofetch/config.jsonc; else sed -i '/\"logo\": {/a\\    \"source\": \"Cog\",' ~/.config/neurofetch/config.jsonc; fi");
         printf("Default logo set to: Cog\n");
         exit(0);
     }
-    else if(ffStrEqualsIgnCase(key, "-r") || ffStrEqualsIgnCase(key, "--random-mode"))
+    else if(ffStrEqualsIgnCase(key, "--r"))
     {
-        // Enable random mode in .zshrc - uncomment random section, comment sequential section
-        system("sed -i '/^# Randomly select/,/^esac$/ { s/^# //; }' ~/.config/zsh/.zshrc");
-        system("sed -i '/^# # Sequential select/,/^# echo/ { s/^# // ; s/^/# / }' ~/.config/zsh/.zshrc");
-        printf("Random mode enabled - terminal will show random logos on startup\n");
+        // Reset to Neuro default - remove source line from config
+        system("sed -i '/\"source\":/d' ~/.config/neurofetch/config.jsonc");
+        printf("Reset to default: Neurosama\n");
         exit(0);
     }
-    else if(ffStrEqualsIgnCase(key, "-n") || ffStrEqualsIgnCase(key, "--normal-mode"))
+    else if(ffStrEqualsIgnCase(key, "--vedal-u"))
     {
-        // Enable sequential mode in .zshrc - comment random section, uncomment sequential section
+        // Unapply Vedal and reset to Neuro default
+        system("sed -i '/\"source\":/d' ~/.config/neurofetch/config.jsonc");
+        printf("Unapplied Vedal, reset to default: Neurosama\n");
+        exit(0);
+    }
+    else if(ffStrEqualsIgnCase(key, "--evil-u"))
+    {
+        // Unapply Evil and reset to Neuro default
+        system("sed -i '/\"source\":/d' ~/.config/neurofetch/config.jsonc");
+        printf("Unapplied EvilNeuro, reset to default: Neurosama\n");
+        exit(0);
+    }
+    else if(ffStrEqualsIgnCase(key, "--anny-u"))
+    {
+        // Unapply Anny and reset to Neuro default
+        system("sed -i '/\"source\":/d' ~/.config/neurofetch/config.jsonc");
+        printf("Unapplied Anny, reset to default: Neurosama\n");
+        exit(0);
+    }
+    else if(ffStrEqualsIgnCase(key, "--aquwa-u"))
+    {
+        // Unapply Aquwa and reset to Neuro default
+        system("sed -i '/\"source\":/d' ~/.config/neurofetch/config.jsonc");
+        printf("Unapplied Aquwa, reset to default: Neurosama\n");
+        exit(0);
+    }
+    else if(ffStrEqualsIgnCase(key, "--imp-u"))
+    {
+        // Unapply Imp and reset to Neuro default
+        system("sed -i '/\"source\":/d' ~/.config/neurofetch/config.jsonc");
+        printf("Unapplied Imp, reset to default: Neurosama\n");
+        exit(0);
+    }
+    else if(ffStrEqualsIgnCase(key, "--camimi-u"))
+    {
+        // Unapply Camimi and reset to Neuro default
+        system("sed -i '/\"source\":/d' ~/.config/neurofetch/config.jsonc");
+        printf("Unapplied Camimi, reset to default: Neurosama\n");
+        exit(0);
+    }
+    else if(ffStrEqualsIgnCase(key, "--cog-u"))
+    {
+        // Unapply Cog and reset to Neuro default
+        system("sed -i '/\"source\":/d' ~/.config/neurofetch/config.jsonc");
+        printf("Unapplied Cog, reset to default: Neurosama\n");
+        exit(0);
+    }
+    else if(ffStrEqualsIgnCase(key, "--s") || ffStrEqualsIgnCase(key, "--shuffle"))
+    {
+        // Enable shuffle - uncomment random section, comment sequential section in .zshrc
+        system("sed -i '/^# Randomly select/,/^esac$/ { s/^# //; }' ~/.config/zsh/.zshrc");
+        system("sed -i '/^# # Sequential select/,/^# echo/ { s/^# // ; s/^/# / }' ~/.config/zsh/.zshrc");
+        printf("Shuffle enabled - terminal will show shuffled logos on startup\n");
+        exit(0);
+    }
+    else if(ffStrEqualsIgnCase(key, "--n") || ffStrEqualsIgnCase(key, "--normal"))
+    {
+        // Enable normal (sequential) - comment random section, uncomment sequential section in .zshrc
         system("sed -i '/^# Randomly select/,/^esac$/ { s/^/# / }' ~/.config/zsh/.zshrc");
         system("sed -i '/^# # Sequential select/,/^# echo/ { s/^# // }' ~/.config/zsh/.zshrc");
-        printf("Sequential mode enabled - terminal will cycle through logos in order\n");
+        printf("Normal enabled - terminal will cycle through logos in sequence\n");
         exit(0);
     }
     else if((subKey = ffOptionTestPrefix(key, "chafa")))

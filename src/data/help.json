@@ -65,14 +65,46 @@
             "desc": "Apply Cog as the default logo"
         },
         {
-            "short": "r",
-            "long": "random-mode",
-            "desc": "Enable random logo on terminal startup"
+            "long": "r",
+            "desc": "Reset to default Neurosama logo"
+        },
+        {
+            "long": "vedal-u",
+            "desc": "Unapply Vedal and reset to Neurosama"
+        },
+        {
+            "long": "evil-u",
+            "desc": "Unapply EvilNeuro and reset to Neurosama"
+        },
+        {
+            "long": "anny-u",
+            "desc": "Unapply Anny and reset to Neurosama"
+        },
+        {
+            "long": "aquwa-u",
+            "desc": "Unapply Aquwa and reset to Neurosama"
+        },
+        {
+            "long": "imp-u",
+            "desc": "Unapply Imp and reset to Neurosama"
+        },
+        {
+            "long": "camimi-u",
+            "desc": "Unapply Camimi and reset to Neurosama"
+        },
+        {
+            "long": "cog-u",
+            "desc": "Unapply Cog and reset to Neurosama"
+        },
+        {
+            "short": "s",
+            "long": "shuffle",
+            "desc": "Enable shuffle - show shuffled logos on terminal startup"
         },
         {
             "short": "n",
-            "long": "normal-mode",
-            "desc": "Enable sequential logo rotation on terminal startup"
+            "long": "normal",
+            "desc": "Enable normal - cycle through logos in sequence on terminal startup"
         }
     ],
     "Informative": [
