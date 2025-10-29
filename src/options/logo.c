@@ -2,6 +2,8 @@
 
 #include "common/jsonconfig.h"
 #include "util/stringUtils.h"
+#include <time.h>
+#include <unistd.h>
 
 void ffOptionsInitLogo(FFOptionsLogo* options)
 {
@@ -336,19 +338,35 @@ logoType:
     }
     else if(ffStrEqualsIgnCase(key, "--s") || ffStrEqualsIgnCase(key, "--shuffle"))
     {
-        // Enable shuffle - uncomment random section, comment sequential section in .zshrc
-        system("sed -i '/^# Randomly select/,/^esac$/ { s/^# //; }' ~/.config/zsh/.zshrc");
-        system("sed -i '/^# # Sequential select/,/^# echo/ { s/^# // ; s/^/# / }' ~/.config/zsh/.zshrc");
-        printf("Shuffle enabled - terminal will show shuffled logos on startup\n");
-        exit(0);
+        // Shuffle - randomly select a logo each time
+        srand((unsigned int)(time(NULL) + getpid())); // Seed with time and process ID for better randomness
+        const char* logos[] = {"Neurosama", "Vedal", "Evil", "Anny", "Aquwa", "Imp", "Camimi", "Cog"};
+        int randomIndex = rand() % 8;
+        ffStrbufSetS(&options->source, logos[randomIndex]);
+        return true;
     }
     else if(ffStrEqualsIgnCase(key, "--n") || ffStrEqualsIgnCase(key, "--normal"))
     {
-        // Enable normal (sequential) - comment random section, uncomment sequential section in .zshrc
-        system("sed -i '/^# Randomly select/,/^esac$/ { s/^/# / }' ~/.config/zsh/.zshrc");
-        system("sed -i '/^# # Sequential select/,/^# echo/ { s/^# // }' ~/.config/zsh/.zshrc");
-        printf("Normal enabled - terminal will cycle through logos in sequence\n");
-        exit(0);
+        // Normal/Sequential - cycle through logos in sequence
+        // Read the last used index from a state file
+        const char* stateFile = "/tmp/neurofetch_sequence_state";
+        FILE* f = fopen(stateFile, "r");
+        int currentIndex = 0;
+        if (f) {
+            fscanf(f, "%d", &currentIndex);
+            fclose(f);
+        }
+
+        const char* logos[] = {"Neurosama", "Vedal", "Evil", "Anny", "Aquwa", "Imp", "Camimi", "Cog"};
+        ffStrbufSetS(&options->source, logos[currentIndex % 8]);
+
+        // Save next index for next run
+        f = fopen(stateFile, "w");
+        if (f) {
+            fprintf(f, "%d", (currentIndex + 1) % 8);
+            fclose(f);
+        }
+        return true;
     }
     else if((subKey = ffOptionTestPrefix(key, "chafa")))
     {
